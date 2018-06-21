@@ -34,7 +34,8 @@
         <a class="navbar-brand" href="#"> FUN MOFO </a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="mynav"><a ng-href="#/"> Home </a></li>
+        <li class="mynav"><a ng-href="#/preview"> Home </a></li>
+        <!-- <li class="mynav"><a href="views/preview.html"> Home </a></li> -->
       </ul>
       <div>
       <form class="navbar-form navbar-left" action="/action_page.php">
@@ -47,7 +48,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="mynav"><a data-toggle="modal" data-target="#myModalRegister"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li class="mynav"><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li class="mynav"><a><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li class="mynav"><a ng-href="#/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
   </nav>
@@ -197,7 +198,7 @@
             <div class="banner_right">
                 <h1>Delivery within 30 mins otherwise<font color = "#FECF17"> FREE</font></h1>
                 <p></p>
-                <a href="#" class="banner_btn">Buy Now</a>
+                <a href="#" class="banner_btn">Buy Now</a> -->
             </div>
             <div class='clearfix'></div>
         </div>
@@ -233,9 +234,8 @@
 		<div class="footer-grid">
 			<h3>Your Account</h3>
 			<ul class="list1">
-				<li><a href="login.html">Your Account</a></li>
-				<li><a href="contact.html">Personal information</a></li>
-				<li><a href="checkout.html">Orders history</a></li>
+				<li><a href="#/myprofile">Your Account</a></li>
+				<li><a href="">Orders history</a></li>
 			</ul>
 		</div>
 		<div class="footer-grid">

@@ -14,7 +14,7 @@ p {margin: 0;}
 html, body{
    font-family: 'Raleway', sans-serif;
    font-size: 100%;
-	 background-color: rgb(252, 249, 249);
+	 background-color: rgb(248, 247, 247);
 }
 body a{
 	transition:0.5s all;
@@ -1725,10 +1725,10 @@ a.forgot:hover {
 .news-letter:hover {
 	color:#00BFF0;
 }
-.register-but{
+.register-but,.confirm-but{
 	margin-top:1em;
 }
-.register-but form input[type="submit"] {
+.register-but form input[type="submit"] ,.confirm-but form input[type="submit"]{
 	background:#df4782;
 	color: #FFF;
 	font-size: 0.8em;
@@ -2476,7 +2476,7 @@ h3.typo-title {
   float: none;
 }
 .container {
-  padding:0 10px;
+	padding:0 10px;
 }
 .copy {
   text-align: center;
@@ -7611,5 +7611,125 @@ td.invert-image a img {
 	margin-left: 40px;
 }
 
-
 /*-- //responsive media queries --*/
+
+/* our style */
+ .account{
+	padding:40px;
+	border-radius: 4px;
+	background-color: white;
+	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+div.settings a ,#Account{
+	/* text-align:center; */
+	text-decoration:none;
+	color:black;
+	padding:5px;
+	margin:0px;
+	font-weight: normal;
+	font-family: Roboto, Arial, sans-serif;
+}
+div.settings a div span{
+	margin-left:23px;
+}
+div.settings a div{
+	padding:10px;
+	margin:0px;
+}
+div.settings a div:hover{
+	color:white;
+	font-weight:bold;
+	background:#31C2DB;
+	font-family: Roboto, Arial, sans-serif;
+	cursor: pointer;
+}
+
+.Account{
+	font-weight:500;
+	color:grey;
+	font-size:20px;
+	font-family:inherit;
+}
+
+#profileimage,#order{
+ margin-right:15px;
+}
+
+.edit{
+	color:black;
+	font-family: Roboto, Arial, sans-serif;
+	font-size:16px;
+	margin-top:20px;
+}
+
+.topedit{
+	float:right;
+	font-weight: bold;
+	color:#31C2DB;
+	cursor: pointer;
+	font-size:16px;
+	margin-right:5%;
+}
+
+.confirm-but form input[type="submit"]{
+	background:#31C2DB;
+	
+}
+
+.name,.mobile,div.addr span{
+	color:black;
+	font-weight:bold;
+	font-family: Roboto, Arial, sans-serif;
+	font-size:15px;
+}
+
+.mobile{
+   margin-left:20px;
+}
+
+.manage_addr{
+	margin-top:1.3em;
+	border-bottom: solid 1px #e0e0e0;
+	padding:20px;
+}
+
+div.addr{
+  margin-top:1em;
+}
+
+div.addr span{
+font-weight:normal;
+}
+
+.imgdel{
+	display:inline;
+	float:right;
+	cursor:pointer;
+	height:5%;
+	width:5%;
+}
+
+#right{
+	float:right;
+	cursor:pointer;
+}
+
+#orderid{
+	font-size:20px;
+}
+
+.highlight{
+	cursor:pointer;
+}
+
+.highlight:hover{
+	color:#31C2DB;
+}
+
+#logout{
+	font-size:18x;
+	font-weight:500;
+}

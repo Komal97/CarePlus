@@ -1,4 +1,4 @@
-app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHECKOUT){
+app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHECKOUT,PREVIEW,MYPROFILE){
     $locationProvider.hashPrefix('');
     $routeProvider.when(HOME,{
         templateUrl:'views/home.html'
@@ -8,5 +8,10 @@ app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHE
         templateUrl:'views/contactus.html',
     }).when(CHECKOUT,{
         templateUrl:'views/checkout.html',
-    }).otherwise({template:'Some Wrong URI U Type'});
+    }).when(PREVIEW,{
+        templateUrl:'views/preview.html',
+    }).when(MYPROFILE,{
+        templateUrl:'views/myprofile.html',
+    })
+    .otherwise({template:'Some Wrong URI U Type'});
 });
