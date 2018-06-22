@@ -51,3 +51,4 @@ $(window).load(function () {
         controlNav: "thumbnails"
     });
 });
+
