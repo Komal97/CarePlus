@@ -7655,8 +7655,8 @@ td.invert-image a img {
 	border-radius: 4px;
 	background-color: white;
 	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
-	margin-top:50px;
-	margin-bottom:50px;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 
 .headingdiv{
@@ -7723,9 +7723,8 @@ div.settings a div:hover{
 
 .address{
 	color: #555;
-	font-size: 0.6em;;
+	font-size: 0.85em;;
 	font-family: Roboto, Arial, sans-serif;
-	font-size:13px;
 }
 
 .topedit{
@@ -7758,6 +7757,8 @@ div.settings a div:hover{
 	border-bottom: solid 1px #e0e0e0;
 	padding:20px;
 }
+
+
 
 div.addr{
   margin-top:1em;
