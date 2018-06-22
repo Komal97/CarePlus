@@ -36,3 +36,18 @@ $(document).ready(function() {
         mainClass: 'my-mfp-zoom-in'
      });
 });
+
+$(document).ready(function () {
+    $('#horizontalTab').easyResponsiveTabs({
+        type: 'default', //Types: default, vertical, accordion           
+        width: 'auto', //auto or any width like 600px
+        fit: true   // 100% fit in a container
+    });
+});
+
+$(window).load(function () {
+    $('.flexslider').flexslider({
+        animation: "slide",
+        controlNav: "thumbnails"
+    });
+});

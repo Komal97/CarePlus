@@ -33,8 +33,33 @@ body a{
 	width: 20%;
 }
 
+.btn-primary{
+	background-color: #004284 !important ; 
+	border: 1px solid #004284 !important;
+	height: 200%;
+	padding-top: 1.3%;
+	padding-bottom: 1.3%;
+	width: 12%;
+	margin-right: 10px;
+	font-size: 100%;
+	border-radius: 0px !important;
+}
+
+
+.btn-danger{
+	background-color: #d94f5c !important; 
+	border: 1px solid #d94f5c !important;
+	height: 200%;
+	padding-top: 1.3%;
+	padding-bottom: 1.3%;
+	width: 12%;
+	margin-right: 10px;
+	font-size: 100%;
+	border-radius: 0px !important;
+}
+
 li.mynav{
-	background-color:#333;;
+	background-color:#333;
 }
 
 li.mynav a:hover{
@@ -256,6 +281,8 @@ ul.quick_access li.check{
   font-size: .8em;
   text-transform: capitalize;
 }
+
+
 .search input[type="submit"] {
   background: url('../images/search.png') no-repeat 10px 9px #333;
   padding: 6px 19px;
@@ -1273,7 +1300,7 @@ h3.recent{
 	margin: 0;
 	text-align: center;
 	list-style: none;
-	float: left;
+  float: left;
 	outline: none;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
@@ -7623,6 +7650,34 @@ td.invert-image a img {
 	margin-bottom:50px;
 }
 
+.checkoutdiv{
+	padding:0px;
+	border-radius: 4px;
+	background-color: white;
+	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+.headingdiv{
+	background-color:#31C2DB;
+	padding:2.5%;
+	color: white;
+	font-size: 1.2em;
+	font-weight:500;
+	
+}
+
+.previewdiv{
+	padding:20px;
+	border-radius: 4px;
+	background-color: white;
+	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
+	align-content: center;
+	margin-top:40px;
+	margin-bottom:5px;
+}
+
 div.settings a ,#Account{
 	/* text-align:center; */
 	text-decoration:none;
@@ -7659,10 +7714,18 @@ div.settings a div:hover{
 }
 
 .edit{
-	color:black;
+	color: #555;
+	font-size: 0.9em;;
 	font-family: Roboto, Arial, sans-serif;
 	font-size:16px;
 	margin-top:20px;
+}
+
+.address{
+	color: #555;
+	font-size: 0.6em;;
+	font-family: Roboto, Arial, sans-serif;
+	font-size:13px;
 }
 
 .topedit{
