@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Luxury Furnish an E-Commerce online Shopping</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Luxury Furnish Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
       Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /> 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
     <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
     <link href="css/component.css" rel='stylesheet' type='text/css' />
-    
+
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script src="js/simpleCart.min.js"> </script>
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/custom/indexjquery.js"></script>
     <script type="text/javascript" src="js/jquery.flexisel.js"></script>
-    <script defer src="js/jquery.flexslider.js"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/jquery.easydropdown.js"></script>
     <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -30,83 +32,133 @@
     <script src="js/config/routesconstants.js"></script>
     <script src='spa-routes.js'></script>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-		    
+
 </head>
+
 <body ng-app="myapp">
 
-<!-- NAVBAR SECTION -->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"> FUN MOFO </a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="mynav"><a ng-href="#/checkout"> Home </a></li>
-        <!-- <li class="mynav"><a href="views/preview.html"> Home </a></li> -->
-      </ul>
-      <div>
-      <form class="navbar-form navbar-left" action="/action_page.php">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit"  class="btn glyphicon glyphicon-search"></button>
-      </form>
-    </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="mynav"><a data-toggle="modal" data-target="#myModalRegister"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li class="mynav"><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li class="mynav"><a ng-href="#/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </nav>
-
-<!-- Modal Register-->
-<div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <!-- NAVBAR SECTION -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"> FUN MOFO </a>
             </div>
-            <div class="modal-body">
-                <div class="main">
-                    <div class="container">
-                        <div class="register">
-                            <form> 
-                                <div class="register-top-grid">
-                                   <h3>PERSONAL INFORMATION</h3>
-                                    <div>
-                                        <span>First Name<label>*</label></span>
-                                        <input type="text"> 
-                                    </div>
-                                    <div>
-                                        <span>Last Name<label>*</label></span>
-                                        <input type="text"> 
-                                    </div>
-                                    <div>
-                                        <span>Email Address<label>*</label></span>
-                                        <input type="text"> 
-                                    </div>
-                                    <div>
-                                        <span>Mobile Number<label>*</label></span>
-                                        <input type="text"> 
-                                    </div>
-                                    <div>
-                                        <span>Password<label>*</label></span>
-                                        <input type="password">
-                                    </div>
-                                    <div>
-                                        <span>Confirm Password<label>*</label></span>
-                                        <input type="password">
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </form>
-                            <div class="clearfix"> </div>
-                            <div class="register-but">
+            <ul class="nav navbar-nav">
+                <li class="mynav">
+                    <a ng-href="#/"> Home </a>
+                </li>
+                <!-- <li class="mynav"><a href="views/preview.html"> Home </a></li> -->
+            </ul>
+            <div>
+                <form class="navbar-form navbar-left" action="/action_page.php">
+                    <div class="form-group relative">
+                        <input type="text" class="form-control w-300" placeholder="Search">
+                        <button type="submit" class="btn glyphicon absolute srch-ryt glyphicon-search"></button>
+                    </div>
+
+                </form>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="mynav">
+                    <a data-toggle="modal" data-target="#myModalRegister">
+                        <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                </li>
+                <li class="mynav">
+                    <a data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
+                <li class="mynav">
+                    <a ng-href="#/cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal Register-->
+    <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="main">
+                        <div class="contain">
+                            <div class="register">
+                                    <h3 class="text-center pb-3">PERSONAL INFORMATION</h3>
                                 <form>
-                                    <input type="submit" value="submit">
-                                    <div class="clearfix"> </div>
+                                    <!-- <div class="register-top-grid"> -->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                       
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <!-- </div> -->
+                                        <!-- <div>
+                                            <span>First Name
+                                                <label>*</label>
+                                            </span>
+                                            <input type="text">
+                                        </div> -->
+                                        <!-- <div>
+                                            <span>Last Name
+                                                <label>*</label>
+                                            </span>
+                                            <input type="text">
+                                        </div>
+                                        <div>
+                                            <span>Email Address
+                                                <label>*</label>
+                                            </span>
+                                            <input type="text">
+                                        </div>
+                                        <div>
+                                            <span>Mobile Number
+                                                <label>*</label>
+                                            </span>
+                                            <input type="text">
+                                        </div>
+                                        <div>
+                                            <span>Password
+                                                <label>*</label>
+                                            </span>
+                                            <input type="password">
+                                        </div>
+                                        <div>
+                                            <span>Confirm Password
+                                                <label>*</label>
+                                            </span>
+                                            <input type="password">
+                                        </div> -->
+                                        <!-- <div class="clearfix"> </div> -->
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
                                 </form>
+                                <!-- <div class="clearfix"> </div> -->
+                                <!-- <div class="register-but">
+                                    <form>
+                                        <input type="submit" value="submit">
+                                        <div class="clearfix"> </div>
+                                    </form>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -114,140 +166,199 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal Login-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-            <div class="account_grid">
-                <div class="col-md-6 login-left">
-                    <h3>NEW CUSTOMERS</h3>
-                  <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                  <a class="acount-btn" href="register.html" data-toggle="modal" data-target="#myModalRegister">Create an Account</a>
+    <!-- Modal Login-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="col-md-6 login-right">
-                   <h3>REGISTERED CUSTOMERS</h3>
-                 <p>If you have an account with us, please log in.</p>
-                 <form>
-                   <div>
-                     <span>Email Address<label>*</label></span>
-                     <input type="text"> 
-                   </div>
-                   <div>
-                     <span>Password<label>*</label></span>
-                     <input type="text"> 
-                   </div>
-                   <a class="forgot" href="#">Forgot Your Password?</a>
-                   <input type="submit" value="Login">
-                 </form>
-                </div>	
-                <div class="clearfix"> </div>
-              </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-<!-- HEADER SECTION -->
-<div class="header">	
-    <div class="container"> 
-        <div class="header-top">
-            <div class="logo">
-                <a href="index.html"><h6></h6><h2>Fun<br>Mofo</h2></a>
-            </div>
-            <div class="header_right">
-               <ul class="social">
-                <li><a href=""> <i class="fb"> </i> </a></li>
-                <li><a href=""><i class="tw"> </i> </a></li>
-                <li><a href=""><i class="utube"> </i> </a></li>
-                <li><a href=""><i class="pin"> </i> </a></li>
-                <li><a href=""><i class="instagram"> </i> </a></li>
-               </ul>
-               <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>  
-        <div class="banner_wrap">
-            <div class="bannertop_box">
-                <div class="welcome_box">
-                    <h3>Welcome to<br> Fun Mofo</h3>
-                    <p><h4>Keep Calm <br>&<br> Carry One.</h4></p>
+                <div class="modal-body">
+                    <div class="account_grid">
+                        <div class="col-md-6 login-left">
+                            <h3>NEW CUSTOMERS</h3>
+                            <p>By creating an account with our store, you will be able to move through the checkout process
+                                faster, store multiple shipping addresses, view and track your orders in your account and
+                                more.</p>
+                            <a class="acount-btn" href="register.html" data-toggle="modal" data-dismiss="modal" data-target="#myModalRegister">Create an Account</a>
+                        </div>
+                        <div class="col-md-6 login-right">
+                            <h3>REGISTERED CUSTOMERS</h3>
+                            <p>If you have an account with us, please log in.</p>
+                            <form>
+                                <div>
+                                    <span>Email Address
+                                        <label>*</label>
+                                    </span>
+                                    <input type="text">
+                                </div>
+                                <div>
+                                    <span>Password
+                                        <label>*</label>
+                                    </span>
+                                    <input type="text">
+                                </div>
+                                <a class="forgot" href="#">Forgot Your Password?</a>
+                                <input type="submit" value="Login">
+                            </form>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
                 </div>
             </div>
-            <div class="banner_right">
-                <h1>Delivery within 30 mins otherwise<font color = "#FECF17"> FREE</font></h1>
-                <p></p>
-                <a href="#" class="banner_btn">Buy Now</a> -->
-            </div>
-            <div class='clearfix'></div>
         </div>
     </div>
-</div>
 
-<!-- CATEGORIES SECTION -->
-<div class="menu_box">
-    <h3 class="menu_head">Categories</h3>
-    <ul class="nav">
-        <li><a ng-href="#/itemlist"> Sanitizers </a></li>
-        <li><a ng-href="#/itemlist"> Sanitary Pads </a></li>
-        <li><a ng-href="#/itemlist"> Condoms </a></li>
-    </ul>
-  </div>
-
-
-<!-- Changing div -->
-<div >
-    <ng-view></ng-view>
-</div>
-
-  <!-- FOOTER SECTION -->
-<div class="footer">
-	<div class="container">
-		<div class="footer-grid">
-			<h3>Category</h3>
-			<ul class="list1">
-				<li><a ng-href="#/">Home</a></li>
-				<li><a>About us</a></li>
-			</ul>
-		</div>
-		<div class="footer-grid">
-			<h3>Your Account</h3>
-			<ul class="list1">
-				<li><a ng-href="#/myprofile">Your Account</a></li>
-				<li><a ng-href="#/orderhistory">Orders history</a></li>
-			</ul>
-		</div>
-		<div class="footer-grid">
-			<h3>Our Support</h3>
-			<ul class="list1">
-				<li><a ng-href="#/contactus">Contact Us</a></li>
-				<li><a ng-href="#/contactus">Addresses</a></li>
-			</ul>
-		</div>
-		<div class="footer-grid">
-			<h3>Newsletter</h3>
-			<p class="footer_desc"> Sign up for our free newsletter </p>
-			<div class="search_footer">
-				<input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
-				<input type="submit" value="Subscribe">
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html">
+                        <h6></h6>
+                        <h2>Fun
+                            <br>Mofo</h2>
+                    </a>
+                </div>
+                <div class="header_right">
+                    <ul class="social">
+                        <li>
+                            <a href="">
+                                <i class="fb"> </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="tw"> </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="utube"> </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="pin"> </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="instagram"> </i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <p class="footer_desc"> Payment method </p>
-			<img src="images/payment.png" class="img-responsive" alt=""/>
-		</div>
-		<div class="clearfix"> </div>
-	</div>
-</div>
-<div class="footer_bottom">
-	<div class="container">
-		<div class="copy">
-			<p>Copyright &copy; 2015 Luxury Furnish. All Rights Reserved . Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-		</div>
-	</div>
-</div>
+            <div class="banner_wrap">
+                <div class="bannertop_box">
+                    <div class="welcome_box">
+                        <h3>Welcome to
+                            <br> Fun Mofo</h3>
+                        <p>
+                            <h4>Keep Calm
+                                <br>&
+                                <br> Carry One.</h4>
+                        </p>
+                    </div>
+                </div>
+                <div class="banner_right">
+                    <h1>Delivery within 30 mins otherwise
+                        <font color="#FECF17"> FREE</font>
+                    </h1>
+                    <p></p>
+                    <a href="#" class="banner_btn">Buy Now</a> -->
+                </div>
+                <div class='clearfix'></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIES SECTION -->
+    <div class="menu_box">
+        <h3 class="menu_head">Categories</h3>
+        <ul class="nav">
+            <li>
+                <a ng-href="#/itemlist"> Sanitizers </a>
+            </li>
+            <li>
+                <a ng-href="#/itemlist"> Sanitary Pads </a>
+            </li>
+            <li>
+                <a ng-href="#/itemlist"> Condoms </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Changing div -->
+    <div>
+        <ng-view></ng-view>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <h3>Category</h3>
+                <ul class="list1">
+                    <li>
+                        <a ng-href="#/">Home</a>
+                    </li>
+                    <li>
+                        <a>About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-grid">
+                <h3>Your Account</h3>
+                <ul class="list1">
+                    <li>
+                        <a ng-href="#/myprofile">Your Account</a>
+                    </li>
+                    <li>
+                        <a ng-href="#/orderhistory">Orders history</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-grid">
+                <h3>Our Support</h3>
+                <ul class="list1">
+                    <li>
+                        <a ng-href="#/contactus">Contact Us</a>
+                    </li>
+                    <li>
+                        <a ng-href="#/contactus">Addresses</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-grid">
+                <h3>Newsletter</h3>
+                <p class="footer_desc"> Sign up for our free newsletter </p>
+                <div class="search_footer">
+                    <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
+                    <input type="submit" value="Subscribe">
+                </div>
+                <p class="footer_desc"> Payment method </p>
+                <img src="images/payment.png" class="img-responsive" alt="" />
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="copy">
+                <p>Copyright &copy; 2015 Luxury Furnish. All Rights Reserved . Design by
+                    <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

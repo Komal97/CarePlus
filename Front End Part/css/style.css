@@ -77,9 +77,42 @@ nav{
 	color:white !important;
 }
 
-.form-control{
+.w-300{
 	width:300% !important;
 }
+
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.pb-1{
+	padding-bottom: 10px;
+}
+
+.pb-2{
+	padding-bottom: 20px;
+}
+
+.pb-3{
+	padding-bottom: 30px;
+}
+
+.pb-4{
+	padding-bottom: 40px;
+}
+.pb-5{
+	padding-bottom: 50px;
+}
+
+.srch-ryt{
+	right: -346px;
+}
+
+
 .header{
 	background: url(../images/banner2.jpg) no-repeat 0px 0px;
 	-webkit-background-size: cover;
@@ -540,7 +573,7 @@ ul.quick_access li.check{
 h3.menu_head{
 	text-align:center;
 	background: #333;
-	padding: 1em 0 1em 1.5em;
+	padding: 1em 0 1em 0em;
 	color: #fff;
 	text-transform: capitalize;
 	font-size: 1.5em;
@@ -564,9 +597,13 @@ ul.nav li a{
 	font-weight:400;
 	 font-family: 'Raleway', sans-serif;
 	display: block;
-	  padding:10px 15px 10px 40px; 
+	  padding:10px  26px; 
 	 text-align:center;
 }
+ul.nav li a:visited{
+	background-color: black;
+}
+
 ul.nav li a:hover{
 	color:#fff;
 	text-decoration:none;
@@ -1655,9 +1692,7 @@ a.forgot:hover {
   color: #ffd001;
 }
 /*--register--*/
-.register{
-	padding:5em 0;
-}
+
 .register-top-grid h3 {
 	color:#31C2DB;
 	font-size: 1.3em;
@@ -3938,7 +3973,7 @@ text-align:center;
 }
 .resp-tab-item{
     margin: 0 25px;
-    padding: 0 35px 25px 35px;
+		padding: 15px 26px;
     text-decoration: none;
     color: #ccc;
     cursor: pointer;
@@ -7676,6 +7711,19 @@ td.invert-image a img {
 	align-content: center;
 	margin-top:40px;
 	margin-bottom:5px;
+	height:444px;
+	position: relative;
+}
+
+.previewdiv1{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.previewdiv1 img{
+	min-width:340px;
 }
 
 div.settings a ,#Account{
