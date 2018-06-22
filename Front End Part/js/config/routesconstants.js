@@ -4,4 +4,5 @@ app.constant('CONTACTUS','/contactus');
 app.constant('CART','/cart');
 app.constant('PREVIEW','/preview');
 app.constant('MYPROFILE','/myprofile');
-app.constant('CHECKOUT','/checkout')
+app.constant('CHECKOUT','/checkout');
+app.constant('ORDERHISTORY','/orderhistory');

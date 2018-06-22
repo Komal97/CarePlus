@@ -1,4 +1,4 @@
-app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHECKOUT,CART,PREVIEW,MYPROFILE){
+app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHECKOUT,CART,PREVIEW,MYPROFILE,ORDERHISTORY){
     $locationProvider.hashPrefix('');
     $routeProvider.when(HOME,{
         templateUrl:'views/home.html'
@@ -14,6 +14,8 @@ app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHE
         templateUrl:'views/checkout.html',
     }).when(MYPROFILE,{
         templateUrl:'views/myprofile.html',
+    }).when(ORDERHISTORY,{
+        templateUrl:'views/orderhistory.html',
     })
     .otherwise({template:'Some Wrong URI U Type'});
 });

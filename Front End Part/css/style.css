@@ -7642,7 +7642,7 @@ td.invert-image a img {
 
 /* our style */
  .account{
-	padding:40px;
+	padding:5%;
 	border-radius: 4px;
 	background-color: white;
 	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
@@ -7661,7 +7661,7 @@ td.invert-image a img {
 
 .headingdiv{
 	background-color:#31C2DB;
-	padding:2.5%;
+	padding:2%;
 	color: white;
 	font-size: 1.2em;
 	font-weight:500;
@@ -7792,7 +7792,104 @@ font-weight:normal;
 	color:#31C2DB;
 }
 
-#logout{
-	font-size:18x;
-	font-weight:500;
+.orderhistory{
+	margin-top:2%;
+	border: 1px solid rgb(233, 229, 229);
+	border-radius:4px;
 }
+
+.status{
+	margin-bottom:5%;
+	/* border-bottom:1px dashed rgb(233, 229, 229) */
+}
+
+.subordstatus{
+	float:left;
+	margin-left:2%;
+	font-size:1.05em;
+	color:#757575;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+.subordtext{
+	color: #DF4782;
+}
+
+.expdel{
+	float: right;
+	margin-right:2%;
+	font-size:1.05em;
+	color: #757575;
+	clear: right;
+	font-family: Roboto, Arial, sans-serif;
+	font-size:1.05em;
+}
+
+.ordid , div.ordid span{
+	font-size:1em;
+	color:#f5f5f5;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+#ordiddiv{
+	float:right;
+}
+
+#itemname {
+	margin-top:20%;
+}
+
+#itemname span{
+	color: black;
+	font-size: 150%;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+#itemprice{
+	margin-top:4%;
+}
+
+#itemprice span{
+	color: #31C2DB;
+	font-size: 135%;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+.img{
+	height:60%;
+	width:60%;
+}
+
+/* timeline{
+	width: 725px;
+  margin-top: 15px;
+  margin-left: 18px;
+	position: relative;	
+}
+
+.timeline,.circle,.greencircle{
+	background-color: #61c26e;
+	border: 3px solid #61c26e;
+}
+
+.timeline,.circle{
+	width: 12px;
+  height: 12px;
+  border: 3px solid #e3e3e3;
+  border-radius: 50px;
+  position: absolute;
+  padding-top: 0px;
+}
+
+.timeline,.line,.greenline{
+	border-top: 3px solid #61c26e;
+}
+
+.timeline,.line{
+	width: 321px;
+  border-top: 3px solid #e3e3e3;
+  vertical-align: middle;
+  margin-left: 23px;
+  margin-bottom: 3px;
+	margin-right: 5px;
+} */
