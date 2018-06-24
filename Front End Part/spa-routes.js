@@ -13,7 +13,7 @@ app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHE
     }).when(CHECKOUT,{
         templateUrl:'views/checkout.html',
     }).when(MYPROFILE,{
-        templateUrl:'views/myprofile.html',
+        templateUrl:'views/myaccount.html',
     }).when(ORDERHISTORY,{
         templateUrl:'views/orderhistory.html',
     })
