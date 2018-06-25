@@ -1697,7 +1697,7 @@ a.forgot:hover {
 
 .register-top-grid h3 {
 	color:#31C2DB;
-	font-size: 1.3em;
+	font-size: 1.75em;
 	padding-bottom: 5px;
 	margin: 0;
 }
@@ -1921,12 +1921,8 @@ a.continue:hover{
   color: #000;
   line-height: 1.8em;
 }
-ul.total_price li.last_price span {
-}
 
 ul.total_price {
-  padding: 0;
-  margin: 1em 0 0 0;
   list-style: none;
 }
 ul.total_price li.last_price {
@@ -1949,7 +1945,6 @@ a.order {
   display: block;
   font-weight: 600;
   text-align: center;
-  margin: 3em 0;
 }
 a.order:hover{
 	background:#df4782;
@@ -5497,7 +5492,7 @@ td.invert-image a img {
     height: 28px;
     position: absolute;
     right: 42px;
-    top: -13px;
+    top: 40px;
     -webkit-transition: color 0.2s ease-in-out;
     -moz-transition: color 0.2s ease-in-out;
     -o-transition: color 0.2s ease-in-out;
@@ -5947,7 +5942,6 @@ td.invert-image a img {
 		margin-top: 17px;
 	}
 	.content-rgrid {
-
 		float: left;
 	}
 	.content-lgrid {
@@ -7683,8 +7677,6 @@ td.invert-image a img {
 	border-radius: 4px;
 	background-color: white;
 	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
-	margin-top:50px;
-	margin-bottom:50px;
 }
 
 .checkoutdiv{
@@ -7728,38 +7720,52 @@ td.invert-image a img {
 	min-width:340px;
 }
 
-div.settings a ,#Account{
-	/* text-align:center; */
-	text-decoration:none;
-	color:black;
-	padding:5px;
-	margin:0px;
-	font-weight: normal;
-	font-family: Roboto, Arial, sans-serif;
-}
-div.settings a div span{
-	margin-left:23px;
-}
-div.settings a div{
-	padding:10px;
-	margin:0px;
-}
-div.settings a div:hover{
-	color:white;
-	font-weight:bold;
-	background:#31C2DB;
-	font-family: Roboto, Arial, sans-serif;
-	cursor: pointer;
+ul.my-nav-pills{
+	text-decoration:none !important;
+	padding:5px !important;
+	font-weight: normal !important;
+	background:white !important;
 }
 
-.Account{
+ul.my-nav-pills li a{
+	font-family: Roboto, Arial, sans-serif !important;
+	float:left !important;
+	font-size:1.05em !important;
+	color:black !important;
+}
+
+ul.my-nav-pills li a:hover{
+	color:white !important;
+	font-weight:bold !important;
+	background:#31C2DB !important;
+	font-family: Roboto, Arial, sans-serif !important;
+	cursor: pointer !important;
+}
+
+ul.my-nav-pills li a:visited{
+	background-color: #31C2DB !important;
+}
+
+ul.my-nav-pills li{
+	width:100%;
+	padding:1.1%;
+	margin:1%;
+	border-radius:4px;
+}
+
+.Account,div.Account a{
+	margin-top:1%;
 	font-weight:500;
 	color:grey;
 	font-size:20px;
 	font-family:inherit;
 }
 
-#profileimage,#order{
+div.Account a{
+text-decoration: none;
+}
+
+.account-icon{
  margin-right:15px;
 }
 
@@ -7824,12 +7830,12 @@ font-weight:normal;
 	width:5%;
 }
 
-#right{
+.right{
 	float:right;
 	cursor:pointer;
 }
 
-#orderid{
+.font-size-20{
 	font-size:20px;
 }
 
@@ -7958,6 +7964,26 @@ border-radius: 50%;
 .progressbar li.active + li:after{
 	background-color: #DF4782;
 }
+ .mrgnbtm{
+	 margin-bottom: 50px;
+ }
 
+ .mrgntop{
+	margin-top: 50px;
+}
 
+.border-btm{
+	border-bottom: 1px solid rgb(211, 210, 210);
+}
 
+.border-top{
+	border-top: 1px solid rgb(211, 210, 210);
+}
+
+.pb-0{
+	padding-bottom: 0px;
+}
+
+.mrgntop-80{
+	margin-top: 80px;
+}
