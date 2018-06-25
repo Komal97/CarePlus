@@ -2,18 +2,17 @@
     <div class="container">
         <div class="row">
             <div style="float:right" class="col-md-4">
-                <div style="padding:6%" class="checkoutdiv">
-                    <div class="price-details">
+                <div class="price-details account" style="margin-top:10px;">
                         <h3>Price Details</h3>
                         <span>Total</span>
-                        <span>6200.00</span>
+                        <span class="total1">6200.00</span>
                         <span>Discount</span>
-                        <span>---</span>
+                        <span class="total1">---</span>
                         <span>Delivery Charges</span>
-                        <span>150.00</span>
+                        <span class="total1">150.00</span>
                         <div class="clearfix"></div>
                     </div>
-                    <ul class="total_price">
+                    <ul class="total_price account">
                         <li class="last_price">
                             <h4>TOTAL</h4>
                         </li>
@@ -22,9 +21,6 @@
                         </li>
                         <div class="clearfix"> </div>
                     </ul>
-
-
-                </div>
             </div>
             <div class="col-md-8">
                 <div class="checkoutdiv">
@@ -101,24 +97,25 @@
                         <span style="margin-left:1%" class="edit">Credit</span>
                     </div>
                     <div class="container">
-
+                        <div style="float:right ;display:inline-block;">
+                            <span> CVV </span>
+                            <input id="cvv" style="margin:1.5% 5%;float:right;border: 1px solid #ADA7A7;padding:0.5%;line-height:34px;width:70px;" type="text">
+                        </div>
                         <table>
                             <tr>
-                                <td>Enter card number: </td>
+                                <td> Card number </td>
                                 <td>
-                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;"
-                                        type="text">
+                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Name on Card: </td>
+                                <td>Name on Card</td>
                                 <td>
-                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;"
-                                        type="text">
+                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Expiry: </td>
+                                <td>Expiry Date </td>
                                 <td>
                                     <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%" type="month">
                                 </td>
@@ -139,24 +136,26 @@
                         <span style="margin-left:1%" class="edit">Debit</span>
                     </div>
                     <div class="container">
+                        <div style="float:right ;display:inline-block;">
+                            <span> CVV </span>
+                            <input id="cvv" style="margin:1.5% 5%;float:right;border: 1px solid #ADA7A7;padding:0.5%;line-height:34px;width:70px;" type="text">
 
+                        </div>
                         <table>
                             <tr>
-                                <td>Enter card number: </td>
+                                <td>Card number </td>
                                 <td>
-                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;"
-                                        type="text">
+                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <td>CVV: </td>
+                                <td>Name on Card </td>
                                 <td>
-                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;"
-                                        type="text">
+                                    <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Expiry: </td>
+                                <td>Expiry Date</td>
                                 <td>
                                     <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%" type="month">
                                 </td>
@@ -176,9 +175,7 @@
                     <div style="padding:2%;">
                         <input type="radio">
                         <span style="margin-left:1%" class="edit">Cash on Delivery</span>
-                    </div>
-
-
+                   </div>
                 </div>
             </div>
         </div>

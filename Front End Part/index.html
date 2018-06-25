@@ -33,8 +33,6 @@
     <script src="js/config/routesconstants.js"></script>
     <script src='spa-routes.js'></script>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-
-
 </head>
 
 <body ng-app="myapp">
@@ -89,77 +87,48 @@
                     <div class="main">
                         <div class="contain">
                             <div class="register">
-                                <h3 class="text-center pb-3">PERSONAL INFORMATION</h3>
+                                <div class="register-top-grid">
+                                        <h3 class="text-center pb-3">PERSONAL INFORMATION</h3>
+                                </div>
+                                
                                 <form>
-                                    <!-- <div class="register-top-grid"> -->
-                                    <div class="row">
+                                    <div class="row my-form-group">
                                         <div class="col-md-12">
-
                                             <div class="form-group">
-                                                <label>First Name</label>
+                                                <label> First Name* </label>
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label>First Name</label>
+                                                <label>Last Name* </label>
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label>First Name</label>
+                                                <label> E-mail Address* </label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Mobile Number* </label>
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control">
+                                                <label> Password* </label>
+                                                <input type="password" class="form-control">
                                             </div>
-                                            <!-- </div> -->
-                                            <!-- <div>
-                                            <span>First Name
-                                                <label>*</label>
-                                            </span>
-                                            <input type="text">
-                                        </div> -->
-                                            <!-- <div>
-                                            <span>Last Name
-                                                <label>*</label>
-                                            </span>
-                                            <input type="text">
-                                        </div>
-                                        <div>
-                                            <span>Email Address
-                                                <label>*</label>
-                                            </span>
-                                            <input type="text">
-                                        </div>
-                                        <div>
-                                            <span>Mobile Number
-                                                <label>*</label>
-                                            </span>
-                                            <input type="text">
-                                        </div>
-                                        <div>
-                                            <span>Password
-                                                <label>*</label>
-                                            </span>
-                                            <input type="password">
-                                        </div>
-                                        <div>
-                                            <span>Confirm Password
-                                                <label>*</label>
-                                            </span>
-                                            <input type="password">
-                                        </div> -->
-                                            <!-- <div class="clearfix"> </div> -->
+                                            <div class="form-group">
+                                                <label> Confirm Password* </label>
+                                                <input type="password" class="form-control">
+                                            </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-default">Submit</button>
+                                    <!-- <button type="submit" class="btn btn-default">Submit</button> -->
                                 </form>
-                                <!-- <div class="clearfix"> </div> -->
-                                <!-- <div class="register-but">
+                                <div class="clearfix"> </div>
+                                <div class="register-but">
                                     <form>
                                         <input type="submit" value="submit">
                                         <div class="clearfix"> </div>
                                     </form>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,7 +290,7 @@
                 <h3>Your Account</h3>
                 <ul class="list1">
                     <li>
-                        <a ng-href="#/myprofile">Your Account</a>
+                        <a ng-href="#/myprofile"> My Account</a>
                     </li>
                     <li>
                         <a ng-href="#/orderhistory">Orders history</a>

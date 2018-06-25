@@ -4,8 +4,6 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
-
-
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0;}
@@ -57,8 +55,6 @@ body a{
 	font-size: 100%;
 	border-radius: 0px !important;
 }
-
-
 
 li.mynav{
 	background-color:#333;
@@ -113,7 +109,6 @@ nav{
 .srch-ryt{
 	right: -346px;
 }
-
 
 .header{
 	background: url(../images/banner2.jpg) no-repeat 0px 0px;
@@ -251,7 +246,6 @@ a.item_1 {
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-top-right-radius: 50%;
-  /* border-bottom-right-radius: 50%; */
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   border-top-left-radius: 50%;
@@ -316,8 +310,6 @@ ul.quick_access li.check{
   font-size: .8em;
   text-transform: capitalize;
 }
-
-
 .search input[type="submit"] {
   background: url('../images/search.png') no-repeat 10px 9px #333;
   padding: 6px 19px;
@@ -423,10 +415,6 @@ ul.quick_access li.check{
 }
 .dropdown.open{
 	z-index: 2;
-}
-.dropdown:hover,
-.dropdown.focus{
-	/*--background:#F7F7F7;--*/
 }
 /* CARAT */
 .dropdown .carat,
@@ -1809,7 +1797,6 @@ a.forgot:hover {
 .register-but input[type="submit"]:hover {
 	background:#DF4782;
 }
-
 /*--checkout--*/
 .check_box{
   padding: 5em 0;
@@ -7663,22 +7650,18 @@ td.invert-image a img {
 	}
 
 }
-
 .main{
 	margin-right: 40px;
 	margin-left: 40px;
 }
-
 /*-- //responsive media queries --*/
 
-/* our style */
  .account{
 	padding:5%;
 	border-radius: 4px;
 	background-color: white;
 	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
 }
-
 .checkoutdiv{
 	padding:0px;
 	border-radius: 4px;
@@ -7687,7 +7670,6 @@ td.invert-image a img {
 	margin-top:10px;
 	margin-bottom:10px;
 }
-
 .headingdiv{
 	background-color:#31C2DB;
 	padding:2%;
@@ -7696,7 +7678,6 @@ td.invert-image a img {
 	font-weight:500;
 	
 }
-
 .previewdiv{
 	padding:20px;
 	border-radius: 4px;
@@ -7708,32 +7689,27 @@ td.invert-image a img {
 	height:444px;
 	position: relative;
 }
-
 .previewdiv1{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-
 .previewdiv1 img{
 	min-width:340px;
 }
-
 ul.my-nav-pills{
 	text-decoration:none !important;
 	padding:5px !important;
 	font-weight: normal !important;
 	background:white !important;
 }
-
 ul.my-nav-pills li a{
 	font-family: Roboto, Arial, sans-serif !important;
 	float:left !important;
 	font-size:1.05em !important;
 	color:black !important;
 }
-
 ul.my-nav-pills li a:hover{
 	color:white !important;
 	font-weight:bold !important;
@@ -7741,18 +7717,15 @@ ul.my-nav-pills li a:hover{
 	font-family: Roboto, Arial, sans-serif !important;
 	cursor: pointer !important;
 }
-
 ul.my-nav-pills li a:visited{
 	background-color: #31C2DB !important;
 }
-
 ul.my-nav-pills li{
 	width:100%;
 	padding:1.1%;
 	margin:1%;
 	border-radius:4px;
 }
-
 .Account,div.Account a{
 	margin-top:1%;
 	font-weight:500;
@@ -7760,15 +7733,12 @@ ul.my-nav-pills li{
 	font-size:20px;
 	font-family:inherit;
 }
-
 div.Account a{
 text-decoration: none;
 }
-
 .account-icon{
  margin-right:15px;
 }
-
 .edit{
 	color: #555;
 	font-size: 0.9em;;
@@ -7776,13 +7746,11 @@ text-decoration: none;
 	font-size:16px;
 	margin-top:20px;
 }
-
 .address{
 	color: #555;
 	font-size: 0.85em;;
 	font-family: Roboto, Arial, sans-serif;
 }
-
 .topedit{
 	float:right;
 	font-weight: bold;
@@ -7791,37 +7759,30 @@ text-decoration: none;
 	font-size:16px;
 	margin-right:5%;
 }
-
 .confirm-but form input[type="submit"]{
 	background:#31C2DB;
 	
 }
-
 .name,.mobile,div.addr span{
 	color:black;
 	font-weight:bold;
 	font-family: Roboto, Arial, sans-serif;
 	font-size:15px;
 }
-
 .mobile{
    margin-left:20px;
 }
-
 .manage_addr{
 	margin-top:1.3em;
 	border-bottom: solid 1px #e0e0e0;
 	padding:20px;
 }
-
 div.addr{
   margin-top:1em;
 }
-
 div.addr span{
 font-weight:normal;
 }
-
 .imgdel{
 	display:inline;
 	float:right;
@@ -7829,35 +7790,27 @@ font-weight:normal;
 	height:5%;
 	width:5%;
 }
-
 .right{
 	float:right;
 	cursor:pointer;
 }
-
 .font-size-20{
 	font-size:20px;
 }
-
 .highlight{
 	cursor:pointer;
 }
-
 .highlight:hover{
 	color:#31C2DB;
 }
-
 .orderhistory{
 	margin-top:2%;
 	border: 1px solid rgb(233, 229, 229);
 	border-radius:4px;
 }
-
 .status{
 	margin-bottom:5%;
-	/* border-bottom:1px dashed rgb(233, 229, 229) */
 }
-
 .subordstatus{
 	float:left;
 	margin-left:2%;
@@ -7865,11 +7818,9 @@ font-weight:normal;
 	color:#757575;
 	font-family: Roboto, Arial, sans-serif;
 }
-
 .subordtext{
 	color: #DF4782;
 }
-
 .expdel{
 	float: right;
 	margin-right:2%;
@@ -7879,37 +7830,30 @@ font-weight:normal;
 	font-family: Roboto, Arial, sans-serif;
 	font-size:1.05em;
 }
-
 .ordid , div.ordid span{
 	font-size:1em;
 	color:#f5f5f5;
 	font-family: Roboto, Arial, sans-serif;
 }
-
 #ordiddiv{
 	float:right;
 }
-
 #itemname {
 	margin-top:20%;
 }
-
 #itemname span{
 	color: black;
 	font-size: 150%;
 	font-family: Roboto, Arial, sans-serif;
 }
-
 #itemprice{
 	margin-top:4%;
 }
-
 #itemprice span{
 	color: #31C2DB;
 	font-size: 135%;
 	font-family: Roboto, Arial, sans-serif;
 }
-
 .img{
 	height:60%;
 	width:60%;
@@ -7964,26 +7908,21 @@ border-radius: 50%;
 .progressbar li.active + li:after{
 	background-color: #DF4782;
 }
- .mrgnbtm{
-	 margin-bottom: 50px;
- }
-
- .mrgntop{
+.mrgnbtm{
+	margin-bottom: 50px;
+}
+.mrgntop{
 	margin-top: 50px;
 }
-
 .border-btm{
 	border-bottom: 1px solid rgb(211, 210, 210);
 }
-
 .border-top{
 	border-top: 1px solid rgb(211, 210, 210);
 }
-
 .pb-0{
 	padding-bottom: 0px;
 }
-
 .mrgntop-80{
 	margin-top: 80px;
 }
