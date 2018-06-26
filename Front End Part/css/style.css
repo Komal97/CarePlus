@@ -21,7 +21,6 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-
 .navbar-inverse {
 	background-color: #333;
 	border-color: #080808;
@@ -30,7 +29,6 @@ body a{
 	float: right;
 	width: 20%;
 }
-
 .btn-primary{
 	background-color: #004284 !important ; 
 	border: 1px solid #004284 !important;
@@ -41,15 +39,11 @@ body a{
 	font-size: 100%;
 	border-radius: 0px !important;
 }
-
-
 .inputbox{
 	border-radius:0px;
 	height:40px;
-	border: 1px solid #ADA7A7;
-                                                
+	border: 1px solid #ADA7A7;                                               
 }
-
 .inputheading{
 	color: #555;
   font-size: 0.9em;
@@ -58,7 +52,6 @@ body a{
 	text-transform: capitalize;
 	font-weight: 500;
 }
-
 .viewallclick{
 	text-align: center;
   padding: 6.8em 0 6.8em 0em;
@@ -68,8 +61,6 @@ body a{
   margin: 0;
   font-family: 'Raleway', sans-serif
 }
-
-
 .btn-danger{
 	background-color: #d94f5c !important; 
 	border: 1px solid #d94f5c !important;
@@ -136,7 +127,7 @@ nav{
 }
 
 .header{
-	background: url(../images/banner2.jpg) no-repeat 0px 0px;
+	background: url(../images/login_page_back.jpg) no-repeat 0px 0px;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -706,10 +697,13 @@ ul.article_links li a {
   line-height: 1.8em;
   font-weight: 600;
 }
-.col_1_of_4 {
+.col_1_of_4{
 	display: block;
 	float: left;
 	margin: 1% 0 1% 2.6%;
+}
+.col_1_of_4 a{
+	text-decoration: none;
 }
 .span_1_of_4 {
 	width: 23%;
@@ -7727,24 +7721,47 @@ ul.my-nav-pills{
 	text-decoration:none !important;
 	padding:5px !important;
 	font-weight: normal !important;
-	background:white !important;
+	background-color:white !important;
 }
 ul.my-nav-pills li a{
 	font-family: Roboto, Arial, sans-serif !important;
-	float:left !important;
+	text-align:left;
+	display:block;
 	font-size:1.05em !important;
 	color:black !important;
 }
+ul.my-nav-pills li.active{
+	background-color: #31C2DB !important;
+}
+
+ul.my-nav-pills li.active:hover {
+	background-color: #31C2DB !important;
+	color: white !important;
+	font-weight:bold !important;
+	font-family: Roboto, Arial, sans-serif !important;
+}
+
+.my-nav-pills > li.active > a, .my-nav-pills > li.active > a:hover, .my-nav-pills > li.active > a:focus{
+	background-color: transparent !important;
+	color:white !important;
+	font-weight:bold !important;
+	font-family: Roboto, Arial, sans-serif !important;
+}
+
+ul.my-nav-pills li:hover{
+	background-color: transparent !important;
+}
+
 ul.my-nav-pills li a:hover{
 	color:white !important;
 	font-weight:bold !important;
-	background:#31C2DB !important;
+	background-color :#31C2DB !important;
 	font-family: Roboto, Arial, sans-serif !important;
 	cursor: pointer !important;
 }
-ul.my-nav-pills li a:visited{
+/* ul.my-nav-pills li a:visited{
 	background-color: #31C2DB !important;
-}
+} */
 ul.my-nav-pills li{
 	width:100%;
 	padding:1.1%;
@@ -7892,6 +7909,7 @@ font-weight:normal;
 .progressbar li{
 	list-style-type: none;
 	float: left;
+	z-index:0;
 	width: 33.33%;
 	position: relative;
 	text-align: center;
@@ -7909,6 +7927,7 @@ text-align: center;
 margin: 0 auto 10px auto;
 background-color:#ddd; 
 border-radius: 50%;
+z-index:-1;
 }
 .progressbar li:after{
 	content: '';
@@ -7919,12 +7938,14 @@ border-radius: 50%;
 	top: 14px;
 	left:-50%;
 	background-color: #ddd;
+	z-index:-1;
 }
 .progressbar li:first-child:after{
 	content: none;
 }
 .progressbar li.active{
 	color: #DF4782;
+	z-index:1;
 }
 .progressbar li.active:before{
 	border-color: #DF4782;
@@ -7932,6 +7953,7 @@ border-radius: 50%;
 }
 .progressbar li.active + li:after{
 	background-color: #DF4782;
+	z-index:-1;
 }
 .mrgnbtm{
 	margin-bottom: 50px;
