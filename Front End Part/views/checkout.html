@@ -1,3 +1,4 @@
+</script>
 <div>
     <div class="container">
         <div class="row">
@@ -36,10 +37,10 @@
                         <span style="margin-left:3%" class="edit">9811127XXX</span>
                     </div>
                     <div class="address" style="margin-left:5.2%;">
-                        <p class="address">69-C Udyog Nagar near xyz lane Delhi-110035</p>
+                        <p ng-click="opensummary()" class="address">69-C Udyog Nagar near xyz lane Delhi-110035</p>
                     </div>
                     <div style="padding:2%">
-                        <button style="width:20%" class="btn btn-danger">DELIVER HERE</button>
+                        <button  style="width:20%" class="btn btn-danger" ng-click="summary=!summary;">DELIVER HERE</button>
                     </div>
                 </div>
             </div>
@@ -50,7 +51,7 @@
                         <div class="headingdiv">
                             <span class="glyphicon glyphicon-plus" id="profileimage"></span>ORDER SUMMARY </div>
                     </div>
-                    <div style="padding:2%" class="cart-header">
+                    <div ng-show="summary" style="padding:2%" class="cart-header">
                         <div style="margin-bottom:0%" class="cart-sec simpleCart_shelfItem">
                             <div class="cart-item cyc">
                                 <img src="images/pic1.jpg" class="img-responsive" alt="">
@@ -78,7 +79,7 @@
                                 </div>
                             </div>
                             <div style="padding:2%;">
-                                <button style="width:20%;" class="btn btn-primary">CONTINUE</button>
+                                <button style="width:20%;" class="btn btn-primary" ng-click="payment=!payment;">CONTINUE</button>
                             </div>
                         </div>
 
@@ -92,7 +93,8 @@
                         <div class="headingdiv">
                             <span class="glyphicon glyphicon-plus" id="profileimage"></span>PAYMENT </div>
                     </div>
-                    <div style="padding:2%;">
+                     <div ng-show="payment">
+                    <div  style="padding:2%;">
                         <input type="radio">
                         <span style="margin-left:1%" class="edit">Credit</span>
                     </div>
@@ -186,6 +188,7 @@
                     <div style="padding:2%;">
                         <input type="radio">
                         <span style="margin-left:1%" class="edit">Cash on Delivery</span>
+                    </div>
                     </div>
                 </div>
             </div>
