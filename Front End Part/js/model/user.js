@@ -7,4 +7,3 @@ class user{
         this.password=password;
     }
 }
-module.exports=user;

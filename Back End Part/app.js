@@ -5,7 +5,7 @@ const userRoute=require("./routes/userroutes");
 
 const app=express();
 
-app.use(bodyparser.urlencoded({encoding:false}));
+app.use(bodyparser.urlencoded({encoding:true}));
 app.use(bodyparser.json());
 
 app.use(function(req,res,next){

@@ -20,7 +20,7 @@ const useroperations={
             }
             else{
                 if(docs && docs.length>0){
-                    var object = {message:"Welcome "+UserObject.userid};
+                    var object = {message:"Welcome "+userobject.userid};
                     response.json(object);
                 }
                 else{
@@ -31,3 +31,4 @@ const useroperations={
         })
     }
 }
+module.exports=useroperations;

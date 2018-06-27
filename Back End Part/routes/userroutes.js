@@ -26,3 +26,4 @@ router.post('/login',(req,res)=>{
     var userobject=new user(firstname,lastname,userid,mobile,password);
     useroperations.login(userobject,res);
 })
+module.exports=router;
