@@ -1,0 +1,1 @@
+app.constant("PRODUCTURL","http://localhost:1234/add");

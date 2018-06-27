@@ -2,6 +2,7 @@
 const express=require("express");
 const bodyparser=require("body-parser");
 const userRoute=require("./routes/userroutes");
+const productRoute=require("./routes/productroutes");
 
 const app=express();
 
@@ -15,6 +16,7 @@ app.use(function(req,res,next){
 })
 
 app.use('/',userRoute);
+app.use('/',productRoute);
 
 //------------------- SERVER START --------------------
 app.listen(1234,()=>{
