@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom/design.css">
+</head>
+
+<body>
+    <div class="container">
+        <fieldset>
+            <legend>Product Details</legend>
+            <div class="form-group">
+                <label for="">Model No</label>
+                <input type="text" placeholder="Type Modal no" id="modalno" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" placeholder="Type Name" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Price</label>
+                <input type="range" min="1" max="1000" step="100" id="price" class="form-control">
+                <output id="output"></output>
+            </div>
+            <div class="form-group">
+                <label for="">Image Url</label>
+                <input type="text" placeholder="Type URL" id="url" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Description</label>
+                <textarea type="text" placeholder="Type description" rows="5" cols="20" id="description" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Quantity</label>
+                <input type="text" id="quantity" placeholder="Type quantity" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Status</label>
+                <input type="text" id="status" class="form-control"  placeholder="Type Status">
+            </div>
+            <div class="form-group">
+                <label for="">Out Of Stock</label>
+                <input type="text" id="outofstock" class="form-control" placeholder="Available or not">
+            </div>
+            <div id="buttonGroup" class="form-group">
+                <button id="add" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add</button>
+                <button id="deleteBt" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</button>
+                <button id="search" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Search</button>
+                <button id="update" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>&nbsp;Update</button>
+            </div>
+        </fieldset>
+    </div>
+</body>
+
+</html>
