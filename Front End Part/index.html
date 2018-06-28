@@ -41,13 +41,14 @@
     <script src="js/controller/usercontroller.js"></script>
     <script src="js/factory/retrieveproductfactory.js"></script>
     <script src="js/controller/retrieveproductcontroller.js"></script>
+    <!-- <script src="js/factory/retrieveitemlistfactory.js"></script>  -->
+    <!-- <script src="js/controller/retrieveitemlistcontroller.js"></script> -->
     <script src="js/factory/retrievetopfactory.js"></script>
     <script src="js/controller/retrievetopcontroller.js"></script>
-    <script src="js/factory/retrieveitemlistfactory.js"></script>
-    <script src="js/controller/retrieveitemlistcontroller.js"></script>
+
 </head>
 
-<body ng-app="myapp" ng-controller="myctrl">
+<body ng-app="myapp">
 
     <!-- NAVBAR SECTION -->
     <nav class="navbar navbar-inverse">
@@ -87,7 +88,7 @@
     </nav>
 
     <!-- Modal Register-->
-    <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="myctrl">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -141,7 +142,7 @@
     </div>
 
     <!-- Modal Login-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="myctrl">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -254,7 +255,7 @@
     </div>
 
     <!-- CATEGORIES SECTION -->
-    <div class="menu_box">
+    <div class="menu_box" ng-controller="retreiveitemlistcontroller">
         <h3 class="menu_head">Categories</h3>
         <ul class="nav">
             <li>

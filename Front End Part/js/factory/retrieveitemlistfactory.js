@@ -1,5 +1,5 @@
-app.factory("retriveitemlistfactory",function($http,$q,URLITEMLIST){
-    console.log("factory");
+app.factory("retrieveitemlistfactory",function($http,$q,URLITEMLIST){
+    console.log("itemlist factory");
     const object={
         callServer(type){
             var defer=$q.defer();
@@ -7,6 +7,7 @@ app.factory("retriveitemlistfactory",function($http,$q,URLITEMLIST){
                 console.log("Success",data);
                 defer.resolve(data);
             },function(error){
+                console.log("Reject");
                 defer.reject(error);
             });
             return defer.promise;

@@ -1,9 +1,11 @@
-app.controller("retrieveitemlistcontroller", function ($scope, retrieveproductfactory) {
-    console.log("controller");
-    $scope.Sendtype(type) = function (type) {
-        var promise = retrieveproductfactory.callServer(type);
+app.controller("retreiveitemlistcontroller", function ($scope, retrieveitemlistfactory) {
+    console.log("itemlist controller");
+    $scope.Sendtype = function (type) {
+       console.log("type : ",type);
+
+        var promise = retrieveitemlistfactory.callServer(type);
         promise.then(function (data) {
-            console.log("controller", data);
+            console.log("itemlist controller", data);
             //$scope.data = data;
         }, function (err) {
             console.log("error", err);
