@@ -1,4 +1,4 @@
-app.controller("retrieveproductcontroller",function($scope,retrieveproductfactory){
+app.controller("retrievenewcontroller",function($scope,retrieveproductfactory){
     //console.log("controller");
     var promise = retrieveproductfactory.callServer();
     promise.then(function(data){
