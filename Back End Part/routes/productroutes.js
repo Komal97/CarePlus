@@ -23,5 +23,10 @@ router.get('/retrieveproduct',(req,res)=>{
     productoperations.retrieve(res);
 })
 
+router.get('/itemlistproduct',(req,res)=>{
+    var type=req.body.type;
+    const productoperations=require("../db/productoperations");
+    productoperations.retrieve(type,res);
+})
 
 module.exports=router;

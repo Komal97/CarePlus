@@ -41,6 +41,8 @@
     <script src="js/controller/usercontroller.js"></script>
     <script src="js/factory/retrieveproductfactory.js"></script>
     <script src="js/controller/retrieveproductcontroller.js"></script>
+    <script src="js/factory/retrieveitemlistfactory.js"></script>
+    <script src="js/controller/retrieveitemlistcontroller.js"></script>
 </head>
 
 <body ng-app="myapp" ng-controller="myctrl">
@@ -171,7 +173,7 @@
                                     </span>
                                     <input type="password" ng-model="loginpassword">
                                 </div>
-                                <a class="forgot" href="#">Forgot Your Password?</a>
+                                <a class="forgot">Forgot Your Password?</a>
                                 <button type="submit" data-dismiss="modal" class="btn btn-default" ng-click="doLogin()"> Login </button>
                             </form>
                         </div>
@@ -187,7 +189,7 @@
         <div class="container">
             <div class="header-top">
                 <div class="logo">
-                    <a href="index.html">
+                    <a>
                         <h6></h6>
                         <h2>Fun
                             <br>Mofo</h2>
@@ -196,27 +198,27 @@
                 <div class="header_right">
                     <ul class="social">
                         <li>
-                            <a href="">
+                            <a>
                                 <i class="fb"> </i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a>
                                 <i class="tw"> </i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a>
                                 <i class="utube"> </i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a>
                                 <i class="pin"> </i>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a>
                                 <i class="instagram"> </i>
                             </a>
                         </li>
@@ -242,7 +244,7 @@
                         <font color="#FECF17"> FREE</font>
                     </h1>
                     <p></p>
-                    <a href="#" class="banner_btn">Buy Now</a> -->
+                    <a class="banner_btn">Buy Now</a> -->
                 </div>
                 <div class='clearfix'></div>
             </div>
@@ -254,13 +256,13 @@
         <h3 class="menu_head">Categories</h3>
         <ul class="nav">
             <li>
-                <a ng-href="#/itemlist"> Sanitizers </a>
+                <a href="#/itemlist" ng-click="Sendtype('sanitizer')"> Sanitizers </a>
             </li>
             <li>
-                <a ng-href="#/itemlist"> Sanitary Pads </a>
+                <a href="#/itemlist" ng-click="Sendtype('pad')"> Sanitary Pads </a>
             </li>
             <li>
-                <a ng-href="#/itemlist"> Condoms </a>
+                <a href="#/itemlist" ng-click="Sendtype('condom')"> Condoms </a>
             </li>
         </ul>
     </div>
