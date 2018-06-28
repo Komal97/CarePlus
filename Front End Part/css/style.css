@@ -54,7 +54,7 @@ body a{
 }
 .viewallclick{
 	text-align: center;
-  padding: 6.8em 0 6.8em 0em;
+  padding: 3.6em 0 3.6em 0em;
   color: #d9534f;
   text-transform: capitalize;
   font-size: 1.5em;
@@ -7991,4 +7991,27 @@ z-index:-1;
 	font-family: inherit !important;
 	padding:1.5% 4% !important;
 	border-radius: 0px !important;
+}
+.newitemname{
+	color: #000;
+	font-size:1.02em;
+	font-weight:400;
+	text-transform: capitalize;
+	font-family: Roboto, Arial, sans-serif;
+}
+.newitemprice{
+	color:#DF4782;
+	font-size: 0.9em;
+	padding-top: 25px;
+	font-family: Roboto, Arial, sans-serif;
+}
+.newitemimage{
+	height:160px;
+	margin-left:auto;
+	margin-right:auto
+}
+.newitemdiv{
+	padding:4%;
+	text-align:center;
+	margin-bottom:10%;
 }

@@ -12,7 +12,18 @@ const productoperations={
         });
     },
     retrieve(response){
-        productcollection.find({},function(err,result){
+        productcollection.find({type:"new"},function(err,result){
+            if(err){
+                response.json({message:'Error'});
+            }
+            else{
+                response.json(result);
+            }
+        });
+        //response.json(getdata);
+    },
+    retrievetop(response){
+        productcollection.find({type:"top"},function(err,result){
             if(err){
                 response.json({message:'Error'});
             }

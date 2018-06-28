@@ -7,13 +7,6 @@ app.controller("retrieveproductcontroller",function($scope,retrieveproductfactor
     },function(err){
       //  console.log("error",err);
         //$scope.err = err;
+        console.log("error",err);
     });
-/*$scope.loadNews=function(){
-    var promise = newsfactory.callServer();
-    promise.then(function(data){
-        $scope.data = data;
-    },function(err){
-        $scope.err = err;
-    }); */
-//}
 });
