@@ -15,15 +15,12 @@ router.post('/register',(req,res)=>{
 })
 
 router.post('/login',(req,res)=>{
-    var firstname=req.body.firstname;
-    var lastname=req.body.lastname;
-    var userid=req.body.userid;
-    var mobile=req.body.mobile;
-    var password=req.body.password;
+    var loginid=req.body.loginid;
+    var loginpassword=req.body.loginpassword;
     
     const useroperations=require("../db/useroperations");
-    const user=require("../model/user");
-    var userobject=new user(firstname,lastname,userid,mobile,password);
+    const loginuser=require("../model/loginuser");
+    var userobject=new loginuser(loginid,loginpassword);
     useroperations.login(userobject,res);
 })
 module.exports=router;

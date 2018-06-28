@@ -13,14 +13,14 @@ const useroperations={
     },
 
     login(userobject,response){
-        usercollection.find({userid:userobject.userid,password:userobject.password},
+        usercollection.find({userid:userobject.loginid,password:userobject.loginpassword},
         function(err,docs){
             if(err){
                 response.json({message:'Error Occured During Login'});
             }
             else{
                 if(docs && docs.length>0){
-                    var object = {message:"Welcome "+userobject.userid};
+                    var object = {message:"Welcome "+userobject.loginid};
                     response.json(object);
                 }
                 else{

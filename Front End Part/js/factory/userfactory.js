@@ -2,6 +2,7 @@ app.factory("myfactory",function($http,$q,URL,URLR){
     const object={
         doLogin(userobject){
             var defer=$q.defer();
+            console.log(userobject);
             $http.post(URL,userobject).then(function(data){
                 console.log("Success",data);
                 defer.resolve(data);

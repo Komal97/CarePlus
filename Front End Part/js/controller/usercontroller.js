@@ -1,7 +1,7 @@
 app.controller("myctrl",function($scope,myfactory){
     $scope.doLogin=function(){
        // console.log("controller");
-        var userobject=new user($scope.firstname,$scope.lastname,$scope.userid,$scope.mobile,$scope.password);
+        var userobject=new loginuser($scope.loginid,$scope.loginpassword);
         var promise=myfactory.doLogin(userobject);
         promise.then(function(data){
         //    console.log("Back to promise...",data);

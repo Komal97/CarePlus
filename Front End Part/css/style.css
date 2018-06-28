@@ -1642,7 +1642,7 @@ i.mail{
 	margin: 0 0 1em 0;
 	line-height: 1.8em;
 }
-.acount-btn {
+.acount-btn ,div.login-right form button{
 	background:#DF4782;
 	color: #FFF;
 	font-size: .9em;
@@ -1654,7 +1654,17 @@ i.mail{
 	display: inline-block;
 	text-transform: capitalize;
 }
-.acount-btn:hover, .login-right input[type="submit"]:hover{
+.acount-btn:hover{
+	cursor:pointer;
+}
+div.login-right form button{
+ width:100%;
+ margin-top:2%;
+}
+div.login-right form button:hover{
+	background:#FDA30E;
+}
+.acount-btn:hover{
 	background:#df4782;
 	text-decoration:none;
 	color:#fff;
@@ -4205,7 +4215,7 @@ a.single-item{
 }
 /*-- login --*/
 .modal-body {
-    padding: 15px 15px 30px;
+	padding:15px 40px 60px !important;
 }
 .login-right, .login-bottom {
     float: left;
@@ -4217,10 +4227,10 @@ a.single-item{
     padding: 10px;
     font-weight: normal;
     background: none;
-    border: 1px solid #E6E4E4;
-    color: #D2D1D1;
+    border: 1px solid #c1bfbf;
+    color: #c1bfbf;
     outline: none;
-    font-size: 14px;
+    font-size: 18px;
     margin: 6px 0 17px 0px;
 }
 .login-right input[type="text"]:hover, .login-right input[type="password"]:hover, .login-bottom input[type="text"]:hover, .login-bottom input[type="password"]:hover{
@@ -7972,4 +7982,13 @@ z-index:-1;
 }
 .mrgntop-80{
 	margin-top: 80px;
+}
+.mybtn{
+	background-color:#DF4782 !important;
+	font-size:16px !important;
+	color:white !important;
+	margin-top:3% !important;
+	font-family: inherit !important;
+	padding:1.5% 4% !important;
+	border-radius: 0px !important;
 }
