@@ -21,6 +21,11 @@ router.post('/add',(req,res)=>{
 router.get('/retrieveproduct',(req,res)=>{
     const productoperations=require("../db/productoperations");
     productoperations.retrieve(res);
+});
+
+router.get('/topproduct',(req,res)=>{
+    const productoperations=require("../db/productoperations");
+    productoperations.retrievetop(res);
 })
 
 

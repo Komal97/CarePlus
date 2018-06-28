@@ -1,147 +1,37 @@
 <!-- MAIN SECTION -->
-<div ng-controller="retrieveproductcontroller" class="main">
+<div class="main">
     <div class="content_box">
         <div class="row">
 
             <div class="col-md-12">
-                <h3 class="m_1">New Products</h3>
-                <div class="content_grid">
-                    <div  class="col_1_of_4 span_1_of_4 simpleCart_shelfItem" ng-repeat="items in data.data">
-                        <a>
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{items.url}}" class="img-responsive" alt="" />
-                                    <a href="" class="button item_add item_1"> </a>
-                                    <div class="product_container">
-                                        <div class="cart-left">
-                                            <!-- <p class="title">Lorem Ipsum 2015</p> -->
-                                            <p class="title">{{items.name}}</p>
-                                        </div>
-                                        <span class="amount item_price">{{items.price}}</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                <h3 class="m_1" style="margin-left:2%">New Products</h3>
+                <div style="padding:2%;" ng-controller="retrievenewcontroller" class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:8">
+
+                        <div class="account newitemdiv">
+
+                            <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
+                            <p class="newitemname">{{items.name}}</p>
+                            <span class="newitemprice">Rs. {{items.price}}</span>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
-                    <!-- <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
-                        <a>
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="images/pic2.jpg" class="img-responsive" alt="" />
-                                    <a href="" class="button item_add item_1"> </a>
-                                    <div class="product_container">
-                                        <div class="cart-left">
-                                            <p class="title">Lorem Ipsum 2015</p>
-                                        </div>
-                                        <span class="amount item_price">$1500.00</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem last_1">
-                        <a>
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="images/pic3.jpg" class="img-responsive" alt="" />
-                                    <a href="" class="button item_add item_1"> </a>
-                                    <div class="product_container">
-                                        <div class="cart-left">
-                                            <p class="title">Lorem Ipsum 2015</p>
-                                        </div>
-                                        <span class="amount item_price">$2000.00</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem last_1">
-                        <a>
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="images/pic4.jpg" class="img-responsive" alt="" />
-                                    <a href="" class="button item_add item_1"> </a>
-                                    <div class="product_container">
-                                        <div class="cart-left">
-                                            <p class="title">Lorem Ipsum 2015</p>
-                                        </div>
-                                        <span class="amount item_price">$2000.00</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="content_grid">
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
-                        <a>
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="images/pic4.jpg" class="img-responsive" alt="" />
-                                    <a href="" class="button item_add item_1"> </a>
-                                    <div class="product_container">
-                                        <div class="cart-left">
-                                            <p class="title">Lorem Ipsum 2015</p>
-                                        </div>
-                                        <span class="amount item_price">$1700.00</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
-                        <a>
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="images/pic5.jpg" class="img-responsive" alt="" />
-                                    <a href="" class="button item_add item_1"> </a>
-                                    <div class="product_container">
-                                        <div class="cart-left">
-                                            <p class="title">Lorem Ipsum 2015</p>
-                                        </div>
-                                        <span class="amount item_price">$800.00</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem last_1">
-                        <a>
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="images/pic6.jpg" class="img-responsive" alt="" />
-                                    <a href="" class="button item_add item_1"> </a>
-                                    <div class="product_container">
-                                        <div class="cart-left">
-                                            <p class="title">Lorem Ipsum 2015</p>
-                                        </div>
-                                        <span class="amount item_price">$199.00</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
                         <a ng-href="#/itemlist">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
+                            <div class="account">
+                                <div class="img-responsive">
                                     <h3 class="viewallclick">View All ></h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="clearfix"></div>
-                </div> -->
-               
+                </div>
+
+
+
                 <!-- <h3 class="m_2 pb-2">Top Products</h3>
+                <div ng-controller="retrievetopcontroller">
                 <div id="view_all_div" class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
                     <a>
                         <div class="inner_content clearfix">
@@ -154,11 +44,11 @@
                     </a>
                 </div>
                 <ul id="flexiselDemo3">
-                    <li>
-                        <img src="images/pic11.jpg" class="img-responsive" />
+                    <li ng-repeat="items in data.data">
+                        <img src="{{items.url}}" class="img-responsive" />
                         <div class="grid-flex">
-                            <a href="#">Syenergy 2mm</a>
-                            <p>Rs 850</p>
+                            <a href="#">{{items.name}}</a>
+                            <p>{{items.price}}</p>
                         </div>
                     </li>
                     <li>
@@ -191,8 +81,8 @@
                     </li>
                 </ul>
                 <div class="clearfix"></div>
+                </div>
             </div> -->
+            </div>
         </div>
     </div>
-</div>
-<!-- </div> -->

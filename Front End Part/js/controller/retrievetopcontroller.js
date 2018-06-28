@@ -1,6 +1,6 @@
-app.controller("retrieveproductcontroller",function($scope,retrieveproductfactory){
+app.controller("retrievetopcontroller",function($scope,retrievetopfactory){
     console.log("controller");
-    var promise = retrieveproductfactory.callServer();
+    var promise = retrievetopfactory.callServer();
     promise.then(function(data){
         console.log("controller",data);
         $scope.data = data;
