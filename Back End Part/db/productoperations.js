@@ -31,7 +31,16 @@ const productoperations={
                 response.json(result);
             }
         });
-        //response.json(getdata);
+    },
+    retrieveitemlist(type,response){
+        productcollection.find({type:type},function(err,result){
+            if(err){
+                response.json({message:'Error'});
+            }
+            else{
+                response.json(result);
+            }
+        })
     }
 }
 module.exports=productoperations;

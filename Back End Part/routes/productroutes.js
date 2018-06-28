@@ -28,5 +28,10 @@ router.get('/topproduct',(req,res)=>{
     productoperations.retrievetop(res);
 })
 
+router.get('/itemlistproduct',(req,res)=>{
+    var type=req.body.type;
+    const productoperations=require("../db/productoperations");
+    productoperations.retrieve(type,res);
+})
 
 module.exports=router;
