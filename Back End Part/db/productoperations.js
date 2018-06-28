@@ -9,7 +9,18 @@ const productoperations={
             else{
                 response.json({message:'success'});
             }
-        })
+        });
+    },
+    retrieve(response){
+        productcollection.find({},function(err,result){
+            if(err){
+                response.json({message:'Error'});
+            }
+            else{
+                response.json(result);
+            }
+        });
+        //response.json(getdata);
     }
 }
 module.exports=productoperations;

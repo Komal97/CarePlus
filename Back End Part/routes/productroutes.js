@@ -16,6 +16,11 @@ router.post('/add',(req,res)=>{
     const product=require("../model/product");
     var productobject=new product(modalno,name,price,url,description,quantity,status,outofstock,type);
     productoperations.addproduct(productobject,res);
+});
+
+router.get('/retrieveproduct',(req,res)=>{
+    const productoperations=require("../db/productoperations");
+    productoperations.retrieve(res);
 })
 
 

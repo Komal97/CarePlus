@@ -1,29 +1,30 @@
 <!-- MAIN SECTION -->
-<div class="main">
+<div ng-controller="retrieveproductcontroller" class="main">
     <div class="content_box">
         <div class="row">
 
             <div class="col-md-12">
                 <h3 class="m_1">New Products</h3>
                 <div class="content_grid">
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
+                    <div  class="col_1_of_4 span_1_of_4 simpleCart_shelfItem" ng-repeat="items in data.data">
                         <a>
                             <div class="inner_content clearfix">
                                 <div class="product_image">
-                                    <img src="images/pic1.jpg" class="img-responsive" alt="" />
+                                    <img src="{{items.url}}" class="img-responsive" alt="" />
                                     <a href="" class="button item_add item_1"> </a>
                                     <div class="product_container">
                                         <div class="cart-left">
-                                            <p class="title">Lorem Ipsum 2015</p>
+                                            <!-- <p class="title">Lorem Ipsum 2015</p> -->
+                                            <p class="title">{{items.name}}</p>
                                         </div>
-                                        <span class="amount item_price">$2300.00</span>
+                                        <span class="amount item_price">{{items.price}}</span>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
+                    <!-- <div class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
                         <a>
                             <div class="inner_content clearfix">
                                 <div class="product_image">
@@ -138,8 +139,9 @@
                         </a>
                     </div>
                     <div class="clearfix"></div>
-                </div>
-                <h3 class="m_2 pb-2">Top Products</h3>
+                </div> -->
+               
+                <!-- <h3 class="m_2 pb-2">Top Products</h3>
                 <div id="view_all_div" class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
                     <a>
                         <div class="inner_content clearfix">
@@ -189,7 +191,7 @@
                     </li>
                 </ul>
                 <div class="clearfix"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
