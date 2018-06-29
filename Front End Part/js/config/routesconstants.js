@@ -1,6 +1,9 @@
 app.constant('HOME','/');
 app.constant('ITEMLIST','/itemlist');
 app.constant('TOPITEMLIST','/topitemlist');
+app.constant('SANITIZERLIST','/sanitizers');
+app.constant('SANITARYLIST','/sanitarypads');
+app.constant('CLIST','/condoms');
 app.constant('CONTACTUS','/contactus');
 app.constant('CART','/cart');
 app.constant('PREVIEW','/preview');
