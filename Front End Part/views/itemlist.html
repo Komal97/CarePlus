@@ -42,184 +42,24 @@
 							</div>
 						</div>
 						<div class="clearfix"></div>
-						<ul>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
+						<ul ng-controller="retrievenewcontroller">
+							<li class="simpleCart_shelfItem" ng-repeat="items in data.data">
+								<a class="cbp-vm-image">
 									<div class="inner_content clearfix">
 										<div class="product_image">
-											<img src="images/pic12.jpg" class="img-responsive" alt="" />
+											<img src="{{items.url}}" class="img-responsive" alt="" />
 											<div class="product_container">
 												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
+													<p class="title">{{items.name}}</p>
 												</div>
-												<div class="mount item_price price">$99.00</div>
+												<div class="mount item_price price">{{items.price}}</div>
 												<div class="clearfix"></div>
 											</div>
 										</div>
 									</div>
 								</a>
 								<div class="cbp-vm-details">
-									Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic11.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic10.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean.
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic4.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic8.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic7.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic6.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic5.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-								</div>
-								<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-							</li>
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="single.html">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="images/pic4.jpg" class="img-responsive" alt="" />
-											<div class="product_container">
-												<div class="cart-left">
-													<p class="title">Lorem Ipsum 2015</p>
-												</div>
-												<div class="price">$99.00</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div>
-								</a>
-								<div class="cbp-vm-details">
-									Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+									{{items.description}}
 								</div>
 								<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 							</li>

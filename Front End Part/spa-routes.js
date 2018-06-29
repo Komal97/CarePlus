@@ -1,9 +1,11 @@
-app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,CONTACTUS,CHECKOUT,CART,PREVIEW,MYPROFILE,ORDERHISTORY){
+app.config(function($routeProvider,$locationProvider,HOME,ITEMLIST,TOPITEMLIST,CONTACTUS,CHECKOUT,CART,PREVIEW,MYPROFILE,ORDERHISTORY){
     $locationProvider.hashPrefix('');
     $routeProvider.when(HOME,{
         templateUrl:'views/home.html'
     }).when(ITEMLIST,{
         templateUrl:'views/itemlist.html',
+    }).when(TOPITEMLIST,{
+        templateUrl:'views/topitemlist.html',
     }).when(CONTACTUS,{
         templateUrl:'views/contactus.html',
     }).when(CART,{

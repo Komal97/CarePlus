@@ -4,7 +4,6 @@ app.factory("retrievetopfactory",function($http,$q,URLTOP){
         callServer(){
             var defer = $q.defer();
             $http.get(URLTOP).then(function(data){
-                console.log(data);
                 defer.resolve(data);
             },function(error){
                 defer.reject(error);

@@ -1,0 +1,74 @@
+<div class="main">
+        <div>
+            <div class="container">
+                <div>
+    
+                    <div>
+                        <div class="mens-toolbar">
+                            <div class="sort">
+                                <div class="sort-by">
+                                    <label>Sort By</label>
+                                    <select>
+                                        <option value="">
+                                            Position </option>
+                                        <option value="">
+                                            Name </option>
+                                        <option value="">
+                                            Price </option>
+                                    </select>
+                                    <a href="">
+                                        <img src="images/arrow2.gif" alt="" class="v-middle">
+                                    </a>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+                            <div class="cbp-vm-options">
+                                <a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid" title="grid">Grid View</a>
+                                <a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" title="list">List View</a>
+                            </div>
+                            <div class="pages">
+                                <div class="limiter visible-desktop">
+                                    <label>Show</label>
+                                    <select>
+                                        <option value="" selected="selected">
+                                            9 </option>
+                                        <option value="">
+                                            15 </option>
+                                        <option value="">
+                                            30 </option>
+                                    </select> per page
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <ul ng-controller="retrievetopcontroller">
+                                <li class="simpleCart_shelfItem" ng-repeat="items in data.data">
+                                    <a class="cbp-vm-image">
+                                        <div class="inner_content clearfix">
+                                            <div class="product_image">
+                                                <img src="{{items.url}}" class="img-responsive" alt="" />
+                                                <div class="product_container">
+                                                    <div class="cart-left">
+                                                        <p class="title">{{items.name}}</p>
+                                                    </div>
+                                                    <div class="mount item_price price">{{items.price}}</div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="cbp-vm-details">
+                                        {{items.description}}
+                                    </div>
+                                    <a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
+                        <script src="js/classie.js" type="text/javascript"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
