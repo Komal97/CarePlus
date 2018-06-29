@@ -28,9 +28,20 @@ router.get('/topproduct',(req,res)=>{
     productoperations.retrievetop(res);
 })
 
-router.get('/itemlistproduct',(req,res)=>{
+router.get('/sanitizerproduct',(req,res)=>{
     const productoperations=require("../db/productoperations");
-    productoperations.retrieveitemlist(res);
+    productoperations.retrievesanitizer(res);
 })
+
+router.get('/sanitaryproduct',(req,res)=>{
+    const productoperations=require("../db/productoperations");
+    productoperations.retrievesanitary(res);
+})
+
+router.get('/condomproduct',(req,res)=>{
+    const productoperations=require("../db/productoperations");
+    productoperations.retrievecondom(res);
+})
+
 
 module.exports=router;

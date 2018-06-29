@@ -1,0 +1,40 @@
+<div class="main">
+        <div class="content_box">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="m_1" style="margin-left:2%"> SANITIZERS </h3>
+                    <div style="padding:2%;" class="row" ng-controller="sanitizercontroller">
+                        <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data">
+                            <div class="account mrgnbtm">
+                                <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
+                                <div style="float:right !important; padding:2%">
+                                    <span class="newitemprice" style="font-size:1.1em;">Rs. {{items.price}}</span>
+                                </div>
+                                <div style="padding:2%">
+                                    <p class="newitemname" style="font-size:1.1em;">{{items.name}}</p>
+                                </div>
+                                <div>
+                                    <a ng-href="#/checkout">
+                                        <button class="btn btn-danger buynowbtn" type="submit">
+                                            <span class="glyphicon glyphicon-gift"></span>
+                                            &nbspBuy Now
+                                        </button>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a>
+                                        <button class="btn btn-primary addtocartbtn" type="submit">
+                                            <span class="glyphicon glyphicon-shopping-cart"></span>&nbspAdd To Cart
+                                        </button>
+                                    </a>
+                                </div>
+    
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

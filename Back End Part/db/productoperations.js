@@ -32,8 +32,9 @@ const productoperations={
             }
         });
     },
-    retrieveitemlist(response){
-        productcollection.find(function(err,result){
+    
+    retrievesanitizer(response){
+        productcollection.find({type:"sanitizer"},function(err,result){
             if(err){
                 response.json({message:'Error'});
             }
@@ -42,6 +43,27 @@ const productoperations={
             }
         });
     },
-   
+
+    retrievesanitary(response){
+        productcollection.find({type:"pad"},function(err,result){
+            if(err){
+                response.json({message:'Error'});
+            }
+            else{
+                response.json(result);
+            }
+        });
+    },
+
+    retrievecondom(response){
+        productcollection.find({type:"condom"},function(err,result){
+            if(err){
+                response.json({message:'Error'});
+            }
+            else{
+                response.json(result);
+            }
+        });
+    },
 }
 module.exports=productoperations;
