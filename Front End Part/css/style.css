@@ -8016,3 +8016,16 @@ z-index:-1;
 	text-align:center;
 	margin-bottom:10%;
 }
+
+.buynowbtn{
+	float:right;
+	padding:3% 3%;
+	margin-right:2% !important;
+
+}
+.addtocartbtn{
+	padding:3% 3%;
+	margin-left:2%;
+}
+
+
