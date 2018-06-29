@@ -1,17 +1,15 @@
 app.factory("retrieveitemlistfactory",function($http,$q,URLITEMLIST){
-    console.log("itemlist factory");
-    const object={
-        callServer(type){
-            var defer=$q.defer();
-            $http.post(URLITEMLIST,type).then(function(data){
-                console.log("Success",data);
+    var object = {
+        callServer(){
+            var defer = $q.defer();
+            $http.get(URLITEMLIST).then(function(data){
+                console.log("Factory success ",data);
                 defer.resolve(data);
             },function(error){
-                console.log("Reject");
-                defer.reject(error);
+                defer.reject("Factory reject ",error);
             });
             return defer.promise;
-        },
+        }
     }
     return object;
 })

@@ -32,15 +32,16 @@ const productoperations={
             }
         });
     },
-    retrieveitemlist(type,response){
-        productcollection.find({type:type},function(err,result){
+    retrieveitemlist(response){
+        productcollection.find({},function(err,result){
             if(err){
                 response.json({message:'Error'});
             }
             else{
                 response.json(result);
             }
-        })
-    }
+        });
+    },
+   
 }
 module.exports=productoperations;

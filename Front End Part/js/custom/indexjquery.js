@@ -23,27 +23,6 @@ $(window).load(function() {
     }); 
 });
 
-$(document).ready(function() {
-    $('.popup-with-zoom-anim').magnificPopup({
-        type: 'inline',
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-zoom-in'
-     });
-});
-
-$(document).ready(function () {
-    $('#horizontalTab').easyResponsiveTabs({
-        type: 'default', //Types: default, vertical, accordion           
-        width: 'auto', //auto or any width like 600px
-        fit: true   // 100% fit in a container
-    });
-});
 
 $(window).load(function () {
     $('.flexslider').flexslider({
