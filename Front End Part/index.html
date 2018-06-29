@@ -54,12 +54,21 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand"> FUN MOFO </a>
+                <a class="navbar-brand" style="font-size:1.3em"> Care<span style="font-size:1.5em">+</span> </a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="mynav">
                     <a ng-href="#/preview"> Home </a>
                 </li>
+                <li class="mynav">
+                        <a  data-toggle="dropdown" href="#">Categories
+                        <span class="caret"></span></a>
+                        <ul style="background-color:#333;min-width:0%" class="dropdown-menu">
+                          <li><a href="#/itemlist">Sanitizers</a></li>
+                          <li><a href="#">Sanitary Pads</a></li>
+                          <li><a href="#">Condoms</a></li>
+                        </ul>
+                      </li>
             </ul>
             <div>
                 <form class="navbar-form navbar-left" action="/action_page.php">
@@ -71,6 +80,7 @@
                 </form>
             </div>
             <ul class="nav navbar-nav navbar-right">
+                    
                 <li class="mynav">
                     <a data-toggle="modal" data-target="#myModalRegister" ng-model="signup">
                         <span class="glyphicon glyphicon-user"></span> Sign Up</a>
@@ -241,7 +251,7 @@
             &nbsp&nbsp<span style="color:aqua">Pre Care</span></p>
             </div>
                 <div class="banner_right">
-                    <h1 style="margin-bottom:2.5%">Delivery within 45 mins otherwise
+                    <h1 style="margin-bottom:2.5%">Delivery within 45 mins <br>otherwise
                         <font color="#FECF17"> FREE</font>
                     </h1>
                     <p></p>

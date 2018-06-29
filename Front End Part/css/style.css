@@ -74,12 +74,14 @@ body a{
 
 li.mynav{
 	background-color:#333;
+	
 }
 
 li.mynav a:hover{
 	background-color:#68656A !important;
 	cursor:pointer;
 }
+
 
 nav{
 	margin-bottom: 0px !important;
@@ -92,7 +94,7 @@ nav{
 }
 
 .w-300{
-	width:300% !important;
+	width:200% !important;
 }
 
 .relative{
@@ -123,7 +125,7 @@ nav{
 }
 
 .srch-ryt{
-	right: -346px;
+	right: -187px;
 }
 
 .header{
