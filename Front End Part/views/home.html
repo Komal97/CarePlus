@@ -3,9 +3,9 @@
         <div class="row">
 
             <div class="col-md-12">
-                <div style="padding:2%;" class="row" ng-controller="retrievenewcontroller">
+                <div style="padding:2%;" class="row" ng-controller="retrieveproductcontroller">
                     <!-- <div > -->
-                        <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:7" >
+                    <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:7">
                         <div class="account newitemdiv">
 
                             <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
@@ -14,7 +14,7 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                <!-- </div> -->
+                    <!-- </div> -->
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <a ng-href="#/itemlist" style="text-decoration:none">
                             <div class="account">
@@ -31,56 +31,62 @@
 
                 <h3 class="m_1" style="margin-left:0%;background-color:#d9534f;color:#fff;padding:1%;margin-right:0%">Top Products</h3>
                 <div class="account" style="padding:0%;margin:2%">
-                <div id="view_all_div" class="col_1_of_4 span_1_of_4 simpleCart_shelfItem" ng-controller="retrievetopcontroller">
-                    <a>
-                        <div class="inner_content clearfix">
-                            <a href="#/topitemlist">
-                                <div class="product_image">
-                                    <h3 style="padding:5em 0 5em 0" class="viewallclick">View All ></h3>
-                                </div>
-                            </a>
-                        </div>
-                    </a>
-                </div>
+                    <div id="view_all_div" class="col_1_of_4 span_1_of_4 simpleCart_shelfItem" ng-controller="retrievetopcontroller">
+                        <a>
+                            <div class="inner_content clearfix">
+                                <a href="#/topitemlist">
+                                    <div class="product_image">
+                                        <h3 style="padding:5em 0 5em 0" class="viewallclick">View All ></h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
 
-                <ul id="flexiselDemo3">
-                    <li>
-                        <img src="images/pic1.jpg" class="img-responsive" />
-                        <div class="grid-flex">
-                            <a href="#">Durex</a>
-                            <p>Rs 600</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/pic10.jpg" class="img-responsive" />
-                        <div class="grid-flex">
-                            <a href="#">Surf Yoke</a>
-                            <p>Rs 1050</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/pic4.jpg" class="img-responsive" />
-                        <div class="grid-flex">
-                            <a href="#">Salty Daiz</a>
-                            <p>Rs 990</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/pic8.jpg" class="img-responsive" />
-                        <div class="grid-flex">
-                            <a href="#">Cheeky Zane</a>
-                            <p>Rs 850</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/pic7.jpg" class="img-responsive" />
-                        <div class="grid-flex">
-                            <a href="#">Synergy</a>
-                            <p>Rs 870</p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
+                    <ul id="flexiselDemo3">
+                        <li>
+                            <img src="images/pic1.jpg" class="img-responsive" />
+                            <div class="grid-flex">
+                                <a href="#">Durex</a>
+                                <p>Rs 600</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/pic10.jpg" class="img-responsive" />
+                            <div class="grid-flex">
+                                <a href="#">Surf Yoke</a>
+                                <p>Rs 1050</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/pic4.jpg" class="img-responsive" />
+                            <div class="grid-flex">
+                                <a href="#">Salty Daiz</a>
+                                <p>Rs 990</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/pic8.jpg" class="img-responsive" />
+                            <div class="grid-flex">
+                                <a href="#">Cheeky Zane</a>
+                                <p>Rs 850</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/pic7.jpg" class="img-responsive" />
+                            <div class="grid-flex">
+                                <a href="#">Synergy</a>
+                                <p>Rs 870</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
                 </div>
             </div>
+<<<<<<< HEAD
             </div>
+=======
+        </div>
+    </div>
+</div>
+>>>>>>> ddd3500882935eed7756147fd4dee89d67392c25
