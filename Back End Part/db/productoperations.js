@@ -33,7 +33,7 @@ const productoperations={
         });
     },
     retrieveitemlist(response){
-        productcollection.find({},function(err,result){
+        productcollection.find(function(err,result){
             if(err){
                 response.json({message:'Error'});
             }

@@ -5,9 +5,9 @@
 
             <div class="col-md-12">
                 <h3 class="m_1" style="margin-left:2%">New Products</h3>
-                <div style="padding:2%;" ng-controller="retreiveitemlistcontroller" class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:8">
-
+                <div style="padding:2%;" class="row" ng-controller="retrievenewcontroller">
+                    <!-- <div > -->
+                        <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:7" >
                         <div class="account newitemdiv">
 
                             <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
@@ -16,8 +16,9 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
+                <!-- </div> -->
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a ng-href="#/itemlist">
+                        <a ng-href="#/itemlist" style="text-decoration:none">
                             <div class="account">
                                 <div class="img-responsive">
                                     <h3 class="viewallclick">View All ></h3>
@@ -31,11 +32,11 @@
 
 
                 <h3 style="margin-left:2%" class="m_2 pb-2">Top Products</h3>
-                <div ng-controller="retrievetopcontroller" class="account" style="padding:0%;margin:2%">
-                <div id="view_all_div" class="col_1_of_4 span_1_of_4 simpleCart_shelfItem">
+                <div class="account" style="padding:0%;margin:2%">
+                <div id="view_all_div" class="col_1_of_4 span_1_of_4 simpleCart_shelfItem" ng-controller="retrievetopcontroller">
                     <a>
                         <div class="inner_content clearfix">
-                            <a ng-href="#/itemlist">
+                            <a href="#/topitemlist">
                                 <div class="product_image">
                                     <h3 style="padding:5em 0 5em 0" class="viewallclick">View All ></h3>
                                 </div>
