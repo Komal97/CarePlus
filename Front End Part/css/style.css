@@ -135,10 +135,10 @@ nav{
 	background-position: center;
 }
 .header-top {
-	padding: 0.5em 0 0.5em;
+	padding: 0.2em 0 0.2em;
 }
 .logo {
-	margin-top:5%;
+	margin-top:1%;
   float: left;
   background-color: rgba(49, 194, 219, 0.66);
   padding: 15px;
@@ -210,6 +210,7 @@ ul.social li a i.instagram{
 	width:23%;
 	float:left;
 }
+
 ul.login{
 	padding: 5px 30px;
 	list-style: none;
@@ -363,7 +364,7 @@ ul.quick_access li.check{
 }
 .banner_right h1{
 	color: #fff;
-    font-size: 3.5em;
+    font-size: 2.5em;
     text-transform: capitalize;
     line-height: 1.2em;
 }
@@ -574,7 +575,7 @@ ul.quick_access li.check{
 	 font-family: 'Raleway', sans-serif;
 }
 .content_box {
-  padding: 5em 0 3em;
+  padding: 1.5em 0 1.5em;
 }
 h3.menu_head{
 	text-align:center;
