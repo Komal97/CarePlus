@@ -11,6 +11,16 @@ const productoperations={
             }
         });
     },
+    previewitem(modalno,response){
+        productcollection.find({modalno:modalno},function(err,result){
+            if(err){
+                response.json({message:'Error'});
+            }
+            else{
+                response.json(result);
+            }
+        });
+    },
     retrieve(response){
         productcollection.find({type:"new"},function(err,result){
             if(err){

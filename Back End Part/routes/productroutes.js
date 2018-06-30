@@ -18,6 +18,12 @@ router.post('/add',(req,res)=>{
     productoperations.addproduct(productobject,res);
 });
 
+router.post('/preview',(req,res)=>{
+    var modalno=req.body.modalno;
+    const productoperations=require("../db/productoperations");
+    productoperations.previewitem(modalno,res);
+});
+
 router.get('/retrieveproduct',(req,res)=>{
     const productoperations=require("../db/productoperations");
     productoperations.retrieve(res);
