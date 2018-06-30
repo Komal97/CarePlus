@@ -1,1 +1,1 @@
-const app = angular.module("myapp",["ngRoute"]);
+const app = angular.module("myapp",["ngRoute","ngStorage"]);

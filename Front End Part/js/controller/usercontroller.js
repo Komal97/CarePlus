@@ -1,14 +1,15 @@
-app.controller("myctrl",function($scope,myfactory){
+app.controller("myctrl",function($scope,myfactory,$localStorage){
     $scope.doLogin=function(){
        // console.log("controller");
         var userobject=new loginuser($scope.loginid,$scope.loginpassword);
         var promise=myfactory.doLogin(userobject);
         promise.then(function(data){
-        //    console.log("Back to promise...",data);
-          //  $scope.message=data.data.message;
           console.log("sucess",data.data.message);
           $scope.signup=" ";
-          $scope.login=data.data.message;
+         // $scope.login=data.data.message;
+         $localStorage.message=data.data.message;
+         $scope.login=$localStorage.message;
+       // console.log($localStorage);
         },function(err){
            $scope.login=err;
         })
@@ -19,7 +20,6 @@ app.controller("myctrl",function($scope,myfactory){
         var promise=myfactory.doRegister(userobject1);
         promise.then(function(data){
            console.log("Back to promise...",data);
-          //  $scope.message=data.data.message;
           $scope.signup=" ";
           $scope.login=data.data.message;
         },function(err){
