@@ -8,13 +8,14 @@
                 <div style="padding:2%;" class="row" ng-controller="retrieveproductcontroller">
                     <!-- <div > -->
                     <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:7">
-                        <div class="account newitemdiv">
+                        <a href="#/preview" style="text-decoration:none">
+                        <div  class="account newitemdiv">
 
                             <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
                             <p class="newitemname">{{items.name}}</p>
                             <span class="newitemprice">Rs. {{items.price}}</span>
                             <div class="clearfix"></div>
-                        </div>
+                        </div></a>
                     </div>
                     <!-- </div> -->
                     <div class="col-xs-12 col-sm-6 col-md-3">

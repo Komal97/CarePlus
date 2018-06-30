@@ -18,7 +18,7 @@ app.controller("myctrl",function($scope,myfactory){
         var userobject1=new user($scope.firstname,$scope.lastname,$scope.userid,$scope.mobile,$scope.password);
         var promise=myfactory.doRegister(userobject1);
         promise.then(function(data){
-          //  console.log("Back to promise...",data);
+           console.log("Back to promise...",data);
           //  $scope.message=data.data.message;
           $scope.signup=" ";
           $scope.login=data.data.message;
