@@ -1,10 +1,19 @@
 //---------------- REQUIRING MODULES-------------------
 const express=require("express");
 const bodyparser=require("body-parser");
+const session=require("express-session");
 const userRoute=require("./routes/userroutes");
 const productRoute=require("./routes/productroutes");
 
 const app=express();
+
+//----------------- SESSION ---------------------------
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}));
 
 app.use(bodyparser.urlencoded({encoding:true}));
 app.use(bodyparser.json());

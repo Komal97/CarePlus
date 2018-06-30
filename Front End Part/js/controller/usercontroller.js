@@ -6,6 +6,7 @@ app.controller("myctrl",function($scope,myfactory){
         promise.then(function(data){
         //    console.log("Back to promise...",data);
           //  $scope.message=data.data.message;
+          console.log("sucess",data.data.message);
           $scope.signup=" ";
           $scope.login=data.data.message;
         },function(err){
