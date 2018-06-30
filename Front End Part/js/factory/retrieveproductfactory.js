@@ -1,4 +1,4 @@
-app.factory("retrieveproductfactory",function($http,$q,URLPR){
+app.factory("retrieveproductfactory",function($http,$q,URLPR,URLPREVIEW){
     var object = {
         callServer(){
             var defer = $q.defer();
@@ -8,7 +8,20 @@ app.factory("retrieveproductfactory",function($http,$q,URLPR){
                 defer.reject(error);
             });
             return defer.promise;
+        },
+        showdata($event,items){
+            var defer=$q.defer();
+            console.log("factory");
+            $http.post(URLPREVIEW,items).then(function(data){
+                console.log("Success",data);
+                defer.resolve(data);
+            },function(error){
+                console.log("error",error);
+                defer.reject(error);
+            });
+            return defer.promise;
         }
     }
+    
     return object;
 })
