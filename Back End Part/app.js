@@ -8,12 +8,6 @@ const productRoute=require("./routes/productroutes");
 const app=express();
 
 //----------------- SESSION ---------------------------
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
-}));
 
 app.use(bodyparser.urlencoded({encoding:true}));
 app.use(bodyparser.json());
