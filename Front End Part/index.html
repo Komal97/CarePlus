@@ -51,7 +51,7 @@
     <script src="js/controller/concontroller.js"></script>
 </head>
 
-<body ng-app="myapp">
+<body ng-app="myapp" ng-controller="myctrl">
 
     <!-- NAVBAR SECTION -->
     <nav class="navbar navbar-inverse" >
@@ -64,7 +64,7 @@
                     <a ng-href="#/preview"> Home </a>
                 </li>
                 <li class="mynav">
-                        <a  data-toggle="dropdown" href="#">Categories
+                        <a  data-toggle="dropdown" >Categories
                         <span class="caret"></span></a>
                         <ul style="background-color:#333;min-width:0%" class="dropdown-menu">
                           <li><a href="#/sanitizers">Sanitizers</a></li>
@@ -86,11 +86,11 @@
                     
                 <li class="mynav">
                     <a data-toggle="modal" data-target="#myModalRegister" ng-model="signup">
-                        <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                        <span class="glyphicon glyphicon-user" ng-init="SignUp"></span> {{signup}} </a>
                 </li>
                 <li class="mynav">
                     <a data-toggle="modal" data-target="#myModal" ng-model="login">
-                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        <span class="glyphicon glyphicon-log-in" ng-init="Login"></span> {{login}} </a>
                 </li>
                 <li class="mynav">
                     <a ng-href="#/cart">
@@ -101,7 +101,7 @@
     </nav>
 
     <!-- Modal Register-->
-    <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="myctrl">
+    <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -155,7 +155,7 @@
     </div>
 
     <!-- Modal Login-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="myctrl">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

@@ -1,18 +1,20 @@
 const usercollection=require("./userschema");
 
 const useroperations={
-    register(userobject,response){
+    register(userobject,req,response){
         usercollection.create(userobject,function(err){
             if(err){
                 response.json({message:'Error Occured During registration'});
             }
             else{
-                response.json({message:'Register successfully'});
+                req.session.userid=userobject.userid;
+                var object = {message:"Welcome "+req.session.userid};
+                response.json(object);
             }
         })
     },
 
-    login(userobject,response){
+    login(userobject,req,response){
         usercollection.find({userid:userobject.loginid,password:userobject.loginpassword},
         function(err,docs){
             if(err){
@@ -20,7 +22,8 @@ const useroperations={
             }
             else{
                 if(docs && docs.length>0){
-                    var object = {message:"Welcome "+userobject.loginid};
+                    req.session.userid=userobject.loginid;
+                    var object = {message:"Welcome "+req.session.userid};
                     response.json(object);
                 }
                 else{
