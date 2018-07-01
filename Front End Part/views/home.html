@@ -8,9 +8,9 @@
                 <div style="padding:2%;" class="row" ng-controller="retrieveproductcontroller">
                     <!-- <div > -->
                     <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:7">
-                        <a  style="text-decoration:none" ng-href="#/preview" ng-click="showdata($event,items)">
+                        <a  style="text-decoration:none" ng-href="#/preview"  ng-click="showdata($event,items)">
                         <div  class="account newitemdiv"  >
-                            <!-- <p>{{nameofitem}}</p> -->
+                            <p>{{nameofitem}}</p>
                             <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
                             <p class="newitemname">{{items.name}}</p>
                             <span class="newitemprice">Rs. {{items.price}}</span>

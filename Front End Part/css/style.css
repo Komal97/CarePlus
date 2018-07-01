@@ -4234,7 +4234,6 @@ a.single-item{
     color: #c1bfbf;
     outline: none;
     font-size: 18px;
-    margin: 6px 0 17px 0px;
 }
 .login-right input[type="text"]:hover, .login-right input[type="password"]:hover, .login-bottom input[type="text"]:hover, .login-bottom input[type="password"]:hover{
     border: 1px solid #FDA30E;	
@@ -8025,5 +8024,8 @@ z-index:-1;
 
 }
 
-
+.error{
+	font-size: 0.8em;
+	color: red;
+}
 
