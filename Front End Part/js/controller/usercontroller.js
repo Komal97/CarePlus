@@ -1,6 +1,7 @@
 app.controller("myctrl",function($scope,myfactory,$localStorage){
     $scope.doLogin=function(){
        // console.log("controller");
+        $('#myModal').modal('hide');
         var userobject=new loginuser($scope.loginid,$scope.loginpassword);
         var promise=myfactory.doLogin(userobject);
         promise.then(function(data){
@@ -24,6 +25,9 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
           $scope.login=data.data.message;
         },function(err){
             $scope.login=err;
-        })
+        });
+       
+        $('#myModalRegister').modal('hide');
+       
     }
 })
