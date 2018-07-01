@@ -1,21 +1,21 @@
 <!-- MAIN SECTION -->
 <div class="main">
-        <div class="content_box">
+    <div class="content_box">
         <div class="row">
 
             <div class="col-md-12">
-                    <h3 class="m_1" style="margin-left:2%">New Products</h3>
+                <h3 class="m_1" style="margin-left:2%">New Products</h3>
                 <div style="padding:2%;" class="row" ng-controller="retrieveproductcontroller">
                     <!-- <div > -->
                     <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data|limitTo:7">
-                        <a  style="text-decoration:none" ng-href="#/preview"  ng-click="showdata($event,items)">
-                        <div  class="account newitemdiv"  >
-                            <p>{{nameofitem}}</p>
-                            <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
-                            <p class="newitemname">{{items.name}}</p>
-                            <span class="newitemprice">Rs. {{items.price}}</span>
-                            <div class="clearfix"></div>
-                        </div></a>
+                        <a style="text-decoration:none" ng-href="#/preview" ng-click="showdata($event,items)">
+                            <div class="account newitemdiv">
+                                <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
+                                <p class="newitemname">{{items.name}}</p>
+                                <span class="newitemprice">Rs. {{items.price}}</span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
                     </div>
                     <!-- </div> -->
                     <div class="col-xs-12 col-sm-6 col-md-3">

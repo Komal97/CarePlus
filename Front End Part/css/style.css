@@ -1208,7 +1208,7 @@ ul.product-qty{
 	padding-bottom: 0.5em;
 	display: block;
 	text-transform: capitalize;
-	margin-top: 2em;
+	margin-top: 1.5%;
 }
 .product-qty select {
 	border: 1px solid #eee;
@@ -7906,6 +7906,21 @@ font-weight:normal;
 #itemprice span{
 	color: #31C2DB;
 	font-size: 135%;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+.previewname{
+	margin-top:2%;
+	color: black;
+	font-size: 130%;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+.previewprice{
+	margin-top:1%;
+	margin-bottom: 1%;
+	color: #d94f5c;
+	font-size: 115%;
 	font-family: Roboto, Arial, sans-serif;
 }
 .img{

@@ -28,6 +28,5 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
         });
        
         $('#myModalRegister').modal('hide');
-       
     }
 })
