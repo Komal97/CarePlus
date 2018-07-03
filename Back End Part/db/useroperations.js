@@ -7,7 +7,7 @@ const useroperations={
                 response.json({message:'Error Occured During registration'});
             }
             else{
-                var object = {message:"Welcome "+userobject.userid};
+                var object = {message:userobject.userid};
                 response.json(object);
             }
         })
@@ -21,7 +21,7 @@ const useroperations={
             }
             else{
                 if(docs && docs.length>0){
-                    var object = {message:"Welcome "+userobject.loginid};
+                    var object = {message:userobject.loginid};
                     response.json(object);
                 }
                 else{
@@ -40,7 +40,23 @@ const useroperations={
                 else{
                     response.json(docs);
                 }
-            })
+        })
+    },
+    save(userobject,response){
+        usercollection.updateOne({userid:userobject.email},
+            {$set :
+                {firstname:userobject.fname,lastname:userobject.lname,
+                 mobile:userobject.mobile
+                }
+            },
+            function(err,result){
+            if(err){
+                response.json({message:'Error during update'});
+            }
+            else{
+                response.json(result);
+            }
+        })
     }
 }
 module.exports=useroperations;

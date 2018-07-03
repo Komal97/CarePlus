@@ -25,12 +25,22 @@ router.post('/login',(req,res)=>{
 });
 
 router.post('/account',(req,res)=>{
-    var accountid=req.body.accountid;
-    
+    var accountid=req.body.accountid;   
     const useroperations=require("../db/useroperations");
     const accountuser=require("../model/accountuser");
     var userobject=new accountuser(accountid);
     useroperations.editprofile(userobject,res);
+});
+
+router.post('/saveaccountinfo',(req,res)=>{
+    var fname=req.body.fname;
+    var lname=req.body.lname;
+    var mobile=req.body.mobile;   
+    var email=req.body.email;
+    const useroperations=require("../db/useroperations");
+    const edituser=require("../model/edituser");
+    var userobject=new edituser(fname,lname,mobile,email);
+    useroperations.save(userobject,res);
 });
 
 module.exports=router;

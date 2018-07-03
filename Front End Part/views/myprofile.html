@@ -55,24 +55,24 @@
                     <div class="account mrgntop mrgnbtm">
                         <form>
                             <div class="register-top-grid">
-                                <a class="topedit"> Save</a>
-                                <a class="topedit"> Edit </a>
+                                <a class="topedit" ng-click="save()"> Save</a>
+                                <a class="topedit"  ng-click="edit()"> Edit </a>
                                 <h3>PERSONAL INFORMATION</h3>
                                 <div>
-                                    <span  class="edit">First Name</span>
-                                    <input ng-model="fname" type="text">
+                                    <span class="edit">First Name</span>
+                                    <input ng-model="fname" type="text" ng-disabled="fname">
                                 </div>
                                 <div>
                                     <span class="edit">Last Name</span>
-                                    <input ng-model="lname" type="text">
-                                </div>
-                                <div>
-                                    <span class="edit">Email Address</span>
-                                    <input ng-model="email" type="text">
+                                    <input ng-model="lname" type="text" ng-disabled="lname">
                                 </div>
                                 <div>
                                     <span class="edit">Mobile Number</span>
-                                    <input ng-model="mobile" type="text">
+                                    <input ng-model="mobile" type="text" ng-disabled="mobile">
+                                </div>
+                                <div>
+                                    <span class="edit">Email Address</span>
+                                    <input ng-model="email" type="text" ng-disabled="email">
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>

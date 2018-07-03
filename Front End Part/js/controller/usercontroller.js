@@ -13,7 +13,8 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
          $scope.login=$localStorage.message;
        // console.log($localStorage);
         },function(err){
-           $scope.login=err;
+          // $scope.login=err;
+          console.log(err);
         })
     },
     $scope.doRegister=function(){
@@ -25,13 +26,14 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
           $scope.signup=" ";
           $scope.login=data.data.message;
         },function(err){
-            $scope.login=err;
+            console.log(err);
+          //  $scope.login=err;
         });
        
         $('#myModalRegister').modal('hide');
     },
     $scope.editprofile=function(){
-        var userobject2=new accountuser($scope.loginid);
+        var userobject2=new accountuser($scope.login);
         console.log($scope.loginid);
         var promise=myfactory.editprofile(userobject2);
         promise.then(function(data){
@@ -45,5 +47,19 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
             console.log("error ",err);
         });
 
+    },
+    $scope.edit=function(){
+        console.log("you clicked edit");
+        $scope.fname=false;
+    }
+    $scope.save=function(){
+        var userobject=new edituser($scope.fname,$scope.lname,$scope.mobile,$scope.email);
+        console.log(userobject);
+        var promise=myfactory.save(userobject);
+        promise.then(function(data){
+          console.log("save success",data);  
+        },function(err){ 
+          console.log(err);
+        })
     }
 })
