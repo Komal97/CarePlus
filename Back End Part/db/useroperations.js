@@ -30,6 +30,17 @@ const useroperations={
                 }
             }
         })
+    },
+    editprofile(userobject,response){
+        usercollection.find({userid:userobject.accountid},
+            function(err,docs){
+                if(err){
+                    response.json({message:'Error'});
+                }
+                else{
+                    response.json(docs);
+                }
+            })
     }
 }
 module.exports=useroperations;

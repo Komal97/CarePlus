@@ -37,6 +37,7 @@
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
     <script src="js/model/user.js"></script>
     <script src="js/model/loginuser.js"></script>
+    <script src="js/model/accountuser.js"></script>
     <script src="js/config/urlconfig.js"></script>
     <script src="js/factory/userfactory.js"></script>
     <script src="js/controller/usercontroller.js"></script>
@@ -160,7 +161,7 @@
 
                                             <div class="form-group">
                                                 <label class="inputheading"> Password* </label>
-                                                <input style="margin:0%" type="password" class="form-control inputbox" ng-model="password" name="password" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/">
+                                                <input style="margin:0%" type="password" class="form-control inputbox" ng-model="password" name="password" >
                                                 <p class="error" ng-show="f1.password.$touched&&f1.password.$pristine"> password is required</p>
                                                 <p class="error" ng-show="f1.password.$touched&&f1.password.$dirty&&f1.password.$invalid">Password should be at least 8 characters long and should contain one number,one
                                                     character and one special character.</p>
@@ -214,7 +215,7 @@
                                     <span>Password
                                         <label>*</label>
                                     </span>
-                                    <input  class="form-control inputbox" name="loginpassword" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/" type="password"
+                                    <input  class="form-control inputbox" name="loginpassword" type="password"
                                         ng-model="loginpassword">
                                     <p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$pristine"> password is required</p>
                                     <p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$dirty&&f2.loginpassword.$invalid">Password should be at least 8 characters long and should contain one number,one character
@@ -339,10 +340,10 @@
                 </ul>
             </div>
             <div class="footer-grid">
-                <h3>Your Account</h3>
+                <h3 >Your Account</h3>
                 <ul class="list1">
                     <li>
-                        <a ng-href="#/myprofile"> My Account</a>
+                        <a  ng-click="editprofile()" ng-href="#/myprofile"> My Account</a>
                     </li>
                     <li>
                         <a ng-href="#/orderhistory">Orders history</a>

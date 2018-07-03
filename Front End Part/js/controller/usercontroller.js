@@ -3,6 +3,7 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
        // console.log("controller");
         $('#myModal').modal('hide');
         var userobject=new loginuser($scope.loginid,$scope.loginpassword);
+        //console.log(userobject);
         var promise=myfactory.doLogin(userobject);
         promise.then(function(data){
           console.log("sucess",data.data.message);
@@ -28,5 +29,21 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
         });
        
         $('#myModalRegister').modal('hide');
+    },
+    $scope.editprofile=function(){
+        var userobject2=new accountuser($scope.loginid);
+        console.log($scope.loginid);
+        var promise=myfactory.editprofile(userobject2);
+        promise.then(function(data){
+            console.log("Back to promise...",data);
+            console.log(data.data);
+            $scope.fname=data.data[0].firstname;
+            $scope.lname=data.data[0].lastname;
+            $scope.email=data.data[0].userid;
+            $scope.mobile=data.data[0].mobile;
+        },function(err){
+            console.log("error ",err);
+        });
+
     }
 })

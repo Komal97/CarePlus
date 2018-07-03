@@ -1,4 +1,4 @@
-app.factory("myfactory",function($http,$q,URL,URLR){
+app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT){
     const object={
         doLogin(userobject){
             var defer=$q.defer();
@@ -14,6 +14,16 @@ app.factory("myfactory",function($http,$q,URL,URLR){
         doRegister(userobject){
             var defer=$q.defer();
             $http.post(URLR,userobject).then(function(data){
+                console.log("Success",data);
+                defer.resolve(data);
+            },function(error){
+                defer.reject(error);
+            });
+            return defer.promise;
+        },
+        editprofile(userobject){
+            var defer=$q.defer();
+            $http.post(URLACCOUNT,userobject).then(function(data){
                 console.log("Success",data);
                 defer.resolve(data);
             },function(error){

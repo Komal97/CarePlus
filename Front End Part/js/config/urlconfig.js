@@ -6,6 +6,7 @@ app.constant("SANITIZERURL","http://localhost:1234/sanitizerproduct");
 app.constant("SANITARYURL","http://localhost:1234/sanitaryproduct");
 app.constant("URLC","http://localhost:1234/condomproduct");
 app.constant("URLPREVIEW","http://localhost:1234/preview");
+app.constant("URLACCOUNT","http://localhost:1234/account")
 
 
 

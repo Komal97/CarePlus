@@ -12,7 +12,7 @@ router.post('/register',(req,res)=>{
     const user=require("../model/user");
     var userobject=new user(firstname,lastname,userid,mobile,password);
     useroperations.register(userobject,res);
-})
+});
 
 router.post('/login',(req,res)=>{
     var loginid=req.body.loginid;
@@ -22,5 +22,15 @@ router.post('/login',(req,res)=>{
     const loginuser=require("../model/loginuser");
     var userobject=new loginuser(loginid,loginpassword);
     useroperations.login(userobject,res);
-})
+});
+
+router.post('/account',(req,res)=>{
+    var accountid=req.body.accountid;
+    
+    const useroperations=require("../db/useroperations");
+    const accountuser=require("../model/accountuser");
+    var userobject=new accountuser(accountid);
+    useroperations.editprofile(userobject,res);
+});
+
 module.exports=router;
