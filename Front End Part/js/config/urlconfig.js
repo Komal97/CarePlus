@@ -8,5 +8,6 @@ app.constant("URLC","http://localhost:1234/condomproduct");
 app.constant("URLPREVIEW","http://localhost:1234/preview");
 app.constant("URLACCOUNT","http://localhost:1234/account");
 app.constant("URLSAVE","http://localhost:1234/saveaccountinfo");
+app.constant("URLTOCART","http://localhost:1234/tocartdb");
 
 
