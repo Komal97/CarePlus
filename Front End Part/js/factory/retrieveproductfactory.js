@@ -1,4 +1,4 @@
-app.factory("retrieveproductfactory",function($http,$q,URLPR,URLPREVIEW){
+app.factory("retrieveproductfactory",function($http,$q,URLPR,URLPREVIEW,BUY){
     var object = {
         callServer(){
             var defer = $q.defer();
@@ -13,6 +13,18 @@ app.factory("retrieveproductfactory",function($http,$q,URLPR,URLPREVIEW){
             var defer=$q.defer();
             console.log("factory");
             $http.post(URLPREVIEW,items).then(function(data){
+                console.log("Success",data);
+                defer.resolve(data);
+            },function(error){
+                console.log("error",error);
+                defer.reject(error);
+            });
+            return defer.promise;
+        },
+        buynowfunc($event,productobject){
+            var defer=$q.defer();
+            console.log("factory");
+            $http.post(BUY,productobject).then(function(data){
                 console.log("Success",data);
                 defer.resolve(data);
             },function(error){

@@ -1,4 +1,4 @@
-app.controller("retrieveproductcontroller", function ($scope, retrieveproductfactory) {
+app.controller("retrieveproductcontroller", function ($scope, $filter,retrieveproductfactory) {
   $scope.showdata = function ($event, items) {
     console.log("controller");
 
@@ -18,6 +18,21 @@ app.controller("retrieveproductcontroller", function ($scope, retrieveproductfac
 
     });
   };
+
+  $scope.buynowfunc=function($event,items){
+    console.log(items);
+    console.log($scope.login);
+    console.log($filter('date')(new Date(), 'fullDate'));
+    var date=$filter('date')(new Date(), 'fullDate');
+    var productobject=new buynowitems($scope.login,items.modalno,items.url,items.name,items.price,date);
+    console.log(productobject);
+    var promise=retrieveproductfactory.buynowfunc($event,productobject);
+    promise.then(function(data){
+      console.log("success",data);
+    },function(err){
+      console.log("error",err);
+    })
+  }
 
   var promise = retrieveproductfactory.callServer();
   promise.then(function (data) {

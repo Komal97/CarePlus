@@ -49,5 +49,5 @@ router.get('/condomproduct',(req,res)=>{
     productoperations.retrievecondom(res);
 })
 
-
 module.exports=router;
+
