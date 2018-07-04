@@ -1,24 +1,18 @@
 app.controller("myctrl",function($scope,myfactory,$localStorage){
     $scope.doLogin=function(){
-       // console.log("controller");
         $('#myModal').modal('hide');
         var userobject=new loginuser($scope.loginid,$scope.loginpassword);
-        //console.log(userobject);
         var promise=myfactory.doLogin(userobject);
         promise.then(function(data){
           console.log("sucess",data.data.message);
           $scope.signup=" ";
-         // $scope.login=data.data.message;
          $localStorage.message=data.data.message;
          $scope.login=$localStorage.message;
-       // console.log($localStorage);
         },function(err){
-          // $scope.login=err;
           console.log(err);
         })
     },
     $scope.doRegister=function(){
-       // console.log("controller");
         var userobject1=new user($scope.firstname,$scope.lastname,$scope.userid,$scope.mobile,$scope.password);
         var promise=myfactory.doRegister(userobject1);
         promise.then(function(data){
@@ -27,7 +21,6 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
           $scope.login=data.data.message;
         },function(err){
             console.log(err);
-          //  $scope.login=err;
         });
        
         $('#myModalRegister').modal('hide');
@@ -51,7 +44,7 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
     $scope.edit=function(){
         console.log("you clicked edit");
         $scope.fname=false;
-    }
+    },
     $scope.save=function(){
         var userobject=new edituser($scope.fname,$scope.lname,$scope.mobile,$scope.email);
         console.log(userobject);
@@ -61,5 +54,16 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
         },function(err){ 
           console.log(err);
         })
+    },
+    $scope.myorders=function(){
+        var userobject3=new accountuser($scope.login);
+        var promise=myfactory.myorders(userobject3);
+        promise.then(function(data){
+            console.log(data.data);
+            $scope.data=data;
+
+        },function(err){
+            console.log("error ",err);
+        });
     }
 })

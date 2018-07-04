@@ -7863,6 +7863,7 @@ font-weight:normal;
 	border-radius:4px;
 }
 .status{
+	margin-top: 1%;
 	margin-bottom:5%;
 }
 .subordstatus{
@@ -7924,6 +7925,8 @@ font-weight:normal;
 	font-family: Roboto, Arial, sans-serif;
 }
 .img{
+	margin-top: 5%;
+  margin-left: 6%;
 	height:60%;
 	width:60%;
 }

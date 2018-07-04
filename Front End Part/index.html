@@ -306,23 +306,6 @@
         </div>
     </div>
 
-    <!-- CATEGORIES SECTION -->
-    <!--<div class="menu_box"> -->
-    <!-- ng-controller="retreiveitemlistcontroller" -->
-    <!-- <h3 class="menu_head">Categories</h3>
-        <ul class="nav">
-            <li>
-                <a href="#/itemlist" ng-click="Sendtype('sanitizer')"> Sanitizers </a>
-            </li>
-            <li>
-                <a href="#/itemlist" ng-click="Sendtype('pad')"> Sanitary Pads </a>
-            </li>
-            <li>
-                <a href="#/itemlist" ng-click="Sendtype('condom')"> Condoms </a>
-            </li>
-        </ul>
-    </div> -->
-
     <!-- Changing div -->
     <div>
         <ng-view></ng-view>
@@ -349,7 +332,7 @@
                         <a  ng-click="editprofile()" ng-href="#/myprofile"> My Account</a>
                     </li>
                     <li>
-                        <a ng-href="#/orderhistory">Orders history</a>
+                        <a href="#/orderhistory" ng-click="myorders()">Orders history</a>
                     </li>
                 </ul>
             </div>

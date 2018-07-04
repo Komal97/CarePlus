@@ -1,7 +1,8 @@
 class buynowitems{
-    constructor(userid,modelno,imageurl,productname,price,buy_quantity,purchasing_date_time,delivery_time,status){
+    constructor(userid,modelno,orderid,imageurl,productname,price,buy_quantity,purchasing_date_time,delivery_time,status){
         this.userid=userid;
         this.modelno=modelno;
+        this.orderid=orderid;
         this.imageurl=imageurl;
         this.productname=productname;
         this.price=price;
