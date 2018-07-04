@@ -45,7 +45,5 @@ app.factory("retrieveproductfactory", function ($http, $q, URLPR, URLPREVIEW,URL
             return defer.promise;
         }
     }
-
-
     return object;
 })

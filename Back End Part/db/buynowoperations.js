@@ -10,6 +10,16 @@ const buynowoperations={
                 response.json(result);
             }
         })
+    },
+    ordershistory(object,response){
+        buynowcollection.find({userid:object.accountid},function(err,result){
+            if(err){
+                response.json({message:"err"});
+            }
+            else{
+                response.json(result);
+            }
+        })
     }
 }
 

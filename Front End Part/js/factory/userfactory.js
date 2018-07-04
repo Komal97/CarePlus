@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB){
+=======
+app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,MYORDERS){
+>>>>>>> 0f03e7474af4fda020c03de3d61bea20c62185dd
     const object={
         doLogin(userobject){
             var defer=$q.defer();
@@ -48,6 +52,16 @@ app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCAR
                 defer.resolve(data);
             },function(error){
                 defer.reject(error);
+            });
+            return defer.promise;
+        },
+        myorders(userobject){
+            var defer=$q.defer();
+            $http.post(MYORDERS,userobject).then(function(data){
+                console.log("sucess",data);
+                defer.resolve(data);
+            },function(err){
+                defer.reject(err);
             });
             return defer.promise;
         }
