@@ -26,6 +26,10 @@ app.controller("retrieveproductcontroller", function ($scope, $rootScope,retriev
     console.log($scope.login);
     console.log($filter('date')(new Date(), 'fullDate'));
     var date=$filter('date')(new Date(), 'fullDate');
+    var d=new Date();
+    var n=d.toString;
+    console.log(n.length);
+
     var productobject=new buynowitems($scope.login,items.modalno,items.url,items.name,items.price,date);
     console.log(productobject);
     var promise=retrieveproductfactory.buynowfunc($event,productobject);
