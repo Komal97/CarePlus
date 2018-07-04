@@ -1896,7 +1896,8 @@ ul.qty li p {
 }
 ul.qty li {
   display: inline-block;
-  margin-right: 10%;
+	margin-right: 10%;
+	margin-top:8%;
 }
 .delivery span {
   color: #333333;
@@ -7894,11 +7895,11 @@ font-weight:normal;
 	float:right;
 }
 #itemname {
-	margin-top:20%;
+	margin-top:13%;
 }
 #itemname span{
 	color: black;
-	font-size: 150%;
+	font-size: 130%;
 	font-family: Roboto, Arial, sans-serif;
 }
 
@@ -7908,12 +7909,10 @@ font-weight:normal;
   font-size: 0.9em;
   font-family: Roboto, Arial, sans-serif;
 }
-#itemprice{
-	margin-top:4%;
-}
+
 #itemprice span{
 	color: #31C2DB;
-	font-size: 135%;
+	font-size: 125%;
 	font-family: Roboto, Arial, sans-serif;
 }
 
@@ -7934,8 +7933,9 @@ font-weight:normal;
 .img{
 	margin-top: 5%;
   margin-left: 6%;
-	height:60%;
-	width:60%;
+	height:45%;
+	width:45%;
+	object-fit: cover;
 }
 .container{
 	width: 90%;

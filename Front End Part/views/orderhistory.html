@@ -59,8 +59,8 @@
                     font-family: Roboto, Arial, sans-serif;">
                         <ul class="progressbar">
                             <li class="active">PLACED</li>
-                            <li>DISPATCHED</li>
-                            <li>DELIVERED</li>
+                            <li ng-class="{active:items.status=='Dispatched',active:items.status=='Delivered'}">DISPATCHED</li>
+                            <li ng-class="{active:items.status=='Delivered'}">DELIVERED</li>
                         </ul>
                     </div>
                 </div>
