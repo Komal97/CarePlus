@@ -1,4 +1,4 @@
-app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE){
+app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB){
     const object={
         doLogin(userobject){
             var defer=$q.defer();
@@ -24,6 +24,16 @@ app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE){
         editprofile(userobject){
             var defer=$q.defer();
             $http.post(URLACCOUNT,userobject).then(function(data){
+                console.log("Success",data);
+                defer.resolve(data);
+            },function(error){
+                defer.reject(error);
+            });
+            return defer.promise;
+        },
+        showcart(userobject){
+            var defer=$q.defer();
+            $http.post(URLFROMCARTDB,userobject).then(function(data){
                 console.log("Success",data);
                 defer.resolve(data);
             },function(error){

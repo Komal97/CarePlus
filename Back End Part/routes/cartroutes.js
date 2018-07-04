@@ -15,5 +15,13 @@ router.post('/tocartdb',(req,res)=>{
     cartoperations.tocartdatabase(cartobject,res);
 });
 
+router.post('/fromcartdb',(req,res)=>{
+    var accountid=req.body.accountid;   
+    const cartoperations=require("../db/cartoperations");
+    const accountuser=require("../model/accountuser");
+    var userobject=new accountuser(accountid);
+    cartoperations.fromdbcart(userobject,res);
+});
+
 
 module.exports=router;

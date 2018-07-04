@@ -48,6 +48,17 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
         });
 
     },
+
+    $scope.showcart=function(){
+        var userobject=new accountuser($scope.login);
+        var promise=myfactory.showcart(userobject);
+        promise.then(function(data){
+            console.log("Back to promise...",data);
+            $scope.data=data;
+        },function(err){
+            console.log("error ",err);
+        });
+    },
     $scope.edit=function(){
         console.log("you clicked edit");
         $scope.fname=false;

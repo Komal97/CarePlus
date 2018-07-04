@@ -10,5 +10,6 @@ app.constant("URLACCOUNT","http://localhost:1234/account");
 app.constant("URLSAVE","http://localhost:1234/saveaccountinfo");
 app.constant("BUY","http://localhost:1234/buyproduct");
 app.constant("URLTOCART","http://localhost:1234/tocartdb");
+app.constant("URLFROMCARTDB","http://localhost:1234/fromcartdb")
 
 

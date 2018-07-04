@@ -1866,10 +1866,10 @@ a.forgot:hover {
 .cart-item {
   width: 20%;
   float: left;
-  margin-right: 5%;
+	margin-right: 5%;
 }
 .cart-item-info {
-  width: 75%;
+  width: 50%;
   float: left;
 }
 .cart-item-info h3 {
@@ -7899,6 +7899,13 @@ font-weight:normal;
 	color: black;
 	font-size: 150%;
 	font-family: Roboto, Arial, sans-serif;
+}
+
+.cartprice{
+	padding-bottom:4%;
+	color: #DF4782;
+  font-size: 0.9em;
+  font-family: Roboto, Arial, sans-serif;
 }
 #itemprice{
 	margin-top:4%;
