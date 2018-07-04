@@ -60,19 +60,6 @@ const useroperations={
     },
 
     confirmpass(confirmpassobject,response){
-        // usercollection.findOneAndUpdate({userid:confirmpassobject.userid,password:confirmpassobject.password},
-        //     {$set :
-        //         {password:confirmpassobject.password}
-        //     },
-        //     function(err,result){
-        //     if(err){
-        //         response.json({message:'Invalid Password'});
-        //     }
-        //     else{
-        //         // response.json({message:'Password changed'});
-        //         response.json(result);         
-        //     }
-        // }) 
         usercollection.find({userid:confirmpassobject.userid,password:confirmpassobject.password},
             function(err){
                 if(err){
