@@ -1,4 +1,10 @@
 app.controller("myctrl",function($scope,myfactory,$localStorage){
+    $scope.isDisabled = true;
+    console.log($localStorage.message);
+    if($localStorage.message){
+    //    alert($localStorage.message);
+        $scope.login=$localStorage.message;
+    }
     $scope.doLogin=function(){
         $('#myModal').modal('hide');
         var userobject=new loginuser($scope.loginid,$scope.loginpassword);
@@ -54,10 +60,12 @@ app.controller("myctrl",function($scope,myfactory,$localStorage){
     },
     $scope.edit=function(){
         console.log("you clicked edit");
-        $scope.fname=false;
+        $scope.isDisabled = false;
+      //  $scope.fname=false;
     },
     $scope.save=function(){
-        var userobject=new edituser($scope.fname,$scope.lname,$scope.mobile,$scope.email);
+        console.log("Scope is ",$scope.name1,$scope.lname);
+        var userobject=new edituser(this.fname,this.lname,this.mobile,this.email);
         console.log(userobject);
         var promise=myfactory.save(userobject);
         promise.then(function(data){

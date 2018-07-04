@@ -6,7 +6,8 @@
                     <div style="padding:2%;" class="row" ng-controller="concontroller">
                         <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="items in data.data">
                             <div class="account mrgnbtm">
-                                <img src="{{items.url}}" class="img-responsive newitemimage" alt="" />
+                                    <a style="text-decoration:none" ng-href="#/preview" ng-click="showdata($event,items)">
+                                        <img  src="{{items.url}}" class="img-responsive newitemimage" alt="" /></a>
                                 <div style="float:right !important; padding:2%">
                                     <span class="newitemprice">Rs. {{items.price}}</span>
                                 </div>

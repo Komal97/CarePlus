@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB){
-=======
-app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,MYORDERS){
->>>>>>> 0f03e7474af4fda020c03de3d61bea20c62185dd
+app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB,MYORDERS){
     const object={
         doLogin(userobject){
             var defer=$q.defer();

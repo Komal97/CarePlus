@@ -60,19 +60,21 @@
                                 <h3>PERSONAL INFORMATION</h3>
                                 <div>
                                     <span class="edit">First Name</span>
-                                    <input ng-model="fname" type="text" ng-disabled="fname">
+                                    <input ng-model="fname" type="text" 
+                                    >
+                                    {{fname}}
                                 </div>
                                 <div>
                                     <span class="edit">Last Name</span>
-                                    <input ng-model="lname" type="text" ng-disabled="lname">
+                                    <input ng-model="lname" type="text" ng-disabled="isDisabled">
                                 </div>
                                 <div>
                                     <span class="edit">Mobile Number</span>
-                                    <input ng-model="mobile" type="text" ng-disabled="mobile">
+                                    <input ng-model="mobile" type="text" ng-disabled="isDisabled">
                                 </div>
                                 <div>
                                     <span class="edit">Email Address</span>
-                                    <input ng-model="email" type="text" ng-disabled="email">
+                                    <input ng-model="email" type="text" ng-disabled="isDisabled">
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>

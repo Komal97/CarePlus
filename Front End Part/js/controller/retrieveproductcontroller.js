@@ -1,11 +1,13 @@
-app.controller("retrieveproductcontroller", function ($scope, $filter,retrieveproductfactory) {
+// app.controller("previewctrl",($scope)=>{
+// console.log("Image path is in Preview... ",$scope.imgpath);
+// });
+app.controller("retrieveproductcontroller", function ($scope, $rootScope,retrieveproductfactory) {
   $scope.showdata = function ($event, items) {
     console.log("controller");
 
     var promise = retrieveproductfactory.showdata($event, items);
     promise.then(function (data) {
-
-      angular.element(document.querySelector('#previmage')).src=data.data[0].url;
+      $rootScope.imgpath = data.data[0].url;
 
       angular.element(document.querySelector('#prevname')).append('<p>' + data.data[0].name + '</p>');
 
@@ -33,6 +35,7 @@ app.controller("retrieveproductcontroller", function ($scope, $filter,retrievepr
       console.log("error",err);
     })
   }
+  
    $scope.tocartdatabase=function($event,items){
     var userobject=new cartdata($scope.login,items.modalno,items.name,items.price,items.url,1);
     var promise=retrieveproductfactory.tocartdatabase(userobject);

@@ -7,21 +7,21 @@
         });
     });
 </script> -->
-<div ng-controller="retrieveproductcontroller">
+<div>
     <div class="container" >
         <div class="row">
             <div class="col-md-4">
                 <div class="previewdiv mrgnbtm">
-                    <div class="previewdiv1">
-                        <img id="previmage" class="img-responsive"  ng-src="" alt="" >
+                    <div>
+                        <img  class="img-responsive previewimage"  ng-src="{{imgpath}}" alt="" >
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="previewdiv mrgnbtm" >
-                    <p  class="previewname" id="prevname"></p>
+                    <h3 class="quick" id="prevname"></h3>
                     <p class="previewprice" id="prevprice"></p>
-                    <h3 class="quick">Quick Overview:</h3>
+                    <h3 class="previewname">Quick Overview:</h3>
                     <p id="prevdes" class="quick_desc"></p>
 
                     <ul class="product-qty">

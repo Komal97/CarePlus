@@ -43,6 +43,9 @@ const useroperations={
         })
     },
     save(userobject,response){
+        console.log("Email is ",userobject.email);
+        console.log("User Object Save ",userobject);
+        
         usercollection.updateOne({userid:userobject.email},
             {$set :
                 {firstname:userobject.fname,lastname:userobject.lname,

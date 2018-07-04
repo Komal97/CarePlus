@@ -7728,6 +7728,7 @@ td.invert-image a img {
 }
 .previewdiv1 img{
 	min-width:340px;
+	object-fit:cover;
 }
 ul.my-nav-pills{
 	text-decoration:none !important;
@@ -8037,6 +8038,14 @@ z-index:-1;
 	margin-left:auto;
 	margin-right:auto
 }
+
+.previewimage{
+	height:365px;
+  margin-left:auto;
+	margin-right:auto;
+	padding-top:15%;
+}
+
 .newitemdiv{
 	padding:4%;
 	text-align:center;

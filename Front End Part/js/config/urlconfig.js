@@ -10,10 +10,7 @@ app.constant("URLACCOUNT","http://localhost:1234/account");
 app.constant("URLSAVE","http://localhost:1234/saveaccountinfo");
 app.constant("BUY","http://localhost:1234/buyproduct");
 app.constant("URLTOCART","http://localhost:1234/tocartdb");
-<<<<<<< HEAD
 app.constant("URLFROMCARTDB","http://localhost:1234/fromcartdb")
-=======
 app.constant("MYORDERS","http://localhost:1234/myorders");
->>>>>>> 0f03e7474af4fda020c03de3d61bea20c62185dd
 
 
