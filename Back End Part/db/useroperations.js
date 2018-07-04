@@ -43,9 +43,6 @@ const useroperations={
         })
     },
     save(userobject,response){
-        console.log("Email is ",userobject.email);
-        console.log("User Object Save ",userobject);
-        
         usercollection.updateOne({userid:userobject.email},
             {$set :
                 {firstname:userobject.fname,lastname:userobject.lname,
@@ -59,6 +56,45 @@ const useroperations={
             else{
                 response.json(result);
             }
+        })
+    },
+
+    confirmpass(confirmpassobject,response){
+        // usercollection.findOneAndUpdate({userid:confirmpassobject.userid,password:confirmpassobject.password},
+        //     {$set :
+        //         {password:confirmpassobject.password}
+        //     },
+        //     function(err,result){
+        //     if(err){
+        //         response.json({message:'Invalid Password'});
+        //     }
+        //     else{
+        //         // response.json({message:'Password changed'});
+        //         response.json(result);         
+        //     }
+        // }) 
+        usercollection.find({userid:confirmpassobject.userid,password:confirmpassobject.password},
+            function(err){
+                if(err){
+                    response.json({message:'Invalid Password'});
+                }
+                else{
+                    console.log(confirmpassobject);
+                   // response.json(docs);
+                   usercollection.updateOne({userid:confirmpassobject.userid},
+                    {$set :
+                       {password:confirmpassobject.password}  
+                    },
+                    function(err,result){
+                    if(err){
+                        response.json({message:'Error during update'});
+                    }
+                    else{
+                        console.log(confirmpassobject);
+                        response.json(result);
+                    }
+                })
+                }
         })
     }
 }

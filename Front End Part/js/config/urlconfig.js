@@ -12,5 +12,6 @@ app.constant("BUY","http://localhost:1234/buyproduct");
 app.constant("URLTOCART","http://localhost:1234/tocartdb");
 app.constant("URLFROMCARTDB","http://localhost:1234/fromcartdb")
 app.constant("MYORDERS","http://localhost:1234/myorders");
+app.constant("PASSWORD","http://localhost:1234/confirmpassword")
 
 

@@ -60,9 +60,7 @@
                                 <h3>PERSONAL INFORMATION</h3>
                                 <div>
                                     <span class="edit">First Name</span>
-                                    <input ng-model="fname" type="text" 
-                                    >
-                                    {{fname}}
+                                    <input ng-model="fname" type="text" ng-disabled="isDisabled">
                                 </div>
                                 <div>
                                     <span class="edit">Last Name</span>
@@ -74,7 +72,7 @@
                                 </div>
                                 <div>
                                     <span class="edit">Email Address</span>
-                                    <input ng-model="email" type="text" ng-disabled="isDisabled">
+                                    <input ng-model="email" type="text" ng-disabled="email">
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
@@ -90,15 +88,17 @@
                                 <h3> CHANGE PASSWORD </h3>
                                 <div>
                                     <span class="edit"> Current Password </span>
-                                    <input type="password">
+                                    <input type="password" style="margin-bottom:0px" id="currentpassword">
+                                    <p class="error"> current </p>
                                 </div>
                                 <div>
                                     <span class="edit"> New Password </span>
-                                    <input type="password">
+                                    <input type="password" id="newpassword">
                                 </div>
                                 <div>
                                     <span class="edit"> Confirm password </span>
-                                    <input type="password">
+                                    <input type="password" style="margin-bottom:0px" id="confirmpassword">
+                                    <p class="error" > {{confirm}} </p>
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
@@ -106,7 +106,7 @@
                         <div class="clearfix"> </div>
                         <div class="confirm-but">
                             <form>
-                                <input type="submit" value="Confirm Password">
+                                <input type="submit" value="Confirm Password" ng-click="confirmpass()">
                                 <div class="clearfix"> </div>
                             </form>
                         </div>

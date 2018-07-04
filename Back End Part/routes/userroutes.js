@@ -43,4 +43,12 @@ router.post('/saveaccountinfo',(req,res)=>{
     useroperations.save(userobject,res);
 });
 
+router.post('/confirmpassword',(req,res)=>{
+    var userid=req.body.userid;
+    var password=req.body.password;
+    const useroperations=require("../db/useroperations");
+    const confirmpasswordclass=require("../model/confirmpassword"); 
+    var confirmpasswordobj=new confirmpasswordclass(userid,password);
+    useroperations.confirmpass(confirmpasswordobj,res);
+})
 module.exports=router;

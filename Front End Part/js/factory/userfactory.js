@@ -1,4 +1,4 @@
-app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB,MYORDERS){
+app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB,MYORDERS,PASSWORD){
     const object={
         doLogin(userobject){
             var defer=$q.defer();
@@ -55,6 +55,15 @@ app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCAR
             var defer=$q.defer();
             $http.post(MYORDERS,userobject).then(function(data){
                 console.log("sucess",data);
+                defer.resolve(data);
+            },function(err){
+                defer.reject(err);
+            });
+            return defer.promise;
+        },
+        confirmpass(confirmobject){
+            var defer=$q.defer();
+            $http.post(PASSWORD,confirmobject).then(function(data){
                 defer.resolve(data);
             },function(err){
                 defer.reject(err);
