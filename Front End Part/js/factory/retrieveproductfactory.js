@@ -1,4 +1,5 @@
-app.factory("retrieveproductfactory", function ($http, $q, URLPR, URLPREVIEW,URLTOCART,BUY) {
+app.factory("retrieveproductfactory", function ($http, $q, URLPR, URLPREVIEW, URLTOCART, BUY) {
+    var itemobject;
     var object = {
         callServer() {
             var defer = $q.defer();
@@ -32,14 +33,22 @@ app.factory("retrieveproductfactory", function ($http, $q, URLPR, URLPREVIEW,URL
             });
             return defer.promise;
         },
-        buynowfunc($event,productobject){
-            var defer=$q.defer();
+        buynowfunc($event, productobject) {
+            itemobject = productobject;
+        },
+
+        getobject() {
+            return itemobject;
+        },
+
+        checkoutfunc(productobject) {
+            var defer = $q.defer();
             console.log("factory");
-            $http.post(BUY,productobject).then(function(data){
-                console.log("Success",data);
+            $http.post(BUY, productobject).then(function (data) {
+                console.log("Success", data);
                 defer.resolve(data);
-            },function(error){
-                console.log("error",error);
+            }, function (error) {
+                console.log("error", error);
                 defer.reject(error);
             });
             return defer.promise;

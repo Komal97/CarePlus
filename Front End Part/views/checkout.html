@@ -1,16 +1,16 @@
 </script>
 <div>
-    <div class="container">
+    <div class="container" ng-controller="retrieveproductcontroller">
         <div class="row">
             <div style="float:right" class="col-md-4">
                 <div class="price-details account" style="margin-top:50px;">
                     <h3>Price Details</h3>
                     <span>Total</span>
-                    <span class="total1">6200.00</span>
+                    <span class="total1">{{calcprice}}</span>
                     <span>Discount</span>
                     <span class="total1">---</span>
                     <span>Delivery Charges</span>
-                    <span class="total1">150.00</span>
+                    <span class="total1">50</span>
                     <div class="clearfix"></div>
                 </div>
                 <ul class="total_price account">
@@ -18,7 +18,7 @@
                         <h4>TOTAL</h4>
                     </li>
                     <li class="last_price">
-                        <span>6350.00</span>
+                        <span>{{totalprice}}</span>
                     </li>
                     <div class="clearfix"> </div>
                 </ul>
@@ -54,21 +54,20 @@
                     <div ng-show="summary" style="padding:2%" class="cart-header">
                         <div style="margin-bottom:0%" class="cart-sec simpleCart_shelfItem">
                             <div class="cart-item cyc">
-                                <img src="images/pic1.jpg" class="img-responsive" alt="">
+                                <img src="{{imgpath2}}" class="img-responsive" alt="">
                             </div>
                             <div class="cart-item-info">
-                                <h3 class="edit">
-                                    <a href="#">Mountain Hopper(XS R034)</a>
-                                    <span>Model No: 3578</span>
+                                <h3 style="font-family: Roboto, Arial, sans-serif" class="edit">
+                                    <a href="#" id="checkname"></a>
+                                    <span>Model No: {{checkmodel}}</span>
                                 </h3>
-                                <ul class="qty">
+                                <ul style="font-family: Roboto, Arial, sans-serif" class="qty">
                                     <li>
-                                        <p>Qty : 1</p>
+                                        <p>Qty : {{checkquant}}</p>
                                     </li>
                                 </ul>
-                                <div class="address">
-                                    <p>Service Charges : Rs.100.00</p>
-                                    <p style="float:right">Delivered in 2-3 bussiness days</p>
+                                <div class="delivery">
+                                    <p class="cartprice">Price : {{checkprice}}</p>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -126,7 +125,7 @@
 
                             <div style="width:50%;  float:right" class="confirm-but">
                                 <form style="float:right">
-                                    <input style="background-color:lightcoral" type="submit" value="Pay Rs.999">
+                                    <input ng-click="payfunc()" style="background-color:lightcoral" type="submit" value="Pay Rs.999">
                                     <div class="clearfix"> </div>
                                 </form>
                             </div>
