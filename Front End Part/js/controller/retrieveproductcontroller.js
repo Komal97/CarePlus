@@ -95,8 +95,9 @@ app.controller("retrieveproductcontroller", function ($scope, $filter,$rootScope
     $timeout(function() {
     $rootScope.successpay=!$scope.successpay;
     $rootScope.blurred=!$scope.blurred;
-    }, 2000);
     $location.path('/');
+    }, 2000);
+    
   };
 
   $scope.tocartdatabase = function ($event, items) {
