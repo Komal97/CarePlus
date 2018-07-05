@@ -102,15 +102,18 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="mynav">
-                    <a data-toggle="modal" data-target="#myModalRegister" ng-model="signup">
-                        <span class="glyphicon glyphicon-user" ng-init="SignUp"></span> {{signup}} </a>
+                <li class="mynav" ng-show="!enablelogin">
+                    <a data-toggle="modal" data-target="#myModalRegister">
+                        <span class="glyphicon glyphicon-user"></span> Sign Up </a>
                 </li>
-                <li class="mynav">
-                    <a data-toggle="modal" data-target="#myModal" ng-model="login">
-                        <span class="glyphicon glyphicon-log-in" ng-init="Login"></span> {{login}} </a>
+                <li class="mynav" ng-show="!enablelogin">
+                    <a data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-log-in"></span> Login </a>
                 </li>
-                <li class="mynav">
+                <li class="mynav" ng-show="enablelogin">
+                    <a ng-model="login"> {{login}} </a>
+                </li>
+                <li class="mynav" ng-show="enablelogin">
                     <a ng-href="#/cart" ng-click="showcart()">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
                 </li>
@@ -146,8 +149,7 @@
                                             <div style="width:40%" class="form-group">
                                                 <label class="inputheading"> First Name* </label>
                                                 <input name="firstname"  type="text" class="form-control inputbox" ng-model="firstname">
-                                                <p  class="error" ng-show="f1.firstname.$touched && f1.firstname.$pristine">First Name is required</p>
-                                                
+                                                <p  class="error" ng-show="f1.firstname.$touched && f1.firstname.$pristine">First Name is required</p>                                                
                                             </div>
 
                                             <div class="form-group">
@@ -213,7 +215,7 @@
                                     <span>Email Address
                                         <label>*</label>
                                     </span>
-                                    <input class="form-control inputbox" required name="loginid" type="email" ng-model="loginid">
+                                    <input class="form-control inputbox" name="loginid" type="email" ng-model="loginid">
                                     <p style="font-size:0.8em;color:red" ng-show="f2.loginid.$touched&&f2.loginid.$pristine"> E-mail address is required</p>
                                     <p style="font-size:0.8em;color:red" ng-show="f2.loginid.$touched&&f2.loginid.$dirty&&f2.loginid.$invalid">Invalid E-mail Address</p>
                                 </div>
@@ -221,14 +223,14 @@
                                     <span>Password
                                         <label>*</label>
                                     </span>
-                                    <input  class="form-control inputbox" name="loginpassword" type="password"
-                                        ng-model="loginpassword">
+                                    <input  class="form-control inputbox" name="loginpassword" type="password" ng-model="loginpassword">
                                     <p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$pristine"> password is required</p>
                                     <p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$dirty&&f2.loginpassword.$invalid">Password should be at least 8 characters long and should contain one number,one character
                                         and one special character.</p>
+                                    <p style="font-size:0.8em;color:red"> {{invalidpassword}} </p>
                                 </div>
                                 <a class="forgot">Forgot Your Password?</a>
-                                <button type="submit"  class="btn btn-default" ng-click="doLogin()"> Login </button>
+                                <button class="btn" ng-click="doLogin()"> Login </button>
                             </form>
                         </div>
                         <div class="clearfix"> </div>
@@ -335,7 +337,7 @@
                         <a ng-href="#/myprofile" ng-click="editprofile()"> My Account</a>
                     </li>
                     <li>
-                        <a ng-href="#/orderhistory" ng-click="myorders()">Orders history</a>
+                        <a ng-href="#/orderhistory" ng-click="myorders()"> Orders history</a>
                     </li>
                 </ul>
             </div>

@@ -8051,13 +8051,10 @@ z-index:-1;
 	text-align:center;
 	margin-bottom:10%;
 }
-
 .buynowbtn{
 	width:100%;
 	margin-top: 2%;
-
 }
-
 .error{
 	font-size: 0.8em;
 	color: red;
@@ -8085,4 +8082,5 @@ z-index:-1;
 	text-align: center;
 	box-shadow: 0px 2px 4px 0px rgb(0,0,0,0.08);
 }
+
 

@@ -25,7 +25,7 @@ const useroperations={
                     response.json(object);
                 }
                 else{
-                    var object = {message:"Invalid Userid or Password "};
+                    var object = {message:"Invalid Userid or Password"};
                     response.json(object);
                 }
             }
