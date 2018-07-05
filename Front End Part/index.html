@@ -59,7 +59,9 @@
 </head>
 
 <body ng-controller="myctrl" ng-app="myapp">
-
+    <div ng-show="successpay" class="div2">
+        <h4>Your payment has been made successfully</h4>
+    </div>
     <!-- NAVBAR SECTION -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -370,6 +372,9 @@
             </div>
         </div>
     </div>
+
+    <div ng-show="blurred" class="div1"></div>
+    
 </body>
 
 </html>

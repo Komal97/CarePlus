@@ -1,7 +1,44 @@
 // app.controller("previewctrl",($scope)=>{
 // console.log("Image path is in Preview... ",$scope.imgpath);
 // });
-app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScope, retrieveproductfactory) {
+app.controller("retrieveproductcontroller", function ($scope, $filter,$rootScope,$timeout,retrieveproductfactory, $location) {
+  $scope.creditbtn=true;
+  $scope.debitbtn=true;
+  $scope.cashbtn=true;
+  $scope.enable1=function(){
+    if($scope.creditbtn==true){
+      $scope.creditbtn=false; 
+    }        
+    if($scope.debitbtn==false){
+      $scope.debitbtn=true;
+    }
+    if($scope.cashbtn==false){
+      $scope.cashbtn=true;
+    }
+  };
+  $scope.enable2=function(){
+    if($scope.creditbtn==false){
+      $scope.creditbtn=true; 
+    }        
+    if($scope.debitbtn==true){
+      $scope.debitbtn=false;
+    }
+    if($scope.cashbtn==false){
+      $scope.cashbtn=true;
+    }
+  };
+  $scope.enable3=function(){
+    if($scope.creditbtn==false){
+      $scope.creditbtn=true; 
+    }        
+    if($scope.debitbtn==false){
+      $scope.debitbtn=true;
+    }
+    if($scope.cashbtn==true){
+      $scope.cashbtn=false;
+    }
+  };
+  
   $scope.showdata = function ($event, items) {
     console.log("controller");
 
@@ -52,6 +89,14 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
     }, function (err) {
       console.log("error", err);
     });
+    
+    $rootScope.successpay=!$scope.successpay;
+    $rootScope.blurred=!$scope.blurred;
+    $timeout(function() {
+    $rootScope.successpay=!$scope.successpay;
+    $rootScope.blurred=!$scope.blurred;
+    }, 2000);
+    $location.path('/');
   };
 
   $scope.tocartdatabase = function ($event, items) {
