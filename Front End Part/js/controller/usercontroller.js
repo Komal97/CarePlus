@@ -1,35 +1,48 @@
-app.controller("myctrl", function ($scope, myfactory, $localStorage) {
+app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
     $scope.isDisabled = true;
+    
     console.log($localStorage.message);
     if ($localStorage.message) {
         $scope.login = $localStorage.message;
+        $scope.enablelogin= $localStorage.enablelogin;
+      
     }
 
-    $scope.doLogin = function () {
-        $('#myModal').modal('hide');
+    $scope.doLogin = function () {  
         var userobject = new loginuser($scope.loginid, $scope.loginpassword);
         var promise = myfactory.doLogin(userobject);
         promise.then(function (data) {
             console.log("sucess", data.data.message);
-            $scope.signup = " ";
-            $localStorage.message = data.data.message;
-            $scope.login = $localStorage.message;
+
+            if(data.data.message=="Invalid Userid or Password"){
+              $scope.invalidpassword=data.data.message;
+            }else{
+                $scope.enablelogin=!($scope.enablelogin);
+                $localStorage.enablelogin=$scope.enablelogin;
+                $localStorage.message = data.data.message;
+                $scope.login = $localStorage.message;
+                $scope.invalidpassword=" ";
+                $scope.loginid=" ";
+                $scope.loginpassword=" ";                  
+                $('#myModal').modal('hide');
+            }  
         }, function (err) {
             console.log(err);
         })
     },
         $scope.doRegister = function () {
-            var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
-            var promise = myfactory.doRegister(userobject1);
-            promise.then(function (data) {
-                console.log("Back to promise...", data);
-                $scope.signup = " ";
-                $scope.login = data.data.message;
-            }, function (err) {
-                console.log(err);
-            });
+            // var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
+            // var promise = myfactory.doRegister(userobject1);
+            // promise.then(function (data) {
+            //     console.log("Back to promise...", data);
+            //     $scope.signup = " ";
+            //     $scope.login = data.data.message;
+            // }, function (err) {
+            //     console.log(err);
+            // });
 
-            $('#myModalRegister').modal('hide');
+            // $('#myModalRegister').modal('hide');
+            
         },
 
         $scope.showcart = function () {
@@ -106,5 +119,16 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage) {
         else {
             $scope.confirm = "password does not match";
         }
+    },
+
+    $scope.logoutfunc=function(){
+        $localStorage.$reset();
+        $scope.enablelogin=!($scope.enablelogin);
+        $scope.login=" ";
+        $scope.fname = " ";
+        $scope.lname = " ";
+        $scope.email = " ";
+        $scope.mobile = " ";
+        $location.path('/');
     }
 })
