@@ -1711,7 +1711,7 @@ a.forgot {
   color: #000;
 }
 a.forgot:hover {
-  color: #ffd001;
+  text-decoration:underline;
 }
 /*--register--*/
 

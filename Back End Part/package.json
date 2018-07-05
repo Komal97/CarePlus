@@ -5,6 +5,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "mongoose": "^5.1.7"
+    "mongoose": "^5.1.7",
+    "nodemailer": "^4.6.7"
   }
 }
