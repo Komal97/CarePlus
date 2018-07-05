@@ -23,5 +23,18 @@ router.post('/fromcartdb',(req,res)=>{
     cartoperations.fromdbcart(userobject,res);
 });
 
+router.post('/deletefromdb',(req,res)=>{
+    var userid=req.body.userid;
+    var modalno=req.body.modalno;
+    var name=req.body.name;
+    var price=req.body.price;
+    var url=req.body.url;
+    var buyquantity=req.body.buyquantity;
+    
+    const cartoperations=require("../db/cartoperations");
+    const cartdata=require("../model/cartdata");
+    var cartobj=new cartdata(userid,modalno,name,price,url,buyquantity);
+    cartoperations.deleteitem(cartobj,res);
+})
 
 module.exports=router;

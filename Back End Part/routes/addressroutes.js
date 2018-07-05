@@ -12,4 +12,11 @@ router.post("/manageaddress",(req,res)=>{
     addressoperations.addr(addrobject,res);
 })
 
+router.post("/fromaddress",(req,res)=>{
+    var userid=req.body.accountid;
+    const addressoperations=require("../db/addressoperations");
+    const accountuser=require("../model/accountuser");
+    var userobject=new accountuser(userid);
+    addressoperations.findaddr(userobject,res);
+})
 module.exports=router;

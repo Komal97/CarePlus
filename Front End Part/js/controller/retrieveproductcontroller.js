@@ -1,7 +1,18 @@
 // app.controller("previewctrl",($scope)=>{
 // console.log("Image path is in Preview... ",$scope.imgpath);
 // });
-app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScope, $timeout, retrieveproductfactory, $location) {
+app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScope, $timeout, retrieveproductfactory, myfactory, $location, $localStorage) {
+
+  var addrobj = new accountuser($scope.login);
+  var promise = myfactory.fromaddressdb(addrobj);
+  promise.then(function (data) {
+    $scope.deliveryname = data.data[0].name;
+    $scope.deliveryaddr = data.data[0].address;
+    console.log(data.data[0]);
+  }, function (err) {
+    console.log("error ", err);
+  });
+
   $scope.creditbtn = true;
   $scope.debitbtn = true;
   $scope.cashbtn = true;
@@ -96,24 +107,26 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
   };
 
   $scope.buynowfunc = function ($event, items) {
-    console.log(items);
-    console.log($scope.login);
-    console.log($filter('date')(new Date(), 'fullDate'));
-    var date = $filter('date')(new Date(), 'fullDate');
-    var d = new Date();
-    var n = d.toString;
-    console.log(n.length);
-
-    var object = new buynowitems($scope.login, items.modalno, items.url, items.name, items.price, date);
-    console.log(object);
-    $rootScope.imgpath2 = object.imageurl;
-    $rootScope.checkname = object.productname;
-    $rootScope.checkprice = object.price;
-    $rootScope.checkmodel = object.modelno;
-    $rootScope.calcprice = object.price;
-    $rootScope.checkquant = object.buy_quantity;
-    $rootScope.totalprice = object.price + 50;
-    retrieveproductfactory.buynowfunc($event, object);
+    if ($localStorage.message) {
+      $location.path('/checkout');
+      console.log(items);
+      console.log($scope.login);
+      console.log($filter('date')(new Date(), 'fullDate'));
+      var date = $filter('date')(new Date(), 'fullDate');
+      var object = new buynowitems($scope.login, items.modalno, items.url, items.name, items.price, date);
+      console.log(object);
+      $rootScope.imgpath2 = object.imageurl;
+      $rootScope.checkname = object.productname;
+      $rootScope.checkprice = object.price;
+      $rootScope.checkmodel = object.modelno;
+      $rootScope.calcprice = object.price;
+      $rootScope.checkquant = object.buy_quantity;
+      $rootScope.totalprice = object.price + 50;
+      retrieveproductfactory.buynowfunc($event, object);
+    }
+    else {
+      $('#myModal').modal('show');
+    }
   };
 
   $rootScope.buynowprev = function ($event, items) {
@@ -153,7 +166,6 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
       $rootScope.blurred = !$scope.blurred;
       $location.path('/');
     }, 2000);
-
   };
 
   $rootScope.tocartdbfromprev=function(){
@@ -170,13 +182,18 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
   };
 
   $scope.tocartdatabase = function ($event, items) {
-    var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, 1);
-    var promise = retrieveproductfactory.tocartdatabase(userobject);
-    promise.then(function (data) {
-      console.log("back to promise", data);
-    }, function (err) {
-      console.log("error", err);
-    });
+    if ($localStorage.message) {
+      var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, 1);
+      var promise = retrieveproductfactory.tocartdatabase(userobject);
+      promise.then(function (data) {
+        console.log("back to promise", data);
+      }, function (err) {
+        console.log("error", err);
+      });
+    }
+    else {
+      $('#myModal').modal('show');
+    }
   };
 
   var promise = retrieveproductfactory.callServer();

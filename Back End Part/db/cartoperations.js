@@ -21,6 +21,18 @@ const cartcollection=require("./cartschema");
                     response.json(docs);
                 }
         })
+    },
+
+    deleteitem(userobject,response){
+        cartcollection.deleteOne({modalno:userobject.modalno},
+            function(err,docs){
+                if(err){
+                    response.json({message:'Error'});
+                }
+                else{
+                    response.json(docs);
+                }
+        })
     }
  }
 
