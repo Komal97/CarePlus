@@ -97,7 +97,7 @@
                                     <tr>
                                         <td> CVV&nbsp&nbsp </td>
                                         <td>
-                                            <input style="margin-right:3%;;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:70px;" type="text">
+                                            <input ng-disabled="cvv1" style="margin-right:3%;;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:70px;" type="text">
                                         </td>
                                     </tr>
                                 </table>
@@ -106,19 +106,19 @@
                                 <tr>
                                     <td> Card number </td>
                                     <td>
-                                        <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
+                                        <input ng-disabled="card1" style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Name on Card</td>
                                     <td>
-                                        <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
+                                        <input ng-disabled="name1" style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Expiry Date </td>
                                     <td>
-                                        <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%" type="month">
+                                        <input ng-disabled="date1" style="margin:5%;border: 1px solid #ADA7A7;padding:2%" type="month">
                                     </td>
                                 </tr>
                             </table>
@@ -143,7 +143,7 @@
                                     <tr>
                                         <td> CVV&nbsp&nbsp </td>
                                         <td>
-                                            <input style="margin-right:3%;;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:70px;" type="text">
+                                            <input ng-disabled="cvv2" style="margin-right:3%;;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:70px;" type="text">
                                         </td>
                                     </tr>
                                 </table>
@@ -152,19 +152,19 @@
                                 <tr>
                                     <td>Card number </td>
                                     <td>
-                                        <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
+                                        <input ng-disabled="card2" style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Name on Card </td>
                                     <td>
-                                        <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
+                                        <input ng-disabled="name2" style="margin:5%;border: 1px solid #ADA7A7;padding:2%;line-height:34px;width:210px;" type="text">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Expiry Date</td>
                                     <td>
-                                        <input style="margin:5%;border: 1px solid #ADA7A7;padding:2%" type="month">
+                                        <input ng-disabled="date2" style="margin:5%;border: 1px solid #ADA7A7;padding:2%" type="month">
                                     </td>
                                 </tr>
                             </table>
@@ -183,7 +183,7 @@
                             <input type="radio" name="rd" ng-click="enable3()">
                             <span style="margin-left:1%" class="edit">Cash on Delivery</span>
                                     <form style="float:right;margin-right:37px">
-                                            <button ng-disabled="cashbtn"  class="btn btn-danger" ng-click="payfunc()">Pay Rs.999</button>
+                                            <button ng-disabled="cashbtn" class="btn btn-danger" ng-click="payfunc()">Pay Rs.999</button>
                                         <div class="clearfix"> </div>
                                     </form>
                         </div>

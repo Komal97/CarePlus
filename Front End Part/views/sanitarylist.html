@@ -17,14 +17,14 @@
     
                                 <div>
                                     <a>
-                                        <button class="btn btn-primary buynowbtn" type="submit">
+                                        <button ng-click="tocartdatabase($event,items)" class="btn btn-primary buynowbtn" type="submit">
                                             <span class="glyphicon glyphicon-shopping-cart"></span>&nbspAdd To Cart
                                         </button>
                                     </a>
                                 </div>
                                 <div>
                                     <a ng-href="#/checkout">
-                                        <button class="btn btn-danger buynowbtn" type="submit">
+                                        <button ng-click="buynowfunc($event,items)" class="btn btn-danger buynowbtn" type="submit">
                                             <span class="glyphicon glyphicon-gift"></span>
                                             &nbspBuy Now
                                         </button>
