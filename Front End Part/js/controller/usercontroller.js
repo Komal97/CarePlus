@@ -20,7 +20,6 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
         console.log("error ", err);
     });
 
-
     // angular.forEach($scope.data,function(value,key){
     //     console.log("value : "+ value + " , key : "+key);
     // })
@@ -178,5 +177,25 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
         }, function (err) {
             console.log("error ", err);
         });
-    }
+    },
+
+        $scope.forgotpass = function () {
+            $scope.forgot = !$scope.forgot;
+            $scope.registerid="Enter your registered e-mail id";
+        },
+
+        $scope.forgotpassword = function () {
+            var passobject = new accountuser($scope.loginid1);
+            var promise = myfactory.forgotpassword(passobject);
+            promise.then(function (data) {
+                if(data.data.message=="User does not exist"){
+                    $scope.registerid="User does not exist";
+                }
+                else{
+                      
+                }
+            }, function (err) {
+                console.log("error ", err);
+            });
+        }
 })

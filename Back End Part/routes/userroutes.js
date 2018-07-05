@@ -50,5 +50,13 @@ router.post('/confirmpassword',(req,res)=>{
     const confirmpasswordclass=require("../model/confirmpassword"); 
     var confirmpasswordobj=new confirmpasswordclass(userid,password);
     useroperations.confirmpass(confirmpasswordobj,res);
-})
+});
+
+router.post('/userforgotpassword',(req,res)=>{
+    var accountid=req.body.accountid;   
+    const useroperations=require("../db/useroperations");
+    const accountuser=require("../model/accountuser");
+    var userobject=new accountuser(accountid);
+    useroperations.forgotpassword(userobject,res);
+});
 module.exports=router;

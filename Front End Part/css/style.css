@@ -1711,7 +1711,7 @@ a.forgot {
   color: #000;
 }
 a.forgot:hover {
-  color: #ffd001;
+  text-decoration:underline;
 }
 /*--register--*/
 
@@ -8088,13 +8088,14 @@ z-index:-1;
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
-	background-color: white;
-	color: black;
+	background-color:#d9534f; 
+	color: white;
 	text-align: center;
-	font-size: 15px;
-	line-height: 18px;
+	font-size: 12px;
+	line-height: 20px;
 	position: absolute;
-	top: 3px;
+	top: 7px;
+	font-family: Roboto, Arial, sans-serif;
 	right: 10px;
 	z-index: 1;
 }

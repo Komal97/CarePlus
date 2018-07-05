@@ -1,5 +1,5 @@
 app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB,
-                                 MYORDERS,PASSWORD,FROMADDRESS,DELETEITEM){
+                                 MYORDERS,PASSWORD,FROMADDRESS,DELETEITEM,FORGOT){
     const object={
         doLogin(userobject){
             var defer=$q.defer();
@@ -92,6 +92,16 @@ app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCAR
             });
             return defer.promise;
         },
+        forgotpassword(passobject){
+            var defer=$q.defer();
+            $http.post(FORGOT,passobject).then(function(data){
+                console.log("sucess",data);
+                defer.resolve(data);
+            },function(err){
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
     }
     return object;
 })

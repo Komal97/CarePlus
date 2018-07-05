@@ -1,88 +1,110 @@
-const usercollection=require("./userschema");
+const usercollection = require("./userschema");
 
-const useroperations={
-    register(userobject,response){
-        usercollection.create(userobject,function(err){
-            if(err){
-                response.json({message:'Error Occured During registration'});
+const useroperations = {
+    register(userobject, response) {
+        usercollection.create(userobject, function (err) {
+            if (err) {
+                response.json({ message: 'Error Occured During registration' });
             }
-            else{
-                var object = {message:userobject.userid};
+            else {
+                var object = { message: userobject.userid };
                 response.json(object);
             }
         })
     },
 
-    login(userobject,response){
-        usercollection.find({userid:userobject.loginid,password:userobject.loginpassword},
-        function(err,docs){
-            if(err){
-                response.json({message:'Error Occured During Login'});
-            }
-            else{
-                if(docs && docs.length>0){
-                    var object = {message:userobject.loginid};
-                    response.json(object);
+    login(userobject, response) {
+        usercollection.find({ userid: userobject.loginid, password: userobject.loginpassword },
+            function (err, docs) {
+                if (err) {
+                    response.json({ message: 'Error Occured During Login' });
                 }
-                else{
-                    var object = {message:"Invalid Userid or Password"};
-                    response.json(object);
+                else {
+                    if (docs && docs.length > 0) {
+                        var object = { message: userobject.loginid };
+                        response.json(object);
+                    }
+                    else {
+                        var object = { message: "Invalid Userid or Password" };
+                        response.json(object);
+                    }
                 }
-            }
-        })
+            })
     },
-    editprofile(userobject,response){
-        usercollection.find({userid:userobject.accountid},
-            function(err,docs){
-                if(err){
-                    response.json({message:'Error'});
+    editprofile(userobject, response) {
+        usercollection.find({ userid: userobject.accountid },
+            function (err, docs) {
+                if (err) {
+                    response.json({ message: 'Error' });
                 }
-                else{
+                else {
                     response.json(docs);
                 }
-        })
+            })
     },
-    save(userobject,response){
-        usercollection.updateOne({userid:userobject.email},
-            {$set :
-                {firstname:userobject.fname,lastname:userobject.lname,
-                 mobile:userobject.mobile
-                }
+    save(userobject, response) {
+        usercollection.updateOne({ userid: userobject.email },
+            {
+                $set:
+                    {
+                        firstname: userobject.fname, lastname: userobject.lname,
+                        mobile: userobject.mobile
+                    }
             },
-            function(err,result){
-            if(err){
-                response.json({message:'Error during update'});
-            }
-            else{
-                response.json(result);
-            }
-        })
+            function (err, result) {
+                if (err) {
+                    response.json({ message: 'Error during update' });
+                }
+                else {
+                    response.json(result);
+                }
+            })
     },
 
-    confirmpass(confirmpassobject,response){
-        usercollection.find({userid:confirmpassobject.userid,password:confirmpassobject.password},
-            function(err){
-                if(err){
-                    response.json({message:'Invalid Password'});
+    confirmpass(confirmpassobject, response) {
+        usercollection.find({ userid: confirmpassobject.userid, password: confirmpassobject.password },
+            function (err) {
+                if (err) {
+                    response.json({ message: 'Invalid Password' });
                 }
-                else{
+                else {
                     console.log(confirmpassobject);
-                   // response.json(docs);
-                   usercollection.updateOne({userid:confirmpassobject.userid},
-                    {$set :
-                       {password:confirmpassobject.password}  
-                    },
-                    function(err,result){
-                    if(err){
-                        response.json({message:'Error during update'});
-                    }
-                    else{
-                        console.log(confirmpassobject);
-                        response.json(result);
-                    }
-                })
+                    // response.json(docs);
+                    usercollection.updateOne({ userid: confirmpassobject.userid },
+                        {
+                            $set:
+                                { password: confirmpassobject.password }
+                        },
+                        function (err, result) {
+                            if (err) {
+                                response.json({ message: 'Error during update' });
+                            }
+                            else {
+                                console.log(confirmpassobject);
+                                response.json(result);
+                            }
+                        })
                 }
-        })
+            })
+    },
+
+    forgotpassword(userobject, response) {
+        usercollection.find({ userid: userobject.accountid },
+            function (err, docs) {
+                if (err) {
+                    response.json({ message: 'Error' });
+                }
+                else {
+                    if (docs && docs.length > 0) {
+                        response.json({ message: "Password has been to your registered e-mail" });
+                        const configmail = require("../utils/mail");
+                        configmail(docs[0].userid, docs[0].password, response);
+                    }
+                    else {
+                        response.json({ message: "User does not exist"});
+                    }
+                }
+            })
     }
 }
-module.exports=useroperations;
+module.exports = useroperations;
