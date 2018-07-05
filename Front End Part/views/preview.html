@@ -8,7 +8,7 @@
     });
 </script> -->
 <div>
-    <div class="container" >
+    <div class="container" ng-controller="retrieveproductcontroller" >
         <div class="row">
             <div class="col-md-4">
                 <div class="previewdiv mrgnbtm">
@@ -19,14 +19,14 @@
             </div>
             <div class="col-md-8">
                 <div class="previewdiv mrgnbtm" >
-                    <h3 class="quick" id="prevname"></h3>
-                    <p class="previewprice" id="prevprice"></p>
+                    <h3 class="quick">{{prevname}}</h3>
+                    <p class="previewprice">Rs. {{prevprice}}</p>
                     <h3 class="previewname">Quick Overview:</h3>
-                    <p id="prevdes" class="quick_desc"></p>
+                    <p class="quick_desc">{{prevdes}}</p>
 
                     <ul class="product-qty">
                         <span>Quantity:</span>
-                        <select>
+                        <select ng-model="prevquant">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -37,12 +37,12 @@
                     </ul>
                     <div style="margin-top:10px;margin-left:0px !important;" class="container">
                         <a>
-                            <button class="btn btn-primary" type="submit" style="margin-left:-13px">
+                            <button ng-click="tocartdbfromprev()" class="btn btn-primary" type="submit" style="margin-left:-13px">
                                 <span class="glyphicon glyphicon-shopping-cart"></span>&nbspAdd To Cart
                             </button>
                         </a>
                         <a ng-href="#/checkout">
-                            <button class="btn btn-danger" type="submit">
+                            <button ng-click="buynowprev()" class="btn btn-danger" type="submit">
                                 <span class="glyphicon glyphicon-gift"></span>
                                 &nbspBuy Now
                             </button>

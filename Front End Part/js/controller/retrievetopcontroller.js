@@ -6,18 +6,17 @@ app.controller("retrievetopcontroller", function ($scope,$filter, retrievetopfac
             var promise = retrieveproductfactory.showdata($event, items);
             promise.then(function (data) {
               $rootScope.imgpath = data.data[0].url;
-        
-              angular.element(document.querySelector('#prevname')).append('<p>' + data.data[0].name + '</p>');
-        
-              angular.element(document.querySelector('#prevprice')).append('<p>' + "Rs. "+ data.data[0].price + '</p>');
-        
-              angular.element(document.querySelector('#prevdes')).append('<p>' + data.data[0].description + '</p>');
+              $rootScope.prevname=data.data[0].name;
+              $rootScope.prevprice=data.data[0].price;
+              $rootScope.prevdes=data.data[0].description;
         
             }, function (err) {
               console.log("error", err);
         
             });
+            retrieveproductfactory.buynowfunc($event,items);
         };
+       
         $scope.tocartdatabase = function ($event, items) {
             var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, 1);
             var promise = retrieveproductfactory.tocartdatabase(userobject);

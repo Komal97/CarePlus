@@ -31,14 +31,14 @@
                     </div>
                     <div style="padding:2%;">
                         <p class="topedit" data-toggle="modal" data-target="#myModalAddress">Edit</p>
-                        <input type="radio" ng-click="disabled=!disabled">
-                        <span style="margin-left:1%;font-weight:bold" class="edit">{{deliveryname}}</span>
+                        <input type="radio" ng-click="enable()">
+                        <span style="margin-left:1%;font-weight:bold;font-size:1.2em" class="edit">{{deliveryname}}</span>
                     </div>
-                    <div class="address" style="margin-left:5%;">
+                    <div class="address" style="margin-left:5%;font-size:1.1em">
                         <p class="address">{{deliveryaddr}}</p>
                     </div>
                     <div style="padding:2%">
-                        <button ng-disabled="!disabled" style="width:20%" class="btn btn-danger" ng-click="summary=!summary;">DELIVER HERE</button>
+                        <button ng-disabled="disabled" style="width:20%;margin-left:3.4%;"class="btn btn-danger" ng-click="summary=!summary;">DELIVER HERE</button>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
 
                             <div style="width:50%;  float:right" class="confirm-but">
                                 <form style="float:right">
-                                        <button ng-disabled="creditbtn"  class="btn btn-danger" ng-click="payfunc()" >Pay Rs.999</button>
+                                        <button ng-disabled="creditbtn"  class="btn btn-danger" ng-click="payfunc()" >Pay Rs. {{checkprice}}</button>
                                     <div class="clearfix"> </div>
                                 </form>
                             </div>
@@ -169,7 +169,7 @@
 
                             <div style="width:50%;  float:right" class="confirm-but">
                                 <form style="float:right">
-                                        <button ng-disabled="debitbtn"  class="btn btn-danger" ng-click="payfunc()">Pay Rs.999</button>
+                                        <button ng-disabled="debitbtn"  class="btn btn-danger" ng-click="payfunc()">Pay Rs.{{checkprice}}</button>
                                     <div class="clearfix"> </div>
                                 </form>
                             </div>
@@ -181,7 +181,7 @@
                             <input type="radio" name="rd" ng-click="enable3()">
                             <span style="margin-left:1%" class="edit">Cash on Delivery</span>
                                     <form style="float:right;margin-right:37px">
-                                            <button ng-disabled="cashbtn" class="btn btn-danger" ng-click="payfunc()">Pay Rs.999</button>
+                                            <button ng-disabled="cashbtn" class="btn btn-danger" ng-click="payfunc()">Pay Rs.{{checkprice}}</button>
                                         <div class="clearfix"> </div>
                                     </form>
                         </div>
@@ -192,7 +192,7 @@
         </div>
         <div class="modal fade" id="myModalAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
-                <div class="modal-content">
+                <div class="modal-content"></div>
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

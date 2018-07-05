@@ -5,18 +5,18 @@ app.controller("concontroller", function ($scope,$filter, confactory,$rootScope,
         var promise = retrieveproductfactory.showdata($event, items);
         promise.then(function (data) {
           $rootScope.imgpath = data.data[0].url;
+          $rootScope.prevname=data.data[0].name;
+          $rootScope.prevprice=data.data[0].price;
+          $rootScope.prevdes=data.data[0].description;
     
-          angular.element(document.querySelector('#prevname')).append('<p>' + data.data[0].name + '</p>');
-    
-          angular.element(document.querySelector('#prevprice')).append('<p>' + "Rs. "+ data.data[0].price + '</p>');
-    
-          angular.element(document.querySelector('#prevdes')).append('<p>' + data.data[0].description + '</p>');
     
         }, function (err) {
           console.log("error", err);
     
         });
+        retrieveproductfactory.buynowfunc($event,items);
     };
+    
     $scope.buynowfunc = function ($event, items) {
       console.log(items);
       console.log($scope.login);

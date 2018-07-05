@@ -13,6 +13,11 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
   $scope.card2 = true;
   $scope.name2 = true;
   $scope.date2 = true;
+  $scope.disabled = true;
+  $scope.enable = function () {
+    if ($scope.disabled == true)
+      $scope.disabled = false;
+  }
   $scope.enable1 = function () {
     if ($scope.creditbtn == true) {
       $scope.creditbtn = false;
@@ -78,17 +83,16 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
     var promise = retrieveproductfactory.showdata($event, items);
     promise.then(function (data) {
       $rootScope.imgpath = data.data[0].url;
+      $rootScope.prevname=data.data[0].name;
+      $rootScope.prevprice=data.data[0].price;
+      $rootScope.prevdes=data.data[0].description;
 
-      angular.element(document.querySelector('#prevname')).append('<p>' + data.data[0].name + '</p>');
-
-      angular.element(document.querySelector('#prevprice')).append('<p>' + "Rs. " + data.data[0].price + '</p>');
-
-      angular.element(document.querySelector('#prevdes')).append('<p>' + data.data[0].description + '</p>');
 
     }, function (err) {
       console.log("error", err);
 
     });
+    retrieveproductfactory.buynowfunc($event,items);
   };
 
   $scope.buynowfunc = function ($event, items) {
@@ -101,6 +105,25 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
     console.log(n.length);
 
     var object = new buynowitems($scope.login, items.modalno, items.url, items.name, items.price, date);
+    console.log(object);
+    $rootScope.imgpath2 = object.imageurl;
+    $rootScope.checkname = object.productname;
+    $rootScope.checkprice = object.price;
+    $rootScope.checkmodel = object.modelno;
+    $rootScope.calcprice = object.price;
+    $rootScope.checkquant = object.buy_quantity;
+    $rootScope.totalprice = object.price + 50;
+    retrieveproductfactory.buynowfunc($event, object);
+  };
+
+  $rootScope.buynowprev = function ($event, items) {
+    var items=retrieveproductfactory.getobject();
+    var date = $filter('date')(new Date(), 'fullDate');
+    var d = new Date();
+    var n = d.toString;
+    console.log(n.length);
+    console.log($scope.prevquant);
+    var object = new buynowpreview($scope.login,items.modalno,items.url,items.name, items.price,$scope.prevquant, date);
     console.log(object);
     $rootScope.imgpath2 = object.imageurl;
     $rootScope.checkname = object.productname;
@@ -133,6 +156,19 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
 
   };
 
+  $rootScope.tocartdbfromprev=function(){
+   var items=retrieveproductfactory.getobject();
+   var prevquant=$scope.prevquant;
+   console.log(prevquant);
+   var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, prevquant);
+   var promise = retrieveproductfactory.tocartdatabase(userobject);
+   promise.then(function (data) {
+     console.log("back to promise", data);
+   }, function (err) {
+     console.log("error", err);
+   });
+  };
+
   $scope.tocartdatabase = function ($event, items) {
     var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, 1);
     var promise = retrieveproductfactory.tocartdatabase(userobject);
@@ -150,18 +186,18 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
     console.log("error", err);
   });
 
-  $scope.address=function(){
-   $scope.deliveryname=$scope.name;
-   $scope.deliveryaddr=$scope.deliveryaddress;
-   $scope.name=" ";
-   $scope.deliveryaddress=" ";
-   $('#myModalAddress').modal('hide');
-   var addrobject = new useraddress($scope.login,$scope.deliveryname,$scope.deliveryaddr);
-   var promise = retrieveproductfactory.address(addrobject);
-   promise.then(function (data) {
-     console.log("back to promise", data);
-   }, function (err) {
-     console.log("error", err);
-   });
+  $scope.address = function () {
+    $scope.deliveryname = $scope.name;
+    $scope.deliveryaddr = $scope.deliveryaddress;
+    $scope.name = " ";
+    $scope.deliveryaddress = " ";
+    $('#myModalAddress').modal('hide');
+    var addrobject = new useraddress($scope.login, $scope.deliveryname, $scope.deliveryaddr);
+    var promise = retrieveproductfactory.address(addrobject);
+    promise.then(function (data) {
+      console.log("back to promise", data);
+    }, function (err) {
+      console.log("error", err);
+    });
   }
 });
