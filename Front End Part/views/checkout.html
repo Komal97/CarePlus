@@ -30,14 +30,12 @@
                             <span class="glyphicon glyphicon-plus" id="profileimage"></span>DELIVERY ADDRESS </div>
                     </div>
                     <div style="padding:2%;">
-                        <p class="topedit">Edit</p>
+                        <p class="topedit" data-toggle="modal" data-target="#myModalAddress">Edit</p>
                         <input type="radio" ng-click="disabled=!disabled">
-
-                        <span style="margin-left:1%" class="edit">XYZ</span>
-                        <span style="margin-left:3%" class="edit">9811127XXX</span>
+                        <span style="margin-left:1%;font-weight:bold" class="edit">{{deliveryname}}</span>
                     </div>
-                    <div class="address" style="margin-left:5.2%;">
-                        <p ng-click="opensummary()" class="address">69-C Udyog Nagar near xyz lane Delhi-110035</p>
+                    <div class="address" style="margin-left:5%;">
+                        <p class="address">{{deliveryaddr}}</p>
                     </div>
                     <div style="padding:2%">
                         <button ng-disabled="!disabled" style="width:20%" class="btn btn-danger" ng-click="summary=!summary;">DELIVER HERE</button>
@@ -188,6 +186,44 @@
                                     </form>
                         </div>
                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModalAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="main">
+                            <div class="contain">
+                                <div class="register">
+                                    <div class="register-top-grid">
+                                        <h3 style="margin-bottom:2%" class="text-center pb-3"> ADDRESS </h3>
+                                    </div>
+                                    <form name="f1" >
+                                        <div class="row my-form-group">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="inputheading"> Name </label>
+                                                    <input type="text" class="form-control inputbox" ng-model="name">    
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label class="inputheading"> Delivery Address </label>
+                                                    <textarea class="form-control inputbox" rows="5" ng-model="deliveryaddress"></textarea>
+                                                </div>                                               
+                                            </div>
+                                        </div>
+                                        <button  class="btn mybtn" ng-click="address()"> Confirm </button>
+                                    </form>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

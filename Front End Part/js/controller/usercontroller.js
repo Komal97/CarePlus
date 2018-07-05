@@ -4,8 +4,7 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
     console.log($localStorage.message);
     if ($localStorage.message) {
         $scope.login = $localStorage.message;
-        $scope.enablelogin= $localStorage.enablelogin;
-      
+        $scope.enablelogin= $localStorage.enablelogin;  
     }
 
     $scope.doLogin = function () {  
@@ -56,9 +55,10 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
             });
         },
 
+        // ng-href="#/myprofile"
+
         $scope.editprofile = function () {
             var userobject2 = new accountuser($scope.login);
-            console.log($scope.loginid);
             var promise = myfactory.editprofile(userobject2);
             promise.then(function (data) {
                 console.log("Back to promise...", data);
@@ -90,6 +90,7 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
             })
         },
 
+        //ng-href="#/orderhistory" 
         $scope.myorders = function () {
             var userobject3 = new accountuser($scope.login);
             var promise = myfactory.myorders(userobject3);

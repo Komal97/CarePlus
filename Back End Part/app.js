@@ -6,6 +6,7 @@ const userRoute=require("./routes/userroutes");
 const productRoute=require("./routes/productroutes");
 const buynowRoute=require("./routes/buynowroutes");
 const cartroute=require("./routes/cartroutes");
+const addressRoute=require("./routes/addressroutes");
 
 const app=express();
 
@@ -24,7 +25,7 @@ app.use('/',userRoute);
 app.use('/',productRoute);
 app.use('/',buynowRoute);
 app.use('/',cartroute);
-
+app.use('/',addressRoute)
 //------------------- SERVER START --------------------
 app.listen(1234,()=>{
     console.log("server start...");

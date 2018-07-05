@@ -116,4 +116,19 @@ app.controller("retrieveproductcontroller", function ($scope, $filter,$rootScope
   }, function (err) {
     console.log("error", err);
   });
+
+  $scope.address=function(){
+   $scope.deliveryname=$scope.name;
+   $scope.deliveryaddr=$scope.deliveryaddress;
+   $scope.name=" ";
+   $scope.deliveryaddress=" ";
+   $('#myModalAddress').modal('hide');
+   var addrobject = new useraddress($scope.login,$scope.deliveryname,$scope.deliveryaddr);
+   var promise = retrieveproductfactory.address(addrobject);
+   promise.then(function (data) {
+     console.log("back to promise", data);
+   }, function (err) {
+     console.log("error", err);
+   });
+  }
 });
