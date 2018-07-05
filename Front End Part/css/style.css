@@ -8067,8 +8067,9 @@ z-index:-1;
     height:100%;
     top:0px;
     left:0px;
-    z-index:1000;
-	
+		z-index:1000;
+		transition: 2s ease-in-out;
+		transition-delay:2s;
 }
 .div2{
 	background-color: #212121;
