@@ -115,13 +115,14 @@
                     <a ng-model="login"> {{login}} </a>
                 </li>
                 <li class="mynav" ng-show="enablelogin">
-                        <a ng-href="#/cart">
+                        <a style="position:relative" ng-href="#/cart">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+                        
                 </li>
             </ul>
         </div>
     </nav>
-
+    <a ng-show="enablelogin" class="notification" ng-model="countitem">{{countitem}}</a>
     <!-- Modal Register-->
     <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">

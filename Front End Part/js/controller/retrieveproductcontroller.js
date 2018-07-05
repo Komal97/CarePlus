@@ -170,6 +170,7 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
 
   $rootScope.tocartdbfromprev=function(){
    var items=retrieveproductfactory.getobject();
+   $rootScope.countitem=$rootScope.countitem + 1;
    var prevquant=$scope.prevquant;
    console.log(prevquant);
    var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, prevquant);
@@ -183,6 +184,7 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
 
   $scope.tocartdatabase = function ($event, items) {
     if ($localStorage.message) {
+      $rootScope.countitem=$rootScope.countitem + 1;
       var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, 1);
       var promise = retrieveproductfactory.tocartdatabase(userobject);
       promise.then(function (data) {

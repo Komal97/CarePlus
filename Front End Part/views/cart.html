@@ -2,9 +2,9 @@
     <div class="container">
         <div class="check_box">
             <div class="col-md-9 cart-items">
-                <h1>My Shopping Bag <span></span></h1>
+                <h1>My Shopping Bag <span>({{cartcount}})</span></h1>
                 
-                <div ng-repeat="items in data.data" style="padding-bottom:0%;margin-bottom:4%" class="cart-header account">
+                <div id="cartdivcount" ng-repeat="items in data.data" style="padding-bottom:0%;margin-bottom:4%" class="cart-header account">
                     <div style="float:right" ng-click="deleteitem($event,items)"><span class="glyphicon glyphicon-remove setcursor"></span> </div>
                     <div class="cart-sec simpleCart_shelfItem">
                         <div class="cart-item cyc">

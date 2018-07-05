@@ -1,4 +1,4 @@
-app.controller("myctrl", function ($scope, myfactory, $localStorage, $location) {
+app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, $location) {
     $scope.isDisabled = true;
 
     console.log($localStorage.message);
@@ -11,11 +11,16 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage, $location) 
     var promise = myfactory.showcart(userobject);
     promise.then(function (data) {
         console.log("Back to promise...", data);
+        console.log(data.data.length);
+        $scope.cartcount = data.data.length;
+        $rootScope.countitem = data.data.length;
+        //console.log(angular.element(document.querySelector("#cartdivcount").length));
         $scope.data = data;
     }, function (err) {
         console.log("error ", err);
     });
-    
+
+
     // angular.forEach($scope.data,function(value,key){
     //     console.log("value : "+ value + " , key : "+key);
     // })
@@ -159,6 +164,17 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage, $location) 
         var promise = myfactory.deleteitem(items);
         promise.then(function (data) {
             console.log(data.data);
+            //$location.path('/cart');
+            var promise = myfactory.showcart(userobject);
+            promise.then(function (data) {
+                console.log("Back to promise...", data);
+                console.log(data.data.length);
+                $scope.cartcount = data.data.length;
+                $rootScope.countitem = data.data.length;
+                $scope.data = data;
+            }, function (err) {
+                console.log("error ", err);
+            });
         }, function (err) {
             console.log("error ", err);
         });

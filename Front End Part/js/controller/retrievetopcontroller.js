@@ -20,6 +20,7 @@ app.controller("retrievetopcontroller", function ($scope, $filter, $localStorage
 
     $scope.tocartdatabase = function ($event, items) {
       if ($localStorage.message) {
+        $rootScope.countitem=$rootScope.countitem + 1;
         var userobject = new cartdata($scope.login, items.modalno, items.name, items.price, items.url, 1);
         var promise = retrieveproductfactory.tocartdatabase(userobject);
         promise.then(function (data) {
