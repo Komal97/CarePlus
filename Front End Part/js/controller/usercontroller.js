@@ -1,34 +1,47 @@
-app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
+app.controller("myctrl", function ($scope, myfactory, $localStorage, $location) {
     $scope.isDisabled = true;
-    
+
     console.log($localStorage.message);
     if ($localStorage.message) {
         $scope.login = $localStorage.message;
-        $scope.enablelogin= $localStorage.enablelogin;  
+        $scope.enablelogin = $localStorage.enablelogin;
     }
 
-    $scope.doLogin = function () {  
+    var userobject = new accountuser($scope.login);
+    var promise = myfactory.showcart(userobject);
+    promise.then(function (data) {
+        console.log("Back to promise...", data);
+        $scope.data = data;
+    }, function (err) {
+        console.log("error ", err);
+    });
+    
+    // angular.forEach($scope.data,function(value,key){
+    //     console.log("value : "+ value + " , key : "+key);
+    // })
+
+    $scope.doLogin = function () {
         var userobject = new loginuser($scope.loginid, $scope.loginpassword);
         var promise = myfactory.doLogin(userobject);
         promise.then(function (data) {
             console.log("sucess", data.data.message);
-
-            if(data.data.message=="Invalid Userid or Password"){
-              $scope.invalidpassword=data.data.message;
-            }else{
-                $scope.enablelogin=!($scope.enablelogin);
-                $localStorage.enablelogin=$scope.enablelogin;
+            if (data.data.message == "Invalid Userid or Password") {
+                $scope.invalidpassword = data.data.message;
+            } else {
+                $scope.enablelogin = !($scope.enablelogin);
+                $localStorage.enablelogin = $scope.enablelogin;
                 $localStorage.message = data.data.message;
                 $scope.login = $localStorage.message;
-                $scope.invalidpassword=" ";
-                $scope.loginid=" ";
-                $scope.loginpassword=" ";                  
+                $scope.invalidpassword = " ";
+                $scope.loginid = " ";
+                $scope.loginpassword = " ";
                 $('#myModal').modal('hide');
-            }  
+            }
         }, function (err) {
             console.log(err);
         })
     },
+
         $scope.doRegister = function () {
             // var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
             // var promise = myfactory.doRegister(userobject1);
@@ -41,23 +54,12 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
             // });
 
             // $('#myModalRegister').modal('hide');
-            
-        },
 
-        $scope.showcart = function () {
-            var userobject = new accountuser($scope.login);
-            var promise = myfactory.showcart(userobject);
-            promise.then(function (data) {
-                console.log("Back to promise...", data);
-                $scope.data = data;
-            }, function (err) {
-                console.log("error ", err);
-            });
-        },
+        }
 
-        // ng-href="#/myprofile"
-
-        $scope.editprofile = function () {
+    $scope.editprofile = function () {
+        if ($localStorage.message) {
+            $location.path('/myprofile');
             var userobject2 = new accountuser($scope.login);
             var promise = myfactory.editprofile(userobject2);
             promise.then(function (data) {
@@ -70,7 +72,11 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
             }, function (err) {
                 console.log("error ", err);
             });
-        },
+        }
+        else {
+            $('#myModal').modal('show');
+        }
+    },
 
         $scope.edit = function () {
             console.log("you clicked edit");
@@ -90,16 +96,20 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
             })
         },
 
-        //ng-href="#/orderhistory" 
         $scope.myorders = function () {
-            var userobject3 = new accountuser($scope.login);
-            var promise = myfactory.myorders(userobject3);
-            promise.then(function (data) {
-                console.log(data.data);
-                $scope.data = data;
-            }, function (err) {
-                console.log("error ", err);
-            });
+            if ($localStorage.message) {
+                $location.path('/orderhistory');
+                var userobject3 = new accountuser($scope.login);
+                var promise = myfactory.myorders(userobject3);
+                promise.then(function (data) {
+                    console.log(data.data);
+                    $scope.data = data;
+                }, function (err) {
+                    console.log("error ", err);
+                });
+            } else {
+                $('#myModal').modal('show');
+            }
         }
 
     $scope.confirmpass = function () {
@@ -122,14 +132,35 @@ app.controller("myctrl", function ($scope, myfactory, $localStorage,$location) {
         }
     },
 
-    $scope.logoutfunc=function(){
-        $localStorage.$reset();
-        $scope.enablelogin=!($scope.enablelogin);
-        $scope.login=" ";
-        $scope.fname = " ";
-        $scope.lname = " ";
-        $scope.email = " ";
-        $scope.mobile = " ";
-        $location.path('/');
+        $scope.logoutfunc = function () {
+            $localStorage.$reset();
+            $scope.enablelogin = !($scope.enablelogin);
+            $scope.login = " ";
+            $scope.fname = " ";
+            $scope.lname = " ";
+            $scope.email = " ";
+            $scope.mobile = " ";
+            $location.path('/');
+        },
+
+        $scope.fromaddressdb = function () {
+            var addrobj2 = new accountuser($scope.login);
+            var promise = myfactory.fromaddressdb(addrobj2);
+            promise.then(function (data) {
+                $scope.data = data;
+                console.log(data.data);
+            }, function (err) {
+                console.log("error ", err);
+            });
+        }
+
+    $scope.deleteitem = function ($event, items) {
+        console.log("delete", items);
+        var promise = myfactory.deleteitem(items);
+        promise.then(function (data) {
+            console.log(data.data);
+        }, function (err) {
+            console.log("error ", err);
+        });
     }
 })

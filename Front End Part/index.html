@@ -114,7 +114,7 @@
                     <a ng-model="login"> {{login}} </a>
                 </li>
                 <li class="mynav" ng-show="enablelogin">
-                    <a ng-href="#/cart" ng-click="showcart()">
+                        <a ng-href="#/cart">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
                 </li>
             </ul>
@@ -326,7 +326,7 @@
                         <a ng-href="#/">Home</a>
                     </li>
                     <li>
-                        <a ng-href="">About us</a>
+                        <a class="setcursor">About us</a>
                     </li>
                 </ul>
             </div>
@@ -334,10 +334,10 @@
                 <h3 >Your Account</h3>
                 <ul class="list1">
                     <li>
-                        <a ng-href="#/myprofile" ng-click="editprofile()"> My Account</a>
+                        <a class="setcursor" ng-click="editprofile()"> My Account</a>
                     </li>
                     <li>
-                        <a ng-href="#/orderhistory" ng-click="myorders()"> Orders history</a>
+                        <a class="setcursor" ng-click="myorders()"> Orders history</a>
                     </li>
                 </ul>
             </div>

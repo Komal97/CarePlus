@@ -1,4 +1,5 @@
-app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB,MYORDERS,PASSWORD){
+app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB,
+                                 MYORDERS,PASSWORD,FROMADDRESS,DELETEITEM){
     const object={
         doLogin(userobject){
             var defer=$q.defer();
@@ -69,7 +70,27 @@ app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCAR
                 defer.reject(err);
             });
             return defer.promise;
-        }
+        },
+        fromaddressdb(addrobj2){
+            var defer=$q.defer();
+            $http.post(FROMADDRESS,addrobj2).then(function(data){
+                console.log("sucess",data);
+                defer.resolve(data);
+            },function(err){
+                defer.reject(err);
+            });
+            return defer.promise;
+        },
+        deleteitem(deleteobj){
+            var defer=$q.defer();
+            $http.post(DELETEITEM,deleteobj).then(function(data){
+                console.log("sucess",data);
+                defer.resolve(data);
+            },function(err){
+                defer.reject(err);
+            });
+            return defer.promise;
+        },
     }
     return object;
 })

@@ -14,5 +14,7 @@ app.constant("URLFROMCARTDB","http://localhost:1234/fromcartdb")
 app.constant("MYORDERS","http://localhost:1234/myorders");
 app.constant("PASSWORD","http://localhost:1234/confirmpassword");
 app.constant("ADDRESS","http://localhost:1234/manageaddress");
+app.constant("FROMADDRESS","http://localhost:1234/fromaddress");
+app.constant("DELETEITEM","http://localhost:1234/deletefromdb");
 
 
