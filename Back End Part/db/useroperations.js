@@ -62,30 +62,20 @@ const useroperations = {
     },
 
     confirmpass(confirmpassobject, response) {
-        usercollection.find({ userid: confirmpassobject.userid, password: confirmpassobject.password },
-            function (err) {
+        usercollection.updateOne({ userid: confirmpassobject.userid, password: confirmpassobject.password },
+            {
+                $set:
+                    { password: confirmpassobject.password }
+            },
+            function (err, result) {
                 if (err) {
-                    response.json({ message: 'Invalid Password' });
+                    response.json({ message: 'Error during update' });
                 }
                 else {
                     console.log(confirmpassobject);
-                    // response.json(docs);
-                    usercollection.updateOne({ userid: confirmpassobject.userid },
-                        {
-                            $set:
-                                { password: confirmpassobject.password }
-                        },
-                        function (err, result) {
-                            if (err) {
-                                response.json({ message: 'Error during update' });
-                            }
-                            else {
-                                console.log(confirmpassobject);
-                                response.json(result);
-                            }
-                        })
+                    response.json(result);
                 }
-            })
+            }) 
     },
 
     forgotpassword(userobject, response) {
