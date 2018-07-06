@@ -8105,3 +8105,26 @@ z-index:-1;
 .pdbtn{
 	padding:8% 10%;
 }
+.modal-footer{
+	background-color: black;
+	 opacity:0;
+	 height:50px;
+	 width: 100%; 
+}
+.modal-footer p{
+	color:white;
+	text-align:center;
+	line-height:50px;
+}
+.show-modal-footer{
+	background-color: black;
+	opacity:1;
+	height:50px;
+	width: 100%;
+	transition:1s; 
+}
+.show-modal-footer p{ 
+	line-height:50px;
+	color:white;
+	text-align:center;
+}

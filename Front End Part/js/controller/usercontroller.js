@@ -1,4 +1,4 @@
-app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, $location) {
+app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage, $location, $timeout) {
     $scope.isDisabled = true;
 
     console.log($localStorage.message);
@@ -19,10 +19,6 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
     }, function (err) {
         console.log("error ", err);
     });
-
-    // angular.forEach($scope.data,function(value,key){
-    //     console.log("value : "+ value + " , key : "+key);
-    // })
 
     $scope.doLogin = function () {
         var userobject = new loginuser($scope.loginid, $scope.loginpassword);
@@ -181,21 +177,27 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
 
         $scope.forgotpass = function () {
             $scope.forgot = !$scope.forgot;
-            $scope.registerid="Enter your registered e-mail id";
+            $scope.registerid = "Enter your registered e-mail id";
         },
 
-        $scope.forgotpassword = function () {
-            var passobject = new accountuser($scope.loginid1);
-            var promise = myfactory.forgotpassword(passobject);
-            promise.then(function (data) {
-                if(data.data.message=="User does not exist"){
-                    $scope.registerid="User does not exist";
-                }
-                else{
-                      
-                }
-            }, function (err) {
-                console.log("error ", err);
-            });
-        }
+        $scope.showmsg = "modal-footer";
+    $scope.forgotpassword = function () {
+        $scope.showmsg = "modal-footer";
+        var passobject = new accountuser($scope.loginid1);
+        var promise = myfactory.forgotpassword(passobject);
+        promise.then(function (data) {
+            if (data.data.message == "User does not exist") {
+                $scope.registerid = "User does not exist";
+            }
+            else {
+                $scope.showmsg = "show-modal-footer";
+                $scope.msg = "Password has been sent to your registered e-mail"
+                $timeout(function () {
+                    $('#myModal').modal('hide');
+                }, 9000);
+            }
+        }, function (err) {
+            console.log("error ", err);
+        });
+    }
 })
