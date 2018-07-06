@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage, $location, $timeout) {
-=======
-app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage, $location) {
->>>>>>> a66e36942e0fef1af008c1f83d4977cd15777487
     $scope.isDisabled = true;
 
     console.log($localStorage.message);
