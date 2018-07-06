@@ -1,4 +1,4 @@
-app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, $location) {
+app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage, $location) {
     $scope.isDisabled = true;
 
     console.log($localStorage.message);
@@ -14,7 +14,12 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
         console.log(data.data.length);
         $scope.cartcount = data.data.length;
         $rootScope.countitem = data.data.length;
-        //console.log(angular.element(document.querySelector("#cartdivcount").length));
+        var sum = 0;
+        for (var key in data.data) {
+            sum = sum + data.data[key].price;
+        }
+        $scope.totalpricecart = sum;
+        $scope.finaltotal = sum + 50;
         $scope.data = data;
     }, function (err) {
         console.log("error ", err);
@@ -32,6 +37,7 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
             if (data.data.message == "Invalid Userid or Password") {
                 $scope.invalidpassword = data.data.message;
             } else {
+                
                 $scope.enablelogin = !($scope.enablelogin);
                 $localStorage.enablelogin = $scope.enablelogin;
                 $localStorage.message = data.data.message;
@@ -162,14 +168,18 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
         console.log("delete", items);
         var promise = myfactory.deleteitem(items);
         promise.then(function (data) {
-            console.log(data.data);
-            //$location.path('/cart');
             var promise = myfactory.showcart(userobject);
             promise.then(function (data) {
                 console.log("Back to promise...", data);
                 console.log(data.data.length);
                 $scope.cartcount = data.data.length;
                 $rootScope.countitem = data.data.length;
+                var sum = 0;
+                for (var key in data.data) {
+                    sum = sum + data.data[key].price;
+                }
+                $scope.totalpricecart = sum;
+                $scope.finaltotal = sum + 50;
                 $scope.data = data;
             }, function (err) {
                 console.log("error ", err);
@@ -181,18 +191,18 @@ app.controller("myctrl", function ($scope,$rootScope, myfactory, $localStorage, 
 
         $scope.forgotpass = function () {
             $scope.forgot = !$scope.forgot;
-            $scope.registerid="Enter your registered e-mail id";
+            $scope.registerid = "Enter your registered e-mail id";
         },
 
         $scope.forgotpassword = function () {
             var passobject = new accountuser($scope.loginid1);
             var promise = myfactory.forgotpassword(passobject);
             promise.then(function (data) {
-                if(data.data.message=="User does not exist"){
-                    $scope.registerid="User does not exist";
+                if (data.data.message == "User does not exist") {
+                    $scope.registerid = "User does not exist";
                 }
-                else{
-                      
+                else {
+
                 }
             }, function (err) {
                 console.log("error ", err);
