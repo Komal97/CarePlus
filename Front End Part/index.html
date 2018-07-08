@@ -65,7 +65,7 @@
         <h4>Your payment has been made successfully</h4>
     </div>
     <!-- NAVBAR SECTION -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" style="font-size:1.3em"> Care
@@ -122,8 +122,9 @@
                 </li>
             </ul>
         </div>
+        <a ng-show="enablelogin" style="z-index: 99999999999" class="notification" ng-model="countitem">{{countitem}}</a>
     </nav>
-    <a ng-show="enablelogin" class="notification" ng-model="countitem">{{countitem}}</a>
+   
     <!-- Modal Register-->
     <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
