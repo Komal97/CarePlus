@@ -14,7 +14,9 @@ function configmail(userid,password,response){
             from:'komal.bansal.2297@gmail.com',
             to:userid,
             subject:"Care+ - Your password details",
-            text:'Your password is '+password+"\n Thank you !!"
+            text:'Your password is '+password+'\nIf you wish to change your' +
+                  'password,then go to My Account -> Change Password \nThank you !!',
+                              
         };
 
         transporter.sendMail(mailOptions,(error,info)=>{
