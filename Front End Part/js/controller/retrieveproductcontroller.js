@@ -144,9 +144,9 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
       $rootScope.checkname = object.productname;
       $rootScope.checkprice = object.price;
       $rootScope.checkmodel = object.modelno;
-      $rootScope.calcprice = object.price;
+      $rootScope.calcprice = object.price * object.buy_quantity;
       $rootScope.checkquant = object.buy_quantity;
-      $rootScope.totalprice = object.price + 50;
+      $rootScope.totalprice = (object.price * object.buy_quantity)+ 50;
       retrieveproductfactory.buynowfunc($event, object);
     }
     else {

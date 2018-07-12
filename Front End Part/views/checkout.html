@@ -122,7 +122,7 @@
 
                             <div style="width:50%;  float:right" class="confirm-but">
                                 <form style="float:right">
-                                    <button ng-disabled="creditbtn" class="btn btn-danger pdbtn" ng-click="payfunc()">Pay Rs.999</button>
+                                    <button ng-disabled="creditbtn" class="btn btn-danger pdbtn" ng-click="payfunc()">Pay Rs.{{totalprice}}</button>
                                     <div class="clearfix"> </div>
                                 </form>
                             </div>
@@ -168,7 +168,7 @@
 
                             <div style="width:50%;  float:right" class="confirm-but">
                                 <form style="float:right">
-                                    <button ng-disabled="debitbtn" class="btn btn-danger pdbtn" ng-click="payfunc()">Pay Rs.{{checkprice}}</button>
+                                    <button ng-disabled="debitbtn" class="btn btn-danger pdbtn" ng-click="payfunc()">Pay Rs.{{totalprice}}</button>
                                     <div class="clearfix"> </div>
                                 </form>
                             </div>
@@ -180,7 +180,7 @@
                             <input type="radio" name="rd" ng-click="enable3()">
                             <span style="margin-left:1%" class="edit">Cash on Delivery</span>
                             <form style="float:right;margin-right:37px">
-                                <button ng-disabled="cashbtn" class="btn btn-danger pdbtn" ng-click="payfunc()">Pay Rs.{{checkprice}}</button>
+                                <button ng-disabled="cashbtn" class="btn btn-danger pdbtn" ng-click="payfunc()">Pay Rs.{{totalprice}}</button>
                                 <div class="clearfix"> </div>
                             </form>
                         </div>

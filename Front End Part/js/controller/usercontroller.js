@@ -171,10 +171,12 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
                 $scope.cartcount = data.data.length;
                 $rootScope.countitem = data.data.length;
                 var sum = 0;
+                
                 for (var key in data.data) {
-                    sum = sum + data.data[key].price;
+                    sum = sum + (data.data[key].price * data.data[key].buy_quantity);
+                    console.log("sum : ",sum);
                 }
-                $scope.totalpricecart = sum;
+                $scope.totalpricecart = sum ;
                 $scope.finaltotal = sum + 50;
                 $scope.data = data;
             }, function (err) {
