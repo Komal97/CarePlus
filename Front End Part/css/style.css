@@ -135,6 +135,7 @@ nav{
 	-o-background-size: cover;
 	background-size: cover;
 	background-position: center;
+	padding-top:60px;
 }
 .header-top {
 	padding: 0.2em 0 0.2em;
