@@ -60,12 +60,32 @@ const useroperations = {
                 }
             })
     },
+    
+    findconfirmpass(confirmpassobject, response) {
+        usercollection.find({ userid: confirmpassobject.userid, password: confirmpassobject.password },
+            function (err, docs) {
+                if (err) {
+                    response.json({ message: 'Error Occured During Change Password' });
+                }
+                else {
+                    if (docs && docs.length > 0) {
+                        // var object = { message:confirmpassobject.userid};
+                        // response.json(object);
+                        useroperations.confirmpass(confirmpassobject,response);
+                    }
+                    else {
+                        var object = { message: "Invalid Password" };
+                        response.json(object);
+                    }
+                }
+            })
+    },
 
     confirmpass(confirmpassobject, response) {
-        usercollection.updateOne({ userid: confirmpassobject.userid, password: confirmpassobject.password },
+        usercollection.updateOne({ userid: confirmpassobject.userid},
             {
                 $set:
-                    { password: confirmpassobject.password }
+                    { password: confirmpassobject.newpass }
             },
             function (err, result) {
                 if (err) {
@@ -73,7 +93,7 @@ const useroperations = {
                 }
                 else {
                     console.log(confirmpassobject);
-                    response.json(result);
+                    response.json({message:"Your password has been changed successfully "});
                 }
             }) 
     },
@@ -86,7 +106,7 @@ const useroperations = {
                 }
                 else {
                     if (docs && docs.length > 0) {
-                        response.json({ message: "Password has been to your registered e-mail" });
+                        //response.json({ message: "Password has been to your registered e-mail" });
                         const configmail = require("../utils/mail");
                         configmail(docs[0].userid, docs[0].password, response);
                     }

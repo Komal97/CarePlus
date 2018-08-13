@@ -89,26 +89,31 @@
                                 <div>
                                     <span class="edit"> Current Password </span>
                                     <input type="password" style="margin-bottom:0px" id="currentpassword">
-                                    <p class="error"> current </p>
+                                    <p class="error"> {{current}} </p>
                                 </div>
                                 <div>
                                     <span class="edit"> New Password </span>
                                     <input type="password" id="newpassword">
                                 </div>
+                                
                                 <div>
                                     <span class="edit"> Confirm password </span>
                                     <input type="password" style="margin-bottom:0px" id="confirmpassword">
                                     <p class="error" > {{confirm}} </p>
                                 </div>
+                                
                                 <div class="clearfix"> </div>
                             </div>
                         </form>
                         <div class="clearfix"> </div>
+                        
                         <div class="confirm-but">
+                            
                             <form>
                                 <input type="submit" value="Confirm Password" ng-click="confirmpass()">
                                 <div class="clearfix"> </div>
                             </form>
+                            <p class="myblue"> {{passchange}} </p>
                         </div>
                     </div>
                 </div>

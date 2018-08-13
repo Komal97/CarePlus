@@ -49,17 +49,17 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
     },
 
         $scope.doRegister = function () {
-            // var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
-            // var promise = myfactory.doRegister(userobject1);
-            // promise.then(function (data) {
-            //     console.log("Back to promise...", data);
-            //     $scope.signup = " ";
-            //     $scope.login = data.data.message;
-            // }, function (err) {
-            //     console.log(err);
-            // });
+            var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
+            var promise = myfactory.doRegister(userobject1);
+            promise.then(function (data) {
+                console.log("Back to promise...", data);
+                $scope.signup = " ";
+                $scope.login = data.data.message;
+            }, function (err) {
+                console.log(err);
+            });
 
-            // $('#myModalRegister').modal('hide');
+            $('#myModalRegister').modal('hide');
 
         }
 
@@ -123,12 +123,22 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
         var newpassword = angular.element(document.querySelector("#newpassword").value);
         var confirmpassword = angular.element(document.querySelector("#confirmpassword").value);
         if (angular.equals(newpassword, confirmpassword)) {
+            $scope.confirm = " ";
             console.log("equal");
-            var confirmobject = new confirmpasswordclass($scope.login, currentpassword.selector);
+            var confirmobject = new confirmpasswordclass($scope.login, currentpassword.selector,newpassword.selector);
             console.log(confirmobject);
             var promise = myfactory.confirmpass(confirmobject);
             promise.then(function (data) {
-                console.log(data.data);
+                if(data.data.message=="Invalid Password"){
+                    $scope.current=data.data.message;
+                }
+                else{
+                    $scope.current=" ";
+                    $scope.passchange=data.data.message;
+                    $timeout(function () {
+                       $location.path('/');
+                    }, 3500);
+                }
             }, function (err) {
                 console.log("error ", err);
             })
@@ -192,7 +202,7 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
         },
 
         $scope.showmsg = "modal-footer";
-    $scope.forgotpassword = function () {
+        $scope.forgotpassword = function () {
         $scope.showmsg = "modal-footer";
         var passobject = new accountuser($scope.loginid1);
         var promise = myfactory.forgotpassword(passobject);
@@ -202,7 +212,8 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
             }
             else {
                 $scope.showmsg = "show-modal-footer";
-                $scope.msg = "Password has been sent to your registered e-mail"
+             //   $scope.msg = "Password has been sent to your registered e-mail"
+                $scope.msg = data.data.message;
                 $timeout(function () {
                     $('#myModal').modal('hide');
                 }, 9000);

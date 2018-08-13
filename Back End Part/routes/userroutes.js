@@ -46,10 +46,11 @@ router.post('/saveaccountinfo',(req,res)=>{
 router.post('/confirmpassword',(req,res)=>{
     var userid=req.body.userid;
     var password=req.body.password;
+    var newpass=req.body.newpass;
     const useroperations=require("../db/useroperations");
     const confirmpasswordclass=require("../model/confirmpassword"); 
-    var confirmpasswordobj=new confirmpasswordclass(userid,password);
-    useroperations.confirmpass(confirmpasswordobj,res);
+    var confirmpasswordobj=new confirmpasswordclass(userid,password,newpass);
+    useroperations.findconfirmpass(confirmpasswordobj,res);
 });
 
 router.post('/userforgotpassword',(req,res)=>{
