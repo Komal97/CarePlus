@@ -16,7 +16,7 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
         $rootScope.countitem = data.data.length;
         var sum = 0;
         for (var key in data.data) {
-            sum = sum + (data.data[key].price*data.data[key].buyquantity);
+            sum = sum + (data.data[key].price * data.data[key].buyquantity);
         }
         $scope.totalpricecart = sum;
         $scope.finaltotal = sum + 50;
@@ -33,7 +33,7 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
             if (data.data.message == "Invalid Userid or Password") {
                 $scope.invalidpassword = data.data.message;
             } else {
-                
+
                 $scope.enablelogin = !($scope.enablelogin);
                 $localStorage.enablelogin = $scope.enablelogin;
                 $localStorage.message = data.data.message;
@@ -45,21 +45,29 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
             }
         }, function (err) {
             console.log(err);
-        })
+        });
+
     },
 
         $scope.doRegister = function () {
-            // var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
-            // var promise = myfactory.doRegister(userobject1);
-            // promise.then(function (data) {
-            //     console.log("Back to promise...", data);
-            //     $scope.signup = " ";
-            //     $scope.login = data.data.message;
-            // }, function (err) {
-            //     console.log(err);
-            // });
+            $scope.formsubmit = function (form) {
+                if (form.$valid) {
+                    var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
+                    console.log(userobject1);
+                    // var promise = myfactory.doRegister(userobject1);
+                    // promise.then(function (data) {
+                    //     console.log("Back to promise...", data);
+                    //     $scope.signup = " ";
+                    //     $scope.login = data.data.message;
+                    // }, function (err) {
+                    //     console.log(err);
+                    // });
 
-            // $('#myModalRegister').modal('hide');
+                    // $('#myModalRegister').modal('hide');
+
+                }
+            }
+
 
         }
 
@@ -171,11 +179,11 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
                 $scope.cartcount = data.data.length;
                 $rootScope.countitem = data.data.length;
                 var sum = 0;
-                
+
                 for (var key in data.data) {
-                    sum = sum + (data.data[key].price*data.data[key].buyquantity);
+                    sum = sum + (data.data[key].price * data.data[key].buyquantity);
                 }
-                $scope.totalpricecart = sum ;
+                $scope.totalpricecart = sum;
                 $scope.finaltotal = sum + 50;
                 $scope.data = data;
             }, function (err) {
