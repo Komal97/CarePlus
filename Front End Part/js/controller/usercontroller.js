@@ -196,6 +196,7 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
 
         $scope.forgotpass = function () {
             $scope.forgot = !$scope.forgot;
+            $scope.showidmsg="bluecolor";
             $scope.registerid = "Enter your registered e-mail id";
         },
 
@@ -206,6 +207,7 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
         var promise = myfactory.forgotpassword(passobject);
         promise.then(function (data) {
             if (data.data.message == "User does not exist") {
+                $scope.showidmsg="redcolor";
                 $scope.registerid = "User does not exist";
             }
             else {
