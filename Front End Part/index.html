@@ -142,39 +142,36 @@
                                     <h3 style="margin-bottom:2%" class="text-center pb-3">PERSONAL INFORMATION</h3>
                                 </div>
 
-                                <form name="f1" nonvalidate>
+                                <form name="f1" novalidate ng-submit="formsubmit(f1)">
                                     <div class="row my-form-group">
                                         <div class="col-md-12">
                                             <div style="float:right;width:40%" class="form-group">
                                                 <label class="inputheading">Last Name* </label>
-                                                <input name="lastname" type="text" class="form-control inputbox" ng-model="lastname">
-                                                <p style="float:right" class="error" ng-show="f1.lastname.$touched && f1.lastname.$pristine">Last Name is required</p>
+                                                <input required name="lastname" type="text" class="form-control inputbox" ng-model="lastname">
+                                                <p style="float:right" class="error" ng-show="f1.lastname.$touched && f1.lastname.$invalid">Last Name is required</p>
                                             </div>
                                             <div style="width:40%" class="form-group">
                                                 <label class="inputheading"> First Name* </label>
-                                                <input name="firstname" type="text" class="form-control inputbox" ng-model="firstname">
-                                                <p class="error" ng-show="f1.firstname.$touched && f1.firstname.$pristine">First Name is required</p>
+                                                <input required name="firstname" type="text" class="form-control inputbox" ng-model="firstname">
+                                                <p class="error" ng-show="f1.firstname.$touched && f1.firstname.$invalid">First Name is required</p>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="inputheading"> E-mail Address* </label>
-                                                <input name="userid" type="email" class="form-control inputbox" ng-model="userid">
-                                                <p class="error" ng-show="f1.userid.$touched&&f1.userid.$pristine"> E-mail address is required</p>
-                                                <p class="error" ng-show="f1.userid.$touched&&f1.userid.$dirty&&f1.userid.$invalid">Invalid E-mail Address</p>
+                                                <input required name="userid" type="email" class="form-control inputbox" ng-model="userid">
+                                                <p class="error" ng-show="f1.userid.$touched&&f1.userid.$invalid">Enter a valid E-mail Address</p>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="inputheading"> Mobile Number* </label>
-                                                <input name="mobile" type="text" class="form-control inputbox" ng-pattern="/^[0-9]{10,10}$/" ng-model="mobile">
-                                                <p class="error" ng-show="f1.mobile.$touched&&f1.mobile.$pristine"> mobile number is required</p>
-                                                <p class="error" ng-show="f1.mobile.$touched&&f1.mobile.$dirty&&f1.mobile.$invalid">Mobile number should be 10 digits</p>
+                                                <input required name="mobile" type="text" class="form-control inputbox" ng-pattern="/^[0-9]{10,10}$/" ng-model="mobile">
+                                                <p class="error" ng-show="f1.mobile.$touched&&f1.mobile.$invalid">Mobile number should be 10 digits</p>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="inputheading"> Password* </label>
-                                                <input style="margin:0%" type="password" class="form-control inputbox" ng-model="password" name="password">
-                                                <p class="error" ng-show="f1.password.$touched&&f1.password.$pristine"> password is required</p>
-                                                <p class="error" ng-show="f1.password.$touched&&f1.password.$dirty&&f1.password.$invalid">Password should be at least 8 characters long and should contain one number,one
+                                                <input required style="margin:0%" type="password" class="form-control inputbox" ng-model="password" name="password">
+                                                <p class="error" ng-show="f1.password.$touched&&f1.password.$invalid">Password should be at least 8 characters long and should contain one number,one
                                                     character and one special character.</p>
                                             </div>
 
@@ -213,33 +210,32 @@
                         <div class="col-md-6 login-right">
                             <h3>REGISTERED CUSTOMERS</h3>
                             <p>If you have an account with us, please log in.</p>
-                            <form name="f2" nonvalidate>
+                            <form name="f2" novalidate>
                                 <div>
                                     <span ng-show="!forgot">Email Address
                                         <label>*</label>
                                     </span>
-                                    <input class="form-control inputbox" name="loginid" type="email" ng-model="loginid" ng-show="!forgot">
-                                    <p style="font-size:0.8em;color:red" ng-show="f2.loginid.$touched&&f2.loginid.$pristine"> E-mail address is required</p>
-                                    <p style="font-size:0.8em;color:red" ng-show="f2.loginid.$touched&&f2.loginid.$dirty&&f2.loginid.$invalid">Invalid E-mail Address</p>
+                                    <input required  class="form-control inputbox" name="loginid" type="email" ng-model="loginid" ng-show="!forgot">
+                                    <div ng-show="!forgot"><p style="font-size:0.8em;color:red" ng-show="f2.loginid.$touched&&f2.loginid.$invalid">Enter a valid E-mail Address</p></div>
                                 </div>
 
                                 <div>
                                     <span ng-show="forgot">Email Address
                                         <label>*</label>
                                     </span>
-                                    <input class="form-control inputbox" type="email" ng-model="loginid1" ng-show="forgot">
-                                    <p style="color:red" ng-show="forgot"> {{registerid}} </p>
+                                    <input class="form-control inputbox" type="email" name="loginid1" ng-model="loginid1" ng-show="forgot">
+                                    <div class="{{showidmsg}}"><p  ng-show="forgot"> {{registerid}} </p></div>
                                 </div>
 
                                 <div>
                                     <span ng-show="!forgot">Password
                                         <label>*</label>
                                     </span>
-                                    <input class="form-control inputbox" name="loginpassword" type="password" ng-model="loginpassword" ng-show="!forgot">
-                                    <p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$pristine"> password is required</p>
-                                    <p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$dirty&&f2.loginpassword.$invalid">Password should be at least 8 characters long and should contain one number,one character
-                                        and one special character.</p>
+                                    <input required class="form-control inputbox" name="loginpassword" type="password" ng-model="loginpassword" ng-show="!forgot">
+                                    <div ng-show="!forgot"><p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$invalid">Password should be at least 8 characters long and should contain one number,one character
+                                        and one special character.</p></div>
                                     <p style="font-size:0.8em;color:red"> {{invalidpassword}} </p>
+                                    
                                 </div>
                                 <a class="forgot setcursor" style="color: #31C2DB" ng-show="!forgot" ng-click="forgotpass()">Forgot Your Password?</a>
                                 <a class="forgot setcursor" style="color: #31C2DB" ng-show="forgot" ng-click="forgotpassword()">Forgot Your Password?</a>

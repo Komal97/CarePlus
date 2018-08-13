@@ -8143,3 +8143,11 @@ z-index:-1;
 	font-weight:15px;
 	font-size:16px;
 }
+.bluecolor p{
+	font-size:0.95em;
+	color: #31C2DB;
+}
+.redcolor p{
+	font-size:0.8em;
+	color: red;
+}
