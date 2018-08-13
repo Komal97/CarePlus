@@ -97,8 +97,6 @@ app.controller("retrieveproductcontroller", function ($scope, $filter, $rootScop
       $rootScope.prevname = data.data[0].name;
       $rootScope.prevprice = data.data[0].price;
       $rootScope.prevdes = data.data[0].description;
-
-
     }, function (err) {
       console.log("error", err);
 

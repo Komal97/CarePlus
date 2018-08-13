@@ -10,8 +10,6 @@ const addressRoute=require("./routes/addressroutes");
 
 const app=express();
 
-//----------------- SESSION ---------------------------
-
 app.use(bodyparser.urlencoded({encoding:true}));
 app.use(bodyparser.json());
 
