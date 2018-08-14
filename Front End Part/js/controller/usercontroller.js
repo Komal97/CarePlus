@@ -52,19 +52,32 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
         $scope.doRegister = function () {
             $scope.formsubmit = function (form) {
                 if (form.$valid) {
-                    var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
-                    console.log(userobject1);
-                    var promise = myfactory.doRegister(userobject1);
+                    var userobject2 = new accountuser($scope.userid);
+                    var promise = myfactory.checkuserexist(userobject2);
                     promise.then(function (data) {
-                        console.log("Back to promise...", data);
-                        $scope.signup = " ";
-                        $scope.login = data.data.message;
+                        if (data.data.message == "User does not exists") {
+                            var userobject1 = new user($scope.firstname, $scope.lastname, $scope.userid, $scope.mobile, $scope.password);
+                            console.log(userobject1);
+                            var promise = myfactory.doRegister(userobject1);
+                            promise.then(function (data) {
+                                $scope.signup = " ";
+                                $scope.enablelogin = !($scope.enablelogin);
+                                $localStorage.enablelogin = $scope.enablelogin;
+                                $localStorage.message = data.data.message;
+                                $scope.login = $localStorage.message;
+                            }, function (err) {
+                                console.log(err);
+                            });
+
+                            $('#myModalRegister').modal('hide');
+                        }
+                        else {
+                            $scope.valid_user = "User already exists";
+                        }
+
                     }, function (err) {
                         console.log(err);
                     });
-
-                    $('#myModalRegister').modal('hide');
-
                 }
             }
         }
@@ -75,7 +88,6 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
             var userobject2 = new accountuser($scope.login);
             var promise = myfactory.editprofile(userobject2);
             promise.then(function (data) {
-                console.log("Back to promise...", data);
                 console.log(data.data);
                 $scope.fname = data.data[0].firstname;
                 $scope.lname = data.data[0].lastname;
@@ -126,23 +138,26 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
 
     $scope.confirmpass = function () {
         var currentpassword = angular.element(document.querySelector("#currentpassword").value);
+        // console.log(currentpassword);
         var newpassword = angular.element(document.querySelector("#newpassword").value);
+        //console.log(newpassword);
         var confirmpassword = angular.element(document.querySelector("#confirmpassword").value);
+        //console.log(confirmpassword);
         if (angular.equals(newpassword, confirmpassword)) {
             $scope.confirm = " ";
             console.log("equal");
-            var confirmobject = new confirmpasswordclass($scope.login, currentpassword.selector,newpassword.selector);
+            var confirmobject = new confirmpasswordclass($scope.login, currentpassword.selector, newpassword.selector);
             console.log(confirmobject);
             var promise = myfactory.confirmpass(confirmobject);
             promise.then(function (data) {
-                if(data.data.message=="Invalid Password"){
-                    $scope.current=data.data.message;
+                if (data.data.message == "Invalid Password") {
+                    $scope.current = data.data.message;
                 }
-                else{
-                    $scope.current=" ";
-                    $scope.passchange=data.data.message;
+                else {
+                    $scope.current = " ";
+                    $scope.passchange = data.data.message;
                     $timeout(function () {
-                       $location.path('/');
+                        $location.path('/');
                     }, 3500);
                 }
             }, function (err) {
@@ -204,23 +219,23 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
 
         $scope.forgotpass = function () {
             $scope.forgot = !$scope.forgot;
-            $scope.showidmsg="bluecolor";
+            $scope.showidmsg = "bluecolor";
             $scope.registerid = "Enter your registered e-mail id";
         },
 
         $scope.showmsg = "modal-footer";
-        $scope.forgotpassword = function () {
+    $scope.forgotpassword = function () {
         $scope.showmsg = "modal-footer";
         var passobject = new accountuser($scope.loginid1);
         var promise = myfactory.forgotpassword(passobject);
         promise.then(function (data) {
             if (data.data.message == "User does not exist") {
-                $scope.showidmsg="redcolor";
+                $scope.showidmsg = "redcolor";
                 $scope.registerid = "User does not exist";
             }
             else {
                 $scope.showmsg = "show-modal-footer";
-             //   $scope.msg = "Password has been sent to your registered e-mail"
+                //   $scope.msg = "Password has been sent to your registered e-mail"
                 $scope.msg = data.data.message;
                 $timeout(function () {
                     $('#myModal').modal('hide');

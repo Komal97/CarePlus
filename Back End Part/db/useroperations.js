@@ -20,7 +20,7 @@ const useroperations = {
                     response.json({ message: 'Error Occured During Login' });
                 }
                 else {
-                    if (docs && docs.length > 0) {
+                    if (docs && docs.length > 0){
                         var object = { message: userobject.loginid };
                         response.json(object);
                     }
@@ -39,6 +39,23 @@ const useroperations = {
                 }
                 else {
                     response.json(docs);
+                }
+            })
+    },
+    checkuserexist(userobject, response) {
+        usercollection.find({ userid: userobject.accountid },
+            function (err, docs) {
+                if (err) {
+                    response.json({ message: 'Error' });
+                }
+                else {
+                    if (docs && docs.length > 0){
+                        response.json(docs);
+                    }
+                    else {
+                        var object = { message: "User does not exists" };
+                        response.json(object);
+                    }
                 }
             })
     },

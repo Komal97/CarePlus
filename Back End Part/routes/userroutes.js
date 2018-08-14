@@ -32,6 +32,14 @@ router.post('/account',(req,res)=>{
     useroperations.editprofile(userobject,res);
 });
 
+router.post('/checkuser',(req,res)=>{
+    var accountid=req.body.accountid;   
+    const useroperations=require("../db/useroperations");
+    const accountuser=require("../model/accountuser");
+    var userobject=new accountuser(accountid);
+    useroperations.checkuserexist(userobject,res);
+});
+
 router.post('/saveaccountinfo',(req,res)=>{
     var fname=req.body.fname;
     var lname=req.body.lname;
