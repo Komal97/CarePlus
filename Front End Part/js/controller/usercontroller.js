@@ -12,6 +12,9 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
     promise.then(function (data) {
         console.log("Back to promise...", data);
         console.log(data.data.length);
+        if(data.data.length==0 && !$scope.placeorder){
+            $scope.placeorder=!$scope.placeorder;
+        }
         $scope.cartcount = data.data.length;
         $rootScope.countitem = data.data.length;
         var sum = 0;
@@ -184,6 +187,9 @@ app.controller("myctrl", function ($scope, $rootScope, myfactory, $localStorage,
             promise.then(function (data) {
                 console.log("Back to promise...", data);
                 console.log(data.data.length);
+                if(data.data.length==0 && !$scope.placeorder){
+                    $scope.placeorder=!$scope.placeorder;
+                }
                 $scope.cartcount = data.data.length;
                 $rootScope.countitem = data.data.length;
                 var sum = 0;
