@@ -17,5 +17,6 @@ app.constant("ADDRESS","http://localhost:1234/manageaddress");
 app.constant("FROMADDRESS","http://localhost:1234/fromaddress");
 app.constant("DELETEITEM","http://localhost:1234/deletefromdb");
 app.constant("FORGOT","http://localhost:1234/userforgotpassword");
+app.constant("CHECKUSER","http://localhost:1234/checkuser");
 
 

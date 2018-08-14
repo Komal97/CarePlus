@@ -160,6 +160,7 @@
                                                 <label class="inputheading"> E-mail Address* </label>
                                                 <input required name="userid" type="email" class="form-control inputbox" ng-model="userid">
                                                 <p class="error" ng-show="f1.userid.$touched&&f1.userid.$invalid">Enter a valid E-mail Address</p>
+                                                <p class="error" >{{valid_user}}</p>
                                             </div>
 
                                             <div class="form-group">
@@ -232,9 +233,9 @@
                                         <label>*</label>
                                     </span>
                                     <input required class="form-control inputbox" name="loginpassword" type="password" ng-model="loginpassword" ng-show="!forgot">
-                                    <div ng-show="!forgot"><p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$invalid">Password should be at least 8 characters long and should contain one number,one character
-                                        and one special character.</p></div>
-                                    <p style="font-size:0.8em;color:red"> {{invalidpassword}} </p>
+                                    <!-- <div ng-show="!forgot"><p style="font-size:0.8em;color:red" ng-show="f2.loginpassword.$touched&&f2.loginpassword.$invalid">Password should be at least 8 characters long and should contain one number,one character
+                                        and one special character.</p></div> -->
+                                    <p style="font-size:0.8em;color:red" ng-show="!forgot"> {{invalidpassword}} </p>
                                     
                                 </div>
                                 <a class="forgot setcursor" style="color: #31C2DB" ng-show="!forgot" ng-click="forgotpass()">Forgot Your Password?</a>

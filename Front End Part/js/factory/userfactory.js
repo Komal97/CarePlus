@@ -1,5 +1,5 @@
 app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCARTDB,
-                                 MYORDERS,PASSWORD,FROMADDRESS,DELETEITEM,FORGOT){
+                                 MYORDERS,PASSWORD,FROMADDRESS,DELETEITEM,FORGOT,CHECKUSER){
     const object={
         doLogin(userobject){
             var defer=$q.defer();
@@ -101,7 +101,17 @@ app.factory("myfactory",function($http,$q,URL,URLR,URLACCOUNT,URLSAVE,URLFROMCAR
                 defer.reject(err);
             });
             return defer.promise;
-        }
+        },
+        checkuserexist(userobject){
+            var defer=$q.defer();
+            $http.post(CHECKUSER,userobject).then(function(data){
+                console.log("Success",data);
+                defer.resolve(data);
+            },function(error){
+                defer.reject(error);
+            });
+            return defer.promise;
+        },
     }
     return object;
 })
